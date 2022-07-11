@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &57283018
 AudioSource:
   m_ObjectHideFlags: 0
@@ -282,8 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0937f67d385932c439878003b46772a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicBpm: 64
+  musicBpm: 128
   musicTemp: 4
+  tikTime: 0
+  nextTime: 0
 --- !u!114 &556583285
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sync : MonoSingleton<Sync>
+public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 { 
     Test test;
 
@@ -19,10 +19,10 @@ public class Sync : MonoSingleton<Sync>
         test = GetComponent<Test>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         tikTime = ((stdBpm / musicBpm) + (musicTemp / stdTemp))/4;
-        nextTime += (float)Time.deltaTime;
+        nextTime += Time.deltaTime;
 
         if(nextTime>= tikTime)
         {

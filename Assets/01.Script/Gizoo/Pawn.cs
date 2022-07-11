@@ -17,7 +17,7 @@ public class Pawn : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Sync.Instance.tikTime);
+            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             Move(playerTransform, blockRadius);
         }
     }
