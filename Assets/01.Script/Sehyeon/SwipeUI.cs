@@ -25,18 +25,13 @@ public class SwipeUI : MonoBehaviour
     private bool isSwipeMode = false;       // 현재 Swipe가 되고 있는지 체크
     private float circleContentScale = 1.6f;    // 현재 페이지의 원 크기(배율)
 
-    Rect rect;
     private void Awake()
-    {
-
-        rect = GetComponent<Rect>();
-        rect.x -= Screen.width;
-        swipeDistance = Screen.width / 2;
-        // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메모리 할당
+    {   
+        // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메 모리 할당
         scrollPageValues = new float[transform.childCount];
 
         // 스크롤 되는 페이지 사이의 거리
-        valueDistance = 1f / (scrollPageValues.Length - 1f);
+        valueDistance = 1f / (scrollPageValues.Length-1);
 
         // 스크롤 되는 페이지의 각 value 위치 설정 [0 <= value <= 1]
         for (int i = 0; i < scrollPageValues.Length; ++i)
@@ -48,19 +43,22 @@ public class SwipeUI : MonoBehaviour
         maxPage = transform.childCount;
     }
 
-    private void Start()
+     void Start()
     {
-        SetScrollBarValue(0);
+        swipeDistance = Screen.width / 2;
+        SetScrollBarValue(1);
     }
 
     public void SetScrollBarValue(int index)
     {
         currentPage = index;
-        scrollBar.value = scrollPageValues[index];
+        scrollBar.value = valueDistance * index;
     }
 
     private void Update()
     {
+        print(scrollBar.value);
+        print(valueDistance);
         UpdateInput();
 
         // 아래에 배치된 페이지 버튼 제어
@@ -72,12 +70,22 @@ public class SwipeUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            currentPage--;
-            print("a");
+            if(currentPage<=0)
+            {
+                return;   
+            }
+            --currentPage;
+            StartCoroutine(OnSwipeOneStep(currentPage));
+            
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            currentPage++;
+            if(currentPage>=maxPage-1)
+            {
+                return;
+            }
+            ++currentPage;
+            StartCoroutine(OnSwipeOneStep(currentPage));
         }
         // 현재 Swipe를 진행중이면 터치 불가
         if (isSwipeMode == true) return;
@@ -207,24 +215,28 @@ public class SwipeUI : MonoBehaviour
         switch (currentPage)
         {
             case 0:
+                difAudio[0].Stop();
+                break;
+            case 1:
                 difAudio[1].Stop();
                 difAudio[0].Play();
                 break;
-            case 1:
+            case 2:
                 difAudio[0].playOnAwake = false;
                 difAudio[0].Stop();
                 difAudio[2].Stop();
                 difAudio[1].Play();
                 break;
-            case 2:
+            case 3:
                 difAudio[1].Stop();
                 difAudio[3].Stop();
                 difAudio[2].Play();
                 break;
-            case 3:
+            case 4:
                 difAudio[2].Stop();
                 difAudio[3].Play();
                 break;
+
         }
     }
 

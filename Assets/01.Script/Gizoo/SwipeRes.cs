@@ -7,15 +7,16 @@ public class SwipeRes : MonoBehaviour
 {
     // Start is called before the first frame update
     public Image rect;
-    void Start()
+    void Awake()
     {
-        
+        rect.rectTransform.sizeDelta = new Vector2(Screen.width, 1080);
+        Debug.Log(Screen.width);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rect.rectTransform.sizeDelta = new Vector2(Screen.width, 1080);
-        Debug.Log(Screen.width);
+        //rect.rectTransform.sizeDelta = new Vector2(Screen.width, 1080);
+   
     }
 }
