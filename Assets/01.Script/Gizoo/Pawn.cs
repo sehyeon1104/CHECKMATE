@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Pawn : MonoBehaviour
 {
-    [SerializeField]
     private Transform playerTransform;
     private float blockRadius = 1f;
 
     private void Start()
     {
+        playerTransform = GameObject.FindWithTag("Player").transform;
         StartCoroutine(PawnM());
     }
 
