@@ -19,7 +19,6 @@ public class warningSign : MonoBehaviour
     {
         for(int i = 0; i < beat; i++)
         {
-            Debug.Log("гогого");
             spriteR.color = Color.black;
             yield return new WaitForSeconds(bpm);
             spriteR.color = Color.white;

@@ -88,7 +88,7 @@ public class Testing : MonoBehaviour
         {
             string line = stringReader.ReadLine(); //한줄씩 반환
 
-
+            Debug.Log(line);
 
             if(line == null)
             {
@@ -113,31 +113,30 @@ public class Testing : MonoBehaviour
     void MonsterSpawn()
     {
         int enemyIndex = 0;
+
+        Debug.Log(spawnList[spawnIndex].type);
         switch(spawnList[spawnIndex].type)
         {
-            case "Pawn":
+            case "P":
                 chessState = ChessMal.Pawn;
                 enemyIndex = 0;
                 break;
-            case "Knight":
+            case "K":
+                Debug.Log("비숍소환");
                 chessState = ChessMal.Knight;
                 enemyIndex = 1;
                 break;
-            case "Bishop":
+            case "B":
                 chessState = ChessMal.Bishop;
                 enemyIndex = 2;
                 break;
-            case "Rook":
+            case "R":
                 chessState = ChessMal.Rook;
                 enemyIndex = 3;
                 break;
-            case "King":
-                chessState = ChessMal.King;
-                enemyIndex = 4;
-                break;
-            case "Queen":
+            case "Q":
                 chessState = ChessMal.Queen;
-                enemyIndex = 5;
+                enemyIndex = 4;
                 break;
         }
 
