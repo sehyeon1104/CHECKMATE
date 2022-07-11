@@ -15,11 +15,12 @@ public class Pawn : MonoBehaviour
 
     private IEnumerator PawnM()
     {
-        while (true)
+        while (transform.position != playerTransform.position)
         {
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             Move(playerTransform, blockRadius);
         }
+        Destroy(gameObject, Sync_Gijoo.Instance.tikTime);
     }
 
     public void Move(Transform playerTransform, float tileRad)

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 { 
     Test test;
+    AudioSource audioSource;
 
     public float musicBpm;
     float stdBpm = 60f;
@@ -16,18 +17,21 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         test = GetComponent<Test>();
+        audioSource.Play();
+
     }
 
     private void FixedUpdate()
     {
-        tikTime = ((stdBpm / musicBpm) + (musicTemp / stdTemp))/4;
+        tikTime = 60 / musicBpm /*+ (musicTemp / stdTemp)*/;
         nextTime += Time.deltaTime;
 
         if(nextTime>= tikTime)
         {
             StartCoroutine(PlayTik(tikTime));
-            nextTime = 0f;
+            nextTime -= 60 / musicBpm;
         }
     }
 
