@@ -8,21 +8,11 @@ public class Test : MonoBehaviour
     CameraShake cameraShake;
     [SerializeField]
     AudioSource testSound;
-    void Update()
+
+    public void TestOffset()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            cameraShake.ReSize();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            cameraShake.Shake();
-        }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            testSound.Play();
-            cameraShake.ReSize();
-            cameraShake.Shake();
-        }
+        testSound.Play();
+        cameraShake.ReSize();
+        cameraShake.Shake();
     }
 }

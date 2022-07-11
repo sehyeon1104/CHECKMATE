@@ -17,9 +17,9 @@ public class Knight : MonoBehaviour
     {
         while (transform.position != playerTransform.position)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Sync.Instance.tikTime);
             transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Sync.Instance.tikTime);
             switch (Random.Range(0, 2))
             {
                 case 0:
@@ -35,7 +35,7 @@ public class Knight : MonoBehaviour
                         transform.position += new Vector3(-blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : -1 * blockRadius);
                     break;
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Sync.Instance.tikTime);
             transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
         }
     }

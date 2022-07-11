@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(Sync.Instance.tikTime * 5f);
             while (new Vector3(xPos, yPos) == Vector3.zero)
             {
                 randomX = Random.Range(0, 3);
