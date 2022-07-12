@@ -1,21 +1,22 @@
-N,W, false, 0
-K,D, false, 0
-N,W, false, 0
-P,S, false, 0
-P,S, true, 1
-R,A, false, 0
-P,W, false, 0
-N,W, false, 0
-P,D, false, 0
-P,D, true, 1
-K,S, false, 0
-N,W, false, 0
-P,A, true, 1
-R,W, false, 0
-P,W, false, 0
-N,W, false, 0
-P,S, false, 0
-P,S, false, 0
-P,S, false, 0
-P,D, false, 0
-P,A, false, 0
+K, 4, 2, false, 0
+N, 0, 0, false, 0
+P, 2, 0, false, 0
+P, 2, 0, true, 1
+R, 0, 2, false, 0
+P, 2, 4, false, 0
+N, 0, 0, false, 0
+P, 4, 2, false, 0
+P, 4, 2, false, 0
+P, 4, 2, true, 1
+K, 2, 0, false, 0
+P, 4, 2, false, 0
+P, 0, 2, true, 1
+R, 2, 4, false, 0
+P, 2, 4, false, 0
+N, 0, 0, false, 0
+P, 2, 0, false, 0
+P, 2, 0, false, 0
+P, 2, 0, false, 0
+P, 2, 0, false, 0
+P, 4, 2, false, 0
+P, 0, 2, false, 0

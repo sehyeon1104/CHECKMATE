@@ -6,16 +6,10 @@ public class Knight : MonoBehaviour
 {
     private Transform playerTransform;
     private float blockRadius = 1f;
-    private int dirType;
-
-    [SerializeField] private Sprite[] sprites;
 
     private void Start()
     {
-        dirType = Random.Range(0, 2);
         playerTransform = GameObject.FindWithTag("Player").transform;
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = sprites[dirType];
         StartCoroutine(KnightM());
     }
 
@@ -29,7 +23,7 @@ public class Knight : MonoBehaviour
             //그러니까 플레이어 위치의 X좌표 - 폰 위치의 X좌표가 0보다 크면 1만큼 이동, 0이면 이동 안함, 0보다 작으면 -1만큼 이동
             //
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-            switch (dirType)
+            switch (Random.Range(0, 2))
             {
                 case 0:
                     if(playerTransform.position.y - transform.position.y == 0)

@@ -13,14 +13,16 @@ public class warningSign : MonoBehaviour
     }
 
     public int beat;
+    //bpm만큼 3박자
+    public float bpm;
     IEnumerator Ienum()
     {
         for(int i = 0; i < beat; i++)
         {
             spriteR.color = Color.black;
-            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+            yield return new WaitForSeconds(bpm);
             spriteR.color = Color.white;
-            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+            yield return new WaitForSeconds(bpm);
 
         }
 
