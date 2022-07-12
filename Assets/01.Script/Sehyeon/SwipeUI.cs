@@ -16,6 +16,8 @@ public class SwipeUI : MonoBehaviour
     // 음악관련
     public AudioSource[] difAudio = null;
 
+    private float timer;
+    bool isswipe;
     private float[] scrollPageValues;           // 각 페이지의 위치 값 [0.0 - 1.0]
     private float valueDistance = 0;            // 각 페이지 사이의 거리
     public int currentPage = 0;            // 현재 페이지
@@ -168,12 +170,12 @@ public class SwipeUI : MonoBehaviour
     /// </summary>
     private IEnumerator OnSwipeOneStep(int index)
     {
+      
         float start = scrollBar.value;
         float current = 0;
         float percent = 0;
 
         isSwipeMode = true;
-
         while (percent < 1)
         {
             current += Time.deltaTime;
@@ -185,6 +187,7 @@ public class SwipeUI : MonoBehaviour
         }
 
         isSwipeMode = false;
+        timer += Time.deltaTime;
     }
 
     public bool check = true;
@@ -199,13 +202,16 @@ public class SwipeUI : MonoBehaviour
         }
         if (flaseCur != currentPage)
         {
-            AudioManaher();
+            if(flaseCur != 0)
+            {
+                AudioManaher();
+            }
         }
     }
 
     IEnumerator WaitForIt()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         check = true;
     }
 
@@ -214,7 +220,6 @@ public class SwipeUI : MonoBehaviour
         switch (currentPage)
         {
             case 0:
-                difAudio[0].Stop();
                 break;
             case 1:
                 difAudio[1].Stop();
