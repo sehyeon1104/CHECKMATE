@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/04.Sprites/화살표.meta
-guid: 2dadf003ef19d044aaf0e3b209840fac
+<<<<<<< HEAD:Assets/Resources/N2.txt.meta
+guid: 5a6498110b124f1488d688aada2b758a
+TextScriptImporter:
 =======
-guid: 9daa98056f4723b41a21308183be460d
->>>>>>> Gijoo:Assets/Scenes/SampleScene.unity.meta
+guid: ac0b4852589e6d045adee4adbe363bc2
 DefaultImporter:
+>>>>>>> 703dd9eacdf6ca348b1197f47557d63c4e92a316:Assets/04.Sprites/화살표.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

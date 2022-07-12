@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime * 3);
+            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime * 3f);
             while (new Vector3(xPos, yPos) == Vector3.zero)
             {
                 randomX = Random.Range(0, 3);

@@ -14,10 +14,7 @@ public class SliderController : MonoBehaviour
     public void SoundControl()
     {
         float sound = volumeSlider.value;
-
-        Debug.Log(sound);
-
-        if (sound == -40f) audioMixer.SetFloat(parameterName, -80);
+        if (sound == -20) audioMixer.SetFloat(parameterName, -80);
         else audioMixer.SetFloat(parameterName, sound);
     }
 }

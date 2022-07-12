@@ -6,10 +6,23 @@ using System.IO;
 public class Wave
 {
     public string type;//몬스터 종류
+<<<<<<< HEAD
     public int x;
     public int y;
+=======
+<<<<<<< HEAD
+    public int x;
+    public int y;
+    public float delay;
+
+=======
+    //public int x;
+    //public int y;
+    public string keyboardArrow;
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
     public bool multi;
     public int childCount;
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
     // 스폰딜레이
 }
 
@@ -21,8 +34,8 @@ public class Testing : MonoBehaviour
 
     private void Awake()
     {
-
         spawnList = new List<Wave>();
+<<<<<<< HEAD
         ReadSpawnFile("N1");
         //int ran = Random.Range(0, 3);
         //switch (ran)
@@ -37,7 +50,26 @@ public class Testing : MonoBehaviour
         //        ReadSpawnFile("patternC");
         //        break;
         //}
+=======
+<<<<<<< HEAD
+=======
+        int ran = Random.Range(0, 3);
+        switch (ran)
+        {
+            case 0:
+                ReadSpawnFile("N1");
+                break;
+            case 1:
+                ReadSpawnFile("N2");
+                break;
+            case 2:
+                ReadSpawnFile("N3");
+                break;
+        }
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
 
+        ReadSpawnFile();
     }
     public List<GameObject> monsterMob = new List<GameObject>();
     
@@ -50,7 +82,6 @@ public class Testing : MonoBehaviour
     private int[,] gridArray;
     void Start()
     {
-
         grid = new Grid(5, 5, cellSize, new Vector3(transform.position.x, transform.position.y));
 
         gridArray = new int[5, 5];
@@ -73,14 +104,26 @@ public class Testing : MonoBehaviour
     public int bpm;
     double currentTime = 0d;
 
+    
 
-    bool isMultiSPawn = true;
     // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;
+<<<<<<< HEAD
         
         if(currentTime >=  (60d / bpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
+=======
+<<<<<<< HEAD
+
+        if(currentTime >= 60d / bpm && !spawnEnd)
+        {
+            MonsterSpawn();
+            currentTime -= 60d / bpm;
+=======
+
+        if (currentTime >= (60f / Sync_Gijoo.Instance.musicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
         {
             MonsterSpawn(); 
             currentTime -=  60d / bpm;
@@ -89,6 +132,7 @@ public class Testing : MonoBehaviour
         }
         else if(spawnEnd == true && isRead == true)
         {
+<<<<<<< HEAD
             //int ran = Random.Range(0, 3);
             //switch(ran)
             //{
@@ -103,20 +147,34 @@ public class Testing : MonoBehaviour
             //        break;
             //}
            
+=======
+            int ran = Random.Range(0, 3);
+            switch (ran)
+            {
+                case 0:
+                    ReadSpawnFile("N1");
+                    break;
+                case 1:
+                    ReadSpawnFile("N2");
+                    break;
+                case 2:
+                    ReadSpawnFile("N3");
+                    break;
+            }
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
         }
     }
-
-    bool isRead;
-    void ReadSpawnFile(string patern)
+    void ReadSpawnFile()
     {
-        isRead = false;
         spawnList.Clear(); //모두 클리어
 
         spawnIndex = 0;
         spawnEnd = false; //변수 초기화
 
         // 리스폰 파일 읽기'
-        TextAsset textFile = Resources.Load(patern) as TextAsset;//텍스트 파일 에셋 클래스
+        TextAsset textFile = Resources.Load("tutorial") as TextAsset;//텍스트 파일 에셋 클래스
         StringReader stringReader = new StringReader(textFile.text); //파일 내의 문자열 읽기 클래스
 
 
@@ -124,6 +182,7 @@ public class Testing : MonoBehaviour
         {
             string line = stringReader.ReadLine(); //한줄씩 반환
 
+            Debug.Log(line);
 
             if(line == null)
             {
@@ -131,10 +190,24 @@ public class Testing : MonoBehaviour
             }
             Wave spawnData = new Wave();
             spawnData.type = line.Split(',')[0];
+<<<<<<< HEAD
             spawnData.x = int.Parse(line.Split(',')[1]);
             spawnData.y = int.Parse(line.Split(',')[2]);
             spawnData.multi = bool.Parse(line.Split(',')[3]);
             spawnData.childCount = int.Parse(line.Split(',')[4]);
+=======
+<<<<<<< HEAD
+            spawnData.x = int.Parse(line.Split(',')[1]);
+            spawnData.y = int.Parse(line.Split(',')[2]);
+            spawnData.delay = float.Parse(line.Split(',')[3]);
+=======
+            //spawnData.x = int.Parse(line.Split(',')[1]);
+            //spawnData.y = int.Parse(line.Split(',')[2]);
+            spawnData.keyboardArrow = line.Split(',')[1];
+            spawnData.multi = bool.Parse(line.Split(',')[2]);
+            spawnData.childCount = int.Parse(line.Split(',')[3]);
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
             spawnList.Add(spawnData); //변수를 초기화하고 변수를 넣은걸 추가한다.
         }
 
@@ -142,25 +215,41 @@ public class Testing : MonoBehaviour
         stringReader.Close();
 
 
-        isRead = true;
+
     }
 
     //
-    private bool isMulti;
-    private int count;
-
-    int i;
     void MonsterSpawn()
     {
+        int enemyIndex = 0;
 
-        if (isMultiSPawn == false) return;
-        isMulti = spawnList[spawnIndex].multi;
-
-
-
-
-        if (isMulti == true)
+        Debug.Log(spawnList[spawnIndex].type);
+        switch(spawnList[spawnIndex].type)
         {
+<<<<<<< HEAD
+            case "P":
+                chessState = ChessMal.Pawn;
+                enemyIndex = 0;
+                break;
+            case "K":
+                Debug.Log("비숍소환");
+                chessState = ChessMal.Knight;
+                enemyIndex = 1;
+                break;
+            case "B":
+                chessState = ChessMal.Bishop;
+                enemyIndex = 2;
+                break;
+            case "R":
+                chessState = ChessMal.Rook;
+                enemyIndex = 3;
+                break;
+            case "Q":
+                chessState = ChessMal.Queen;
+                enemyIndex = 4;
+                break;
+        }
+=======
             isMulti = false;
             isMultiSPawn = false;
             count = spawnList[spawnIndex].childCount;
@@ -264,43 +353,32 @@ public class Testing : MonoBehaviour
         else if(isMulti == false)
         {
             int enemyIndex = 0;
-
-            Debug.Log(spawnList[spawnIndex].type);
-            switch (spawnList[spawnIndex].type)
-            {
-                case "P":
-                    chessState = ChessMal.Pawn;
-                    enemyIndex = 0;
-                    break;
-                case "K":
-                    Debug.Log("비숍소환");
-                    chessState = ChessMal.Knight;
-                    enemyIndex = 1;
-                    break;
-                case "B":
-                    chessState = ChessMal.Bishop;
-                    enemyIndex = 2;
-                    break;
-                case "R":
-                    chessState = ChessMal.Rook;
-                    enemyIndex = 3;
-                    break;
-                case "Q":
-                    chessState = ChessMal.Queen;
-                    enemyIndex = 4;
-                    break;
-                case "N":
-                    enemyIndex = 5;
-                    break;
-            }
-
-            if (enemyIndex == 5)
-            {
-                spawnIndex++;
-                return;
-            }
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 
 
+        GameObject enemy = monsterMob[enemyIndex];
+
+        int enemyPointX = spawnList[spawnIndex].x;
+        int enemyPointY = spawnList[spawnIndex].y;
+
+<<<<<<< HEAD
+
+
+<<<<<<< HEAD
+=======
+        //텍스트로 적소환차기
+        Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
+        Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 1, monsterSpawnPostion.y + 1);
+        //Prefab를 가져온다. 
+        //Enum으로 가져오는 오브젝트를 정하는거야
+        Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+
+
+        spawnIndex++;
+=======
+
+
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
             GameObject enemy = monsterMob[enemyIndex];
 
             int enemyPointX = spawnList[spawnIndex].x;
@@ -325,10 +403,15 @@ public class Testing : MonoBehaviour
                 spawnEnd = true;
                 return;
             }
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 
+        if(spawnIndex == spawnList.Count)
+        {
+            spawnEnd = true;
+            return;
         }
 
-
+       
 
     }
   
