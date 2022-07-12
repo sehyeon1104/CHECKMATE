@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knight : MonoBehaviour
+public class Knight_SeungHoon : MonoBehaviour
 {
     private Transform playerTransform;
     private float blockRadius = 1f;
@@ -41,6 +41,5 @@ public class Knight : MonoBehaviour
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
         }
-        Destroy(gameObject,Sync_Gijoo.Instance.tikTime);
     }
 }
