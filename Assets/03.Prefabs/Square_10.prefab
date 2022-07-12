@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3539824167348927305}
   - component: {fileID: -1127577080579981471}
   - component: {fileID: -4085715227525470236}
+  - component: {fileID: 4033775302117426892}
   m_Layer: 31
   m_Name: Square_10
-  m_TagString: Untagged
+  m_TagString: Chess
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06704c362685a54e9ccd02dd077dd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 1741372048, guid: 2e0554ce99a2dc34f9feb3ac252719d7, type: 3}
-  - {fileID: 1628632980, guid: 2e0554ce99a2dc34f9feb3ac252719d7, type: 3}
 --- !u!96 &-1127577080579981471
 TrailRenderer:
   serializedVersion: 2
@@ -243,13 +241,64 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_Vertices:
+  - position: {x: 1.295, y: 0.61, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.26614583, y: 0.73125}
+  - position: {x: 1.095, y: -1.22, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.25572917, y: 0.540625}
+  - position: {x: 1.295, y: -0.75, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.26614583, y: 0.58958334}
+  - position: {x: 0.815, y: 1.22, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.24114583, y: 0.79479164}
+  - position: {x: -0.195, y: 1.22, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.18854167, y: 0.79479164}
+  - position: {x: -1.255, y: 0.27, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.13333334, y: 0.6958333}
+  - position: {x: -1.295, y: -0.09, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.13125, y: 0.65833336}
+  - position: {x: -1.295, y: -1.22, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.13125, y: 0.540625}
   - position: {x: 0, y: 0, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 0000
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  m_Triangles: 070006000100050001000600040001000500030001000400000001000300020001000000
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1.295, y: 1.22, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -264,3 +313,29 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!61 &4033775302117426892
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539824167348927310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.59, y: 2.44}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.59, y: 2.44}
+  m_EdgeRadius: 0

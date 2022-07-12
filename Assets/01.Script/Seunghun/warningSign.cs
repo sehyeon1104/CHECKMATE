@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class warningSign : MonoBehaviour
+public class warningSign : ChessMal
 {
 
     public GameObject LookObj;
@@ -24,8 +24,29 @@ public class warningSign : MonoBehaviour
 
         }
 
-        Instantiate(LookObj, transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(LookObj, transform.position, Quaternion.identity);
+
+
+        IArrow arr = obj.GetComponent<IArrow>();
+
+        //그러고보니 신호는 그게 없잖아?
+        if (arr != null)
+        {
+
+            Debug.Log("안되는 건가");
+            arr.ArrowCopySW(arrow);
+        }
         gameObject.SetActive(false);
 
+    }
+
+    public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)
+    {
+        base.ArrowCopySW(chessArrow);
+    }
+
+    public override ChessSpawnArrowEnum.ChessArrow GetArrowState()
+    {
+        return base.GetArrowState();
     }
 }

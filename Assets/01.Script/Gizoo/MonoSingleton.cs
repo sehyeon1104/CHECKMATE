@@ -15,7 +15,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
             if (ShuttingDown)
             {
                 Debug.LogWarning("Intance" + typeof(T) + "is destroyed. returning null.");
-                return null;
+                //return null;
             }
 
             lock (locker)
@@ -27,6 +27,13 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                     {
                         instance = new GameObject(typeof(T).ToString()).AddComponent<T>();
                     }
+
+                   // DontDestroyOnLoad(instance.gameObject);
+
+                }
+                else
+                {
+                    //Destroy(instance.gameObject);
                 }
             }
             return instance;

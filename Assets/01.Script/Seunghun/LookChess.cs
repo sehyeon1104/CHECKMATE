@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class LookChess : MonoBehaviour
+public class LookChess : ChessMal
 {
     private Transform playerTransform;
     private float blockRadius = 1f;
@@ -17,7 +17,7 @@ public class LookChess : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position == playerTransform.position)
+        if (transform.position == playerTransform.position)
         {
             Destroy(gameObject, Sync_Gijoo.Instance.tikTime);
         }
@@ -25,8 +25,17 @@ public class LookChess : MonoBehaviour
 
     public void Move(Transform playerTransform, float tileRad)
     {
-        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 : (playerTransform.position.x - transform.position.x) < 0 ? -4 : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 4 : (playerTransform.position.y - transform.position.y) < 0 ? -4 : 0 * tileRad),Sync_Gijoo.Instance.tikTime);
+        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 : (playerTransform.position.x - transform.position.x) < 0 ? -4 : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 4 : (playerTransform.position.y - transform.position.y) < 0 ? -4 : 0 * tileRad), Sync_Gijoo.Instance.tikTime);
     }
 
+    public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)
+    {
+        base.ArrowCopySW(chessArrow);
+    }
+
+    public override ChessSpawnArrowEnum.ChessArrow GetArrowState()
+    {
+        return base.GetArrowState();
+    }
 
 }

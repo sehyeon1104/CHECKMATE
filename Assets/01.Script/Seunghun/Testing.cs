@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
+using static ChessSpawnArrowEnum;
 public class Wave
 {
     public string type;//몬스터 종류
@@ -20,6 +20,9 @@ public class Testing : MonoBehaviour
 
     ChessMal chessState = ChessMal.Pawn;
 
+
+    public bool isSpawn;
+    public ChessArrow arrow;
     private void Awake()
     {
 
@@ -77,6 +80,11 @@ public class Testing : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (isSpawn == false)
+        {
+            return;
+        }
         currentTime += Time.deltaTime;
 
         if (currentTime >= (60f / Sync_Gijoo.Instance.musicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
@@ -166,43 +174,12 @@ public class Testing : MonoBehaviour
             //
             for (i = 0; i < count; i++)
             {
-                //3번반복이 안되네
-                //3개가 되나
 
-                //자식중에 멀티하는게 있다면은 
-
-
-                Debug.Log(spawnList[spawnIndex].childCount);
                 int enemyIndex = 0;
 
-                Debug.Log(spawnList[spawnIndex].type);
-                switch (spawnList[spawnIndex].type)
-                {
-                    case "P":
-                        chessState = ChessMal.Pawn;
-                        enemyIndex = 0;
-                        break;
-                    case "K":
-                        Debug.Log("비숍소환");
-                        chessState = ChessMal.Knight;
-                        enemyIndex = 1;
-                        break;
-                    case "B":
-                        chessState = ChessMal.Bishop;
-                        enemyIndex = 2;
-                        break;
-                    case "R":
-                        chessState = ChessMal.Rook;
-                        enemyIndex = 3;
-                        break;
-                    case "Q":
-                        chessState = ChessMal.Queen;
-                        enemyIndex = 4;
-                        break;
-                    case "N":
-                        enemyIndex = 5;
-                        break;
-                }
+
+                //
+                SelectChess(ref enemyIndex);
 
                 if (enemyIndex == 5)
                 {
@@ -218,45 +195,7 @@ public class Testing : MonoBehaviour
                 //Debug.Log(  "EnemyPointX"  + enemyPointX);
                 //Debug.Log("EnemyPointY" + enemyPointY);
 
-                switch (spawnList[spawnIndex].keyboardArrow)
-                {
-                    case "W":
-                        X = 2;
-                        Y = 4;
-                        break;
-                    case "S":
-                        X = 2;
-                        Y = 0;
-                        break;
-                    case "A":
-                        X = 0;
-                        Y = 2;
-                        break;
-                    case "D":
-                        X = 4;
-                        Y = 2;
-                        break;
-                    case "AW":
-                    case "WA":
-                        X = 4;
-                        Y = 0;
-                        break;
-                    case "DW":
-                    case "WD":
-                        X = 4;
-                        Y = 4;
-                        break;
-                    case "SA":
-                    case "AS":
-                        X = 0;
-                        Y = 0;
-                        break;
-                    case "SD":
-                    case "DS":
-                        X = 4;
-                        Y = 0;
-                        break;
-                }
+                KeyBoardArrowSW(ref X, ref Y);
 
                 //텍스트로 적소환차기
                 Vector2 monsterSpawnPostion;
@@ -264,21 +203,29 @@ public class Testing : MonoBehaviour
                 if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
                 {
                     monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                    monsterPostionSet = new Vector2(monsterSpawnPostion.x*2 + 0.5f, monsterSpawnPostion.y*2 + 0.5f);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 0.5f, monsterSpawnPostion.y * 2 + 0.5f);
                 }
                 else
                 {
                     monsterSpawnPostion = grid.GetWorldPosition(X, Y);
                     monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
                 }
-               
+
 
                 Debug.Log(grid.GetWorldPosition(X, Y));
                 //Prefab를 가져온다. 
                 //Enum으로 가져오는 오브젝트를 정하는거야
-                Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+                GameObject enmeyObj =  Instantiate(enemy, monsterPostionSet, Quaternion.identity);
 
+                IArrow arr = enmeyObj.GetComponent<IArrow>();
 
+                Debug.Log(arrow);
+                if (arr != null)
+                {
+                    arr.ArrowCopySW(arrow);
+                }
+                //에너미의 함수를 실행시키자 실행시키면 자기에게도 그게있는데 그걸 함수를 전달하는 거야
+                //여기에 enum을 넣어가지고 상태를 물려주자
                 spawnIndex++;
 
 
@@ -298,34 +245,7 @@ public class Testing : MonoBehaviour
         {
             int enemyIndex = 0;
 
-            Debug.Log(spawnList[spawnIndex].type);
-            switch (spawnList[spawnIndex].type)
-            {
-                case "P":
-                    chessState = ChessMal.Pawn;
-                    enemyIndex = 0;
-                    break;
-                case "K":
-                    Debug.Log("비숍소환");
-                    chessState = ChessMal.Knight;
-                    enemyIndex = 1;
-                    break;
-                case "B":
-                    chessState = ChessMal.Bishop;
-                    enemyIndex = 2;
-                    break;
-                case "R":
-                    chessState = ChessMal.Rook;
-                    enemyIndex = 3;
-                    break;
-                case "Q":
-                    chessState = ChessMal.Queen;
-                    enemyIndex = 4;
-                    break;
-                case "N":
-                    enemyIndex = 5;
-                    break;
-            }
+            SelectChess(ref enemyIndex);
 
             if (enemyIndex == 5)
             {
@@ -341,49 +261,13 @@ public class Testing : MonoBehaviour
             int Y = 0;
 
 
-            switch (spawnList[spawnIndex].keyboardArrow)
-            {
-                case "W":
-                    X = 2;
-                    Y = 4;
-                    break;
-                case "S":
-                    X = 2;
-                    Y = 0;
-                    break;
-                case "A":
-                    X = 0;
-                    Y = 2;
-                    break;
-                case "D":
-                    X = 4;
-                    Y = 2;
-                    break;
-                case "AW":
-                case "WA":
-                    X = 4;
-                    Y = 0;
-                    break;
-                case "DW":
-                case "WD":
-                    X = 4;
-                    Y = 4;
-                    break;
-                case "SA":
-                case "AS":
-                    X = 0;
-                    Y = 0;
-                    break;
-                case "SD":
-                case "DS":
-                    X = 4;
-                    Y = 0;
-                    break;
-            }
+            KeyBoardArrowSW(ref X, ref Y);
 
 
             Vector2 monsterSpawnPostion;
             Vector2 monsterPostionSet;
+
+            //소환하는 게임오브젝트에다가 x,y에따라 Arrow를 설정해주는 함수를 넣어주는 
             if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
             {
                 monsterSpawnPostion = grid.GetWorldPosition(X, Y);
@@ -396,8 +280,18 @@ public class Testing : MonoBehaviour
             }
             //Prefab를 가져온다. 
             //Enum으로 가져오는 오브젝트를 정하는거야
-            Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+            GameObject enmeyObj = Instantiate(enemy, monsterPostionSet, Quaternion.identity);
 
+            IArrow arr = enmeyObj.GetComponent<IArrow>();
+
+            //그러고보니 신호는 그게 없잖아?
+            Debug.Log(arrow);
+            if (arr != null)
+            {
+
+                Debug.Log("안되는 건가");
+                arr.ArrowCopySW(arrow);
+            }
 
             spawnIndex++;
 
@@ -411,6 +305,97 @@ public class Testing : MonoBehaviour
 
 
 
+    }
+
+    private void SelectChess(ref int enemyIndex)
+    {
+        switch (spawnList[spawnIndex].type)
+        {
+            case "P":
+                chessState = ChessMal.Pawn;
+                enemyIndex = 0;
+                break;
+            case "K":
+                Debug.Log("비숍소환");
+                chessState = ChessMal.Knight;
+                enemyIndex = 1;
+                break;
+            case "B":
+                chessState = ChessMal.Bishop;
+                enemyIndex = 2;
+                break;
+            case "R":
+                chessState = ChessMal.Rook;
+                enemyIndex = 3;
+                break;
+            case "Q":
+                chessState = ChessMal.Queen;
+                enemyIndex = 4;
+                break;
+            case "N":
+                enemyIndex = 5;
+                break;
+        }
+    }
+
+
+    //w면 w만의 인덱스를 가지게 만들려면 
+    private void KeyBoardArrowSW(ref int X, ref int Y)
+    {
+        switch (spawnList[spawnIndex].keyboardArrow)
+        {
+            case "W":
+                //소환이 되게 만들어
+                //소환될떄 //소환되는 오브젝트다가 스크립트를 붙이게 할수있지 않을까 
+                //체스 되어있고, W로 하고,  W만의 인덱스를 가짐
+                //인덱스를 가지게 만들어 스테이트를? 
+                //
+                //에너미의 상태를 결정하는 함수를 만들어야 함
+                arrow = ChessArrow.W;
+                X = 2;
+                Y = 4;
+                break;
+            case "S":
+                
+                arrow = ChessArrow.S;
+                X = 2;
+                Y = 0;
+                break;
+            case "A":
+                arrow = ChessArrow.A;
+                X = 0;
+                Y = 2;
+                break;
+            case "D":
+                arrow = ChessArrow.D;
+                X = 4;
+                Y = 2;
+                break;
+            case "AW":
+            case "WA":
+                arrow = ChessArrow.AW;
+                X = 4;
+                Y = 0;
+                break;
+            case "DW":
+            case "WD":
+                arrow = ChessArrow.DW;
+                X = 4;
+                Y = 4;
+                break;
+            case "SA":
+            case "AS":
+                arrow = ChessArrow.SA;
+                X = 0;
+                Y = 0;
+                break;
+            case "SD":
+            case "DS":
+                arrow = ChessArrow.SD;
+                X = 4;
+                Y = 0;
+                break;
+        }
     }
 
 }
