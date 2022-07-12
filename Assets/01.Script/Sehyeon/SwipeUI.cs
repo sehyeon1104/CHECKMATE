@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class SwipeUI : MonoBehaviour
 {
     [SerializeField]
@@ -57,8 +57,7 @@ public class SwipeUI : MonoBehaviour
 
     private void Update()
     {
-        print(scrollBar.value);
-        print(valueDistance);
+        NextScene();
         UpdateInput();
 
         // 아래에 배치된 페이지 버튼 제어
@@ -241,19 +240,39 @@ public class SwipeUI : MonoBehaviour
     }
 
 
-
+    void NextScene()
+    {
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            switch(currentPage)
+            {
+                case 1:
+                    SceneManager.LoadScene("TutorialScene");
+                    break;
+                case 2:
+                    SceneManager.LoadScene("EasyScene");
+                    break;
+                case 3:
+                    SceneManager.LoadScene("NormalScene");
+                    break;
+                case 4:
+                    SceneManager.LoadScene("HardScene");
+                    break;
+            }
+        }
+    }
     private void UpdateCircleContent()
     {
         // 아래에 배치된 페이지 버튼 크기, 색상 제어 (현재 머물고 있는 페이지의 버튼만 수정)
         for (int i = 0; i < scrollPageValues.Length; ++i)
         {
-            circleContents[i].localScale = Vector2.one;
+            circleContents[i].localScale = new Vector2(0.5f, 0.5f);
             circleContents[i].GetComponent<Image>().color = Color.white;
 
             // 페이지의 절반을 넘어가면 현재 페이지 원을 바꾸도록
             if (scrollBar.value < scrollPageValues[i] + (valueDistance / 2) && scrollBar.value > scrollPageValues[i] - (valueDistance / 2))
             {
-                circleContents[i].localScale = Vector2.one * circleContentScale;
+                circleContents[i].localScale = new Vector2(0.5f, 0.5f) * circleContentScale;
                 circleContents[i].GetComponent<Image>().color = Color.black;
             }
         }
