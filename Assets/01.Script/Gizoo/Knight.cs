@@ -6,10 +6,16 @@ public class Knight : MonoBehaviour
 {
     private Transform playerTransform;
     private float blockRadius = 1f;
+    private int dirType;
+
+    [SerializeField] private Sprite[] sprites;
 
     private void Start()
     {
+        dirType = Random.Range(0, 2);
         playerTransform = GameObject.FindWithTag("Player").transform;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = sprites[dirType];
         StartCoroutine(KnightM());
     }
 
@@ -20,7 +26,7 @@ public class Knight : MonoBehaviour
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-            switch (Random.Range(0, 2))
+            switch (dirType)
             {
                 case 0:
                     if(playerTransform.position.y - transform.position.y == 0)
