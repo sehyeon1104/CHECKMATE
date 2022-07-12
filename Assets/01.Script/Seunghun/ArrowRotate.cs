@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using static ChessSpawnArrowEnum;
+
 
 public class ArrowRotate : MonoBehaviour
 {
-
+    public ChessArrow arrow;
 
     // Start is called before the first frame update
     void Start()
     {
+        arrow = ChessArrow.D;
         check = true;
     }
 
@@ -38,35 +41,39 @@ public class ArrowRotate : MonoBehaviour
         ////}
         //if (check)
         //{
-  
 
 
 
-            if(Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                isUp = true;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            isUp = true;
+            arrow = ChessArrow.W;
                 Debug.Log("Ãâ·Â");
-         
-            }
-            else if(Input.GetKey(KeyCode.RightArrow))
-            {
-                isRight = true;
-       
-            }
-            else if(Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                isLeft = true;
-           
-            }
-            else if(Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                isDown = true;
-               
-            }
 
-       
-            isRotate = true;
-           
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            arrow = ChessArrow.D;
+            isRight = true;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            arrow = ChessArrow.A;
+            isLeft = true;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            arrow = ChessArrow.S;
+            isDown = true;
+
+        }
+
+
+        isRotate = true;
+
         //    check = false;
         //    StartCoroutine(WaitForIt());
         //}
@@ -82,27 +89,30 @@ public class ArrowRotate : MonoBehaviour
 
             if (isUp)
             {
-                
+                arrow = ChessArrow.W;
                 y = 1;
                 x = 0;
             }
             else if (isRight)
             {
+                arrow = ChessArrow.D;
                 x = 1;
                 y = 0;
             }
             else if (isLeft)
             {
+                arrow = ChessArrow.A;
                 x = -1;
                 y = 0;
             }
             else if (isDown)
             {
+                arrow = ChessArrow.S;
                 y = -1;
                 x = 0;
             }
 
-            if(x == 1 && y == 1)
+            if (x == 1 && y == 1)
             {
                 Debug.Log("Ãâ");
             }
@@ -111,7 +121,7 @@ public class ArrowRotate : MonoBehaviour
             isLeft = false;
             isDown = false;
 
-              arrowAxis = new Vector3(x, y, 0);
+            arrowAxis = new Vector3(x, y, 0);
 
             angle = Mathf.Atan2(arrowAxis.y, arrowAxis.x) * Mathf.Rad2Deg;
             Quaternion rookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -121,7 +131,7 @@ public class ArrowRotate : MonoBehaviour
         }
 
         isRotate = false;
-    
+
     }
     IEnumerator WaitForIt()
     {
