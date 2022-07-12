@@ -171,8 +171,8 @@ public class SwipeUI : MonoBehaviour
     /// </summary>
     private IEnumerator OnSwipeOneStep(int index)
     {
-
         float start = scrollBar.value;
+        float timedelt = 0;
         float current = 0;
         float percent = 0;
 
@@ -186,7 +186,15 @@ public class SwipeUI : MonoBehaviour
 
             yield return null;
         }
-        isSwipeMode = false;
+        while(true)
+        {
+            if(timedelt>3f)
+            {
+                isSwipeMode = false;
+                yield break;
+            }
+            timedelt += Time.deltaTime;
+        }
     }
 
      bool check = true;
