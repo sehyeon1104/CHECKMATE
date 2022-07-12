@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 2cda990e2423bbf4892e6590ba056729
+<<<<<<< HEAD:Assets/04.Sprites/화살표.meta
+guid: fa0d847e7fb57b14da04a6db616221b8
+=======
+guid: 9daa98056f4723b41a21308183be460d
+>>>>>>> Gijoo:Assets/Scenes/SampleScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
