@@ -8,9 +8,10 @@ public class LookChess : MonoBehaviour
     private Transform playerTransform;
     private float blockRadius = 1f;
 
-    private void Start()
+    private IEnumerator Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
         Move(playerTransform, blockRadius);
     }
 
