@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Resources/N2.txt.meta
 guid: 19711ae9af0b2214e8bd650cec4af8be
 TextScriptImporter:
@@ -7,10 +6,6 @@ TextScriptImporter:
 guid: ac0b4852589e6d045adee4adbe363bc2
 DefaultImporter:
 >>>>>>> 703dd9eacdf6ca348b1197f47557d63c4e92a316:Assets/04.Sprites/화살표.meta
-=======
-guid: 19711ae9af0b2214e8bd650cec4af8be
-TextScriptImporter:
->>>>>>> 703dd9eacdf6ca348b1197f47557d63c4e92a316
   externalObjects: {}
   userData: 
   assetBundleName: 
