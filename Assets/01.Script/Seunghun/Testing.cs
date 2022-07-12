@@ -7,6 +7,7 @@ public class Wave
 {
     public string type;//���� ����
 <<<<<<< HEAD
+<<<<<<< HEAD
     public int x;
     public int y;
 =======
@@ -20,6 +21,10 @@ public class Wave
     //public int y;
     public string keyboardArrow;
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    public int x;
+    public int y;
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
     public bool multi;
     public int childCount;
 >>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
@@ -36,6 +41,9 @@ public class Testing : MonoBehaviour
     {
         spawnList = new List<Wave>();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
         ReadSpawnFile("N1");
         //int ran = Random.Range(0, 3);
         //switch (ran)
@@ -50,6 +58,7 @@ public class Testing : MonoBehaviour
         //        ReadSpawnFile("patternC");
         //        break;
         //}
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -68,6 +77,8 @@ public class Testing : MonoBehaviour
         }
 >>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
 
         ReadSpawnFile();
     }
@@ -111,6 +122,7 @@ public class Testing : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         if(currentTime >=  (60d / bpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
 =======
@@ -125,6 +137,11 @@ public class Testing : MonoBehaviour
         if (currentTime >= (60f / Sync_Gijoo.Instance.musicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
         {
+=======
+        
+        if(currentTime >=  (60d / bpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
+        {
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
             MonsterSpawn(); 
             currentTime -=  60d / bpm;
             //25 - 5; 
@@ -133,6 +150,9 @@ public class Testing : MonoBehaviour
         else if(spawnEnd == true && isRead == true)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
             //int ran = Random.Range(0, 3);
             //switch(ran)
             //{
@@ -147,6 +167,7 @@ public class Testing : MonoBehaviour
             //        break;
             //}
            
+<<<<<<< HEAD
 =======
             int ran = Random.Range(0, 3);
             switch (ran)
@@ -164,6 +185,8 @@ public class Testing : MonoBehaviour
 >>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
         }
     }
     void ReadSpawnFile()
@@ -191,10 +214,14 @@ public class Testing : MonoBehaviour
             Wave spawnData = new Wave();
             spawnData.type = line.Split(',')[0];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
             spawnData.x = int.Parse(line.Split(',')[1]);
             spawnData.y = int.Parse(line.Split(',')[2]);
             spawnData.multi = bool.Parse(line.Split(',')[3]);
             spawnData.childCount = int.Parse(line.Split(',')[4]);
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
             spawnData.x = int.Parse(line.Split(',')[1]);
@@ -208,6 +235,8 @@ public class Testing : MonoBehaviour
             spawnData.childCount = int.Parse(line.Split(',')[3]);
 >>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
             spawnList.Add(spawnData); //������ �ʱ�ȭ�ϰ� ������ ������ �߰��Ѵ�.
         }
 
@@ -363,6 +392,7 @@ public class Testing : MonoBehaviour
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -379,6 +409,8 @@ public class Testing : MonoBehaviour
 
 
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
             GameObject enemy = monsterMob[enemyIndex];
 
             int enemyPointX = spawnList[spawnIndex].x;

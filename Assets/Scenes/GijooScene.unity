@@ -524,6 +524,9 @@ Transform:
     m_PostInfinity: 2
     m_RotationOrder: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
 --- !u!1 &578391566
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,9 +574,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 =======
 >>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 >>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
 --- !u!1 &643262036
 GameObject:
   m_ObjectHideFlags: 0
