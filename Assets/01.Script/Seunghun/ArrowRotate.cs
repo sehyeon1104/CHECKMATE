@@ -21,8 +21,8 @@ public class ArrowRotate : MonoBehaviour
     float angle = 0;
 
     bool check = true;
-    float x;
-    float y;
+    float x = 0;
+    float y = 0;
 
     bool isRotate;
 
@@ -32,45 +32,13 @@ public class ArrowRotate : MonoBehaviour
     bool isDown;
 
     Vector3 arrowAxis;
-    // Update is called once per frame
+
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Debug.Log("마우스버튼");
-        ////}
-        //if (check)
-        //{
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            isUp = true;
-            arrow = ChessArrow.W;
-                Debug.Log("출력");
-
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            arrow = ChessArrow.D;
-            isRight = true;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            arrow = ChessArrow.A;
-            isLeft = true;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            arrow = ChessArrow.S;
-            isDown = true;
-
-        }
-
+        float h = Input.GetAxisRaw("Horizontal");
+        x = Mathf.Lerp(x, h, 1f);
+        float v = Input.GetAxisRaw("Vertical");
+        y = Mathf.Lerp(y, v, 1f);
 
         isRotate = true;
 
@@ -78,49 +46,51 @@ public class ArrowRotate : MonoBehaviour
         //    StartCoroutine(WaitForIt());
         //}
 
-
-
     }
 
     private void FixedUpdate()
     {
+        Debug.Log($"X : {x}");
         if (isRotate)
         {
-
-            if (isUp)
+            if(y >= 0.25f && x == 0)
             {
                 arrow = ChessArrow.W;
-                y = 1;
-                x = 0;
             }
-            else if (isRight)
-            {
-                arrow = ChessArrow.D;
-                x = 1;
-                y = 0;
-            }
-            else if (isLeft)
-            {
-                arrow = ChessArrow.A;
-                x = -1;
-                y = 0;
-            }
-            else if (isDown)
+            if (y <= -0.25f && x == 0)
             {
                 arrow = ChessArrow.S;
-                y = -1;
-                x = 0;
             }
-
-            if (x == 1 && y == 1)
+            if (y == 0 && x >= 0.25f)
             {
-                Debug.Log("출");
+                arrow = ChessArrow.D;
             }
-            isUp = false;
-            isRight = false;
-            isLeft = false;
-            isDown = false;
+            if (y == 0 && x <= -0.25f)
+            {
+                arrow = ChessArrow.A;
+            }
+            if (y >= 0.25f && x >= 0.25f)
+            {
+                arrow = ChessArrow.DW;
+            }
+            if (y >= 0.25f && x <= -0.25f)
+            {
+                arrow = ChessArrow.AW;
+            }
+            if (y <= -0.25f && x >= 0.25f)
+            {
+                arrow = ChessArrow.SD;
+            }
+            if (y <= -0.25f && x <= -0.25f)
+            {
+                arrow = ChessArrow.SA;
+            }
 
+            if (x == 0 && y == 0)
+            {
+
+            }
+            else if(Mathf.Abs(x) % 1f == 0 && Mathf.Abs(y) % 1f == 0)
             arrowAxis = new Vector3(x, y, 0);
 
             angle = Mathf.Atan2(arrowAxis.y, arrowAxis.x) * Mathf.Rad2Deg;

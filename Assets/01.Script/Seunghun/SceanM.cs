@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceanM : MonoSingleton<SceanM>
 {
-    
-
-    public  void SeceanChange(string name)
+   
+    public void SeceanChange(string name)
     {
         SceneManager.LoadScene(name);
     }

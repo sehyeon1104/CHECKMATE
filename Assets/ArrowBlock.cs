@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class ArrowBlock : MonoBehaviour
@@ -34,7 +35,7 @@ public class ArrowBlock : MonoBehaviour
                 }
                 else
                 {
-                    SceanM.Instance.SeceanChange("Seunghun");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
 
             }

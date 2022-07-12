@@ -27,7 +27,7 @@ public class Testing : MonoBehaviour
     {
 
         spawnList = new List<Wave>();
-        int ran = Random.Range(0, 3);
+        int ran = Random.Range(0, 8);
         switch (ran)
         {
             case 0:
@@ -38,6 +38,21 @@ public class Testing : MonoBehaviour
                 break;
             case 2:
                 ReadSpawnFile("N3");
+                break;
+            case 3:
+                ReadSpawnFile("N4");
+                break;
+            case 4:
+                ReadSpawnFile("N5");
+                break;
+            case 5:
+                ReadSpawnFile("N6");
+                break;
+            case 6:
+                ReadSpawnFile("N7");
+                break;
+            case 7:
+                ReadSpawnFile("N8");
                 break;
         }
 
@@ -96,7 +111,7 @@ public class Testing : MonoBehaviour
         }
         else if (spawnEnd == true && isRead == true)
         {
-            int ran = Random.Range(0, 3);
+            int ran = Random.Range(0, 8);
             switch (ran)
             {
                 case 0:
@@ -107,6 +122,21 @@ public class Testing : MonoBehaviour
                     break;
                 case 2:
                     ReadSpawnFile("N3");
+                    break;
+                case 3:
+                    ReadSpawnFile("N4");
+                    break;
+                case 4:
+                    ReadSpawnFile("N5");
+                    break;
+                case 5:
+                    ReadSpawnFile("N6");
+                    break;
+                case 6:
+                    ReadSpawnFile("N7");
+                    break;
+                case 7:
+                    ReadSpawnFile("N8");
                     break;
             }
 
@@ -184,6 +214,13 @@ public class Testing : MonoBehaviour
                 if (enemyIndex == 5)
                 {
                     spawnIndex++;
+
+
+                    if (spawnIndex == spawnList.Count)
+                    {
+                        spawnEnd = true;
+                        return;
+                    }
                     return;
                 }
 
@@ -203,7 +240,7 @@ public class Testing : MonoBehaviour
                 if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
                 {
                     monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 0.5f, monsterSpawnPostion.y * 2 + 0.5f);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 1f, monsterSpawnPostion.y * 2 + 1f);
                 }
                 else
                 {
@@ -250,6 +287,13 @@ public class Testing : MonoBehaviour
             if (enemyIndex == 5)
             {
                 spawnIndex++;
+
+
+                if (spawnIndex == spawnList.Count)
+                {
+                    spawnEnd = true;
+                    return;
+                }
                 return;
             }
 
@@ -316,7 +360,6 @@ public class Testing : MonoBehaviour
                 enemyIndex = 0;
                 break;
             case "K":
-                Debug.Log("∫ÒºÛº“»Ø");
                 chessState = ChessMal.Knight;
                 enemyIndex = 1;
                 break;
