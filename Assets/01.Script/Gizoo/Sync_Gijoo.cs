@@ -28,8 +28,6 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
         tikTime = stdBpm / musicBpm;
 
-        tikTime = ((stdBpm / musicBpm));
-
         nextTime += Time.deltaTime;
 
         if(nextTime>= tikTime)
@@ -37,8 +35,6 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
             StartCoroutine(PlayTik(tikTime));
 
             nextTime -= stdBpm / musicBpm;
-
-            nextTime -= ((stdBpm / musicBpm));
 
         }
     }

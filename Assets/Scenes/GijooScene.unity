@@ -503,8 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 4633593796718978068, guid: bfe4e86caf1eeab42b97d2cb7aed6d5b, type: 3}
-  - {fileID: 3539824167348927310, guid: 6336eddaa261f0f459ade1822890f583, type: 3}
+  - {fileID: 4633593796718978068, guid: d1dea695a05f9e042baa1291c90e72a4, type: 3}
+  - {fileID: 3539824167348927310, guid: c2ff53deb0b04dd43813d4877db20a41, type: 3}
 --- !u!4 &578391568
 Transform:
   m_ObjectHideFlags: 0
