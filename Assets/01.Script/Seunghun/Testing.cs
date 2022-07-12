@@ -23,7 +23,7 @@ public class Testing : MonoBehaviour
     {
 
         spawnList = new List<Wave>();
-        ReadSpawnFile("patternA");
+        ReadSpawnFile("N1");
         //int ran = Random.Range(0, 3);
         //switch (ran)
         //{
