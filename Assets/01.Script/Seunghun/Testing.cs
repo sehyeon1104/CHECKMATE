@@ -6,8 +6,9 @@ using System.IO;
 public class Wave
 {
     public string type;//몬스터 종류
-    public int x;
-    public int y;
+    //public int x;
+    //public int y;
+    public string keyboardArrow;
     public bool multi;
     public int childCount;
     // 스폰딜레이
@@ -23,20 +24,19 @@ public class Testing : MonoBehaviour
     {
 
         spawnList = new List<Wave>();
-        ReadSpawnFile("N1");
-        //int ran = Random.Range(0, 3);
-        //switch (ran)
-        //{
-        //    case 0:
-        //        ReadSpawnFile("patternA");
-        //        break;
-        //    case 1:
-        //        ReadSpawnFile("patternB");
-        //        break;
-        //    case 2:
-        //        ReadSpawnFile("patternC");
-        //        break;
-        //}
+        int ran = Random.Range(0, 3);
+        switch (ran)
+        {
+            case 0:
+                ReadSpawnFile("N1");
+                break;
+            case 1:
+                ReadSpawnFile("N2");
+                break;
+            case 2:
+                ReadSpawnFile("N3");
+                break;
+        }
 
     }
     public List<GameObject> monsterMob = new List<GameObject>();
@@ -89,20 +89,20 @@ public class Testing : MonoBehaviour
         }
         else if(spawnEnd == true && isRead == true)
         {
-            //int ran = Random.Range(0, 3);
-            //switch(ran)
-            //{
-            //    case 0:
-            //        ReadSpawnFile("patternA");
-            //        break;
-            //    case 1:
-            //        ReadSpawnFile("patternB");
-            //        break;
-            //    case 2:
-            //        ReadSpawnFile("patternC");
-            //        break;
-            //}
-           
+            int ran = Random.Range(0, 3);
+            switch (ran)
+            {
+                case 0:
+                    ReadSpawnFile("N1");
+                    break;
+                case 1:
+                    ReadSpawnFile("N2");
+                    break;
+                case 2:
+                    ReadSpawnFile("N3");
+                    break;
+            }
+
         }
     }
 
@@ -131,10 +131,11 @@ public class Testing : MonoBehaviour
             }
             Wave spawnData = new Wave();
             spawnData.type = line.Split(',')[0];
-            spawnData.x = int.Parse(line.Split(',')[1]);
-            spawnData.y = int.Parse(line.Split(',')[2]);
-            spawnData.multi = bool.Parse(line.Split(',')[3]);
-            spawnData.childCount = int.Parse(line.Split(',')[4]);
+            //spawnData.x = int.Parse(line.Split(',')[1]);
+            //spawnData.y = int.Parse(line.Split(',')[2]);
+            spawnData.keyboardArrow = line.Split(',')[1];
+            spawnData.multi = bool.Parse(line.Split(',')[2]);
+            spawnData.childCount = int.Parse(line.Split(',')[3]);
             spawnList.Add(spawnData); //변수를 초기화하고 변수를 넣은걸 추가한다.
         }
 
@@ -213,17 +214,57 @@ public class Testing : MonoBehaviour
 
                 GameObject enemy = monsterMob[enemyIndex];
 
-                int enemyPointX = spawnList[spawnIndex].x; 
-                int enemyPointY = spawnList[spawnIndex].y;
+                int X = 0;
+                int Y = 0;
 
-                Debug.Log(  "EnemyPointX"  + enemyPointX);
-                Debug.Log("EnemyPointY" + enemyPointY);
+                //Debug.Log(  "EnemyPointX"  + enemyPointX);
+                //Debug.Log("EnemyPointY" + enemyPointY);
+
+                switch (spawnList[spawnIndex].keyboardArrow)
+                {
+                    case "W":
+                        X = 2;
+                        Y = 4;
+                        break;
+                    case "S":
+                        X = 2;
+                        Y = 0;
+                        break;
+                    case "A":
+                        X = 0;
+                        Y = 2;
+                        break;
+                    case "D":
+                        X = 4;
+                        Y = 2;
+                        break;
+                    case "AW":
+                    case "WA":
+                        X = 4;
+                        Y = 0;
+                        break;
+                    case "DW":
+                    case "WD":
+                        X = 4;
+                        Y = 4;
+                        break;
+                    case "SA":
+                    case "AS":
+                        X = 0;
+                        Y = 0;
+                        break;
+                    case "SD":
+                    case "DS":
+                        X = 4;
+                        Y = 0;
+                        break;
+                }
 
                 //텍스트로 적소환차기
-                Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
+                Vector2 monsterSpawnPostion = grid.GetWorldPosition(X, Y);
                 Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
 
-                Debug.Log(grid.GetWorldPosition(enemyPointX, enemyPointY));
+                Debug.Log(grid.GetWorldPosition(X, Y));
                 //Prefab를 가져온다. 
                 //Enum으로 가져오는 오브젝트를 정하는거야
                 Instantiate(enemy, monsterPostionSet, Quaternion.identity);
@@ -231,24 +272,7 @@ public class Testing : MonoBehaviour
 
                 spawnIndex++;
 
-                //isMulti = false;
-                //isMulti = spawnList[spawnIndex].multi;
-                //if (isMulti == true)
-                //{
-                //    //i와 카운트를 다시 조정
-                //    i = 0;
-                //    count = spawnList[spawnIndex].childCount;
-                //    //그럼 다시 for문을 도나?
-                //}
-
-
-
-            
-
-             
-
-
-
+     
 
                 if (spawnIndex == spawnList.Count)
                 {
@@ -301,17 +325,55 @@ public class Testing : MonoBehaviour
             }
 
 
+
+
             GameObject enemy = monsterMob[enemyIndex];
-
-            int enemyPointX = spawnList[spawnIndex].x;
-            int enemyPointY = spawnList[spawnIndex].y;
-
+            int X = 0;
+            int Y = 0;
 
 
-            //텍스트로 적소환차기
-            Debug.Log(enemyPointX);
-            Debug.Log(enemyPointY);
-            Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
+            switch (spawnList[spawnIndex].keyboardArrow)
+            {
+                case "W":
+                    X = 2;
+                    Y = 4;
+                    break;
+                case "S":
+                    X = 2;
+                    Y = 0;
+                    break;
+                case "A":
+                    X = 0;
+                    Y = 2;
+                    break;
+                case "D":
+                    X = 4;
+                    Y = 2;
+                    break;
+                case "AW":
+                case "WA":
+                    X = 4;
+                    Y = 0;
+                    break;
+                case "DW":
+                case "WD":
+                    X = 4;
+                    Y = 4;
+                    break;
+                case "SA":
+                case "AS":
+                    X = 0;
+                    Y = 0;
+                    break;
+                case "SD":
+                case "DS":
+                    X = 4;
+                    Y = 0;
+                    break;
+            }
+
+
+            Vector2 monsterSpawnPostion = grid.GetWorldPosition(X, Y);
             Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
             //Prefab를 가져온다. 
             //Enum으로 가져오는 오브젝트를 정하는거야

@@ -26,7 +26,7 @@ public class warningSign : MonoBehaviour
 
         }
 
-        Instantiate(LookObj, transform.position, Quaternion.identity);
+        Instantiate(LookObj, transform.position + transform.position * 2, Quaternion.identity);
         gameObject.SetActive(false);
 
     }

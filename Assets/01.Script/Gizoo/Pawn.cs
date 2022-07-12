@@ -7,9 +7,13 @@ public class Pawn : MonoBehaviour
     private Transform playerTransform;
     private float blockRadius = 1f;
 
+
     private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+
+
+        //StopCoroutine(PawnM());
         StartCoroutine(PawnM());
     }
 
@@ -17,6 +21,7 @@ public class Pawn : MonoBehaviour
     {
         while (transform.position != playerTransform.position)
         {
+            
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             Move(playerTransform, blockRadius);
         }
