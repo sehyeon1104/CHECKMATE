@@ -16,7 +16,7 @@ public class SwipeUI : MonoBehaviour
     // 음악관련
     public AudioSource[] difAudio = null;
 
-    private float timer;
+    private float timer = 0;
     bool isswipe;
     private float[] scrollPageValues;           // 각 페이지의 위치 값 [0.0 - 1.0]
     private float valueDistance = 0;            // 각 페이지 사이의 거리
@@ -28,12 +28,12 @@ public class SwipeUI : MonoBehaviour
     private float circleContentScale = 1.6f;    // 현재 페이지의 원 크기(배율)
 
     private void Awake()
-    {   
+    {
         // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메 모리 할당
         scrollPageValues = new float[transform.childCount];
 
         // 스크롤 되는 페이지 사이의 거리
-        valueDistance = 1f / (scrollPageValues.Length-1);
+        valueDistance = 1f / (scrollPageValues.Length - 1);
 
         // 스크롤 되는 페이지의 각 value 위치 설정 [0 <= value <= 1]
         for (int i = 0; i < scrollPageValues.Length; ++i)
@@ -45,7 +45,7 @@ public class SwipeUI : MonoBehaviour
         maxPage = transform.childCount;
     }
 
-     void Start()
+    void Start()
     {
         swipeDistance = Screen.width / 2;
         SetScrollBarValue(1);
@@ -71,17 +71,17 @@ public class SwipeUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if(currentPage<=0)
+            if (currentPage <= 0)
             {
-                return;   
+                return;
             }
             --currentPage;
             StartCoroutine(OnSwipeOneStep(currentPage));
-            
+
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if(currentPage>=maxPage-1)
+            if (currentPage >= maxPage - 1)
             {
                 return;
             }
@@ -91,7 +91,7 @@ public class SwipeUI : MonoBehaviour
         // 현재 Swipe를 진행중이면 터치 불가
         if (isSwipeMode == true) return;
 
-#if UNITY_EDITOR
+
         // 마우스 왼쪽 버튼을 눌렀을 때 1회
         if (Input.GetMouseButtonDown(0))
         {
@@ -105,8 +105,6 @@ public class SwipeUI : MonoBehaviour
 
             UpdateSwipe();
         }
-#endif
-
 #if UNITY_ANDROID
 		if ( Input.touchCount == 1 )
 		{
@@ -126,11 +124,14 @@ public class SwipeUI : MonoBehaviour
 			}
 		}
 #endif
+      
+
+
     }
 
     private void UpdateSwipe()
     {
-       
+
         // 너무 작은 거리를 움직였을 때는 Swipe X
         if (Mathf.Abs(startTouchX - endTouchX) < swipeDistance)
         {
@@ -170,7 +171,7 @@ public class SwipeUI : MonoBehaviour
     /// </summary>
     private IEnumerator OnSwipeOneStep(int index)
     {
-      
+
         float start = scrollBar.value;
         float current = 0;
         float percent = 0;
@@ -185,13 +186,11 @@ public class SwipeUI : MonoBehaviour
 
             yield return null;
         }
-
         isSwipeMode = false;
-        timer += Time.deltaTime;
     }
 
-    public bool check = true;
-    public int flaseCur;
+     bool check = true;
+     int flaseCur;
     private void CurrChag()
     {
         if (check)
@@ -202,7 +201,7 @@ public class SwipeUI : MonoBehaviour
         }
         if (flaseCur != currentPage)
         {
-            if(flaseCur != 0)
+            if (flaseCur != 0)
             {
                 AudioManaher();
             }
@@ -232,11 +231,13 @@ public class SwipeUI : MonoBehaviour
                 difAudio[1].Play();
                 break;
             case 3:
+                difAudio[0].Stop();
                 difAudio[1].Stop();
                 difAudio[3].Stop();
                 difAudio[2].Play();
                 break;
             case 4:
+                difAudio[0].Stop();
                 difAudio[2].Stop();
                 difAudio[3].Play();
                 break;
@@ -247,9 +248,9 @@ public class SwipeUI : MonoBehaviour
 
     void NextScene()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            switch(currentPage)
+            switch (currentPage)
             {
                 case 1:
                     SceneManager.LoadScene("TutorialScene");
