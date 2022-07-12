@@ -32,7 +32,10 @@ public class ArrowBlock : MonoBehaviour
                     
                     collision.gameObject.SetActive(false);
                 }
-
+                else
+                {
+                    SceanM.Instance.SeceanChange("Seunghun");
+                }
 
             }
          
