@@ -25,21 +25,21 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
     private void FixedUpdate()
     {
-<<<<<<< HEAD
-        tikTime = stdBpm / musicBpm /*+ (musicTemp / stdTemp)*/;
-=======
+
+        tikTime = stdBpm / musicBpm;
+
         tikTime = ((stdBpm / musicBpm));
->>>>>>> seunghoon
+
         nextTime += Time.deltaTime;
 
         if(nextTime>= tikTime)
         {
             StartCoroutine(PlayTik(tikTime));
-<<<<<<< HEAD
+
             nextTime -= stdBpm / musicBpm;
-=======
+
             nextTime -= ((stdBpm / musicBpm));
->>>>>>> seunghoon
+
         }
     }
 
