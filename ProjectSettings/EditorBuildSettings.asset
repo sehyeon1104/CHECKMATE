@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GijooScene.unity
-    guid: ffb41552d2eb3e448a2b3d75987491e8
+    path: Assets/Scenes/Seunghun.unity
+    guid: 03173a013cf4d7b4bb88f55a7a0ba28e
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: 33d37d65a4f57d947b626839a5c3f685
   m_configObjects: {}
