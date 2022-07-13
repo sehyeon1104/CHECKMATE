@@ -20,8 +20,7 @@ public class LoadingSceneController : MonoBehaviour
     }
     IEnumerator LoadScenePross()
     {
-        float timers = 0;
-        bool isTimeSet = false ;
+
        AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
 
@@ -39,16 +38,8 @@ public class LoadingSceneController : MonoBehaviour
                 progressBar.fillAmount = Mathf.Lerp(0.1f, 1f, timer);
                 if(progressBar.fillAmount>=1f)
                 {
+                    yield return new WaitForSeconds(1.5f);
                     op.allowSceneActivation = true;
-                    timers += Time.deltaTime;
-                    if(timers>3f)
-                    {
-                        isTimeSet=true;
-                    }    
-                    if(isTimeSet)
-                    {
-                        yield break;
-                    }
                     
                 }
             }
