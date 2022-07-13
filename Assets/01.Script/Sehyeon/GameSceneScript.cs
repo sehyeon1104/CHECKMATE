@@ -15,7 +15,7 @@ public class GameSceneScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("SelcetScene");
+            SceneManager.LoadScene("SelectScene");
         }
     }
 }

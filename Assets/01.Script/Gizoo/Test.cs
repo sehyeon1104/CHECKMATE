@@ -13,6 +13,6 @@ public class Test : MonoBehaviour
     {
         testSound.Play();
         cameraShake.ReSize();
-        //cameraShake.Shake();
+        cameraShake.Shake();
     }
 }
