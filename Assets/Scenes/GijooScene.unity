@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicBpm: 110
+  realMusicBpm: 0
   musicTemp: 4
   tikTime: 0
   nextTime: 0

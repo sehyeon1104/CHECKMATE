@@ -102,10 +102,10 @@ public class Testing : MonoBehaviour
         }
         currentTime += Time.deltaTime;
 
-        if (currentTime >= (60f / Sync_Gijoo.Instance.musicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
+        if (currentTime >= (60f / Sync_Gijoo.Instance.realMusicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
         {
             MonsterSpawn();
-            currentTime -= 60f / Sync_Gijoo.Instance.musicBpm;
+            currentTime -= 60f / Sync_Gijoo.Instance.realMusicBpm;
             //25 - 5; 
 
         }
