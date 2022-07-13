@@ -324,8 +324,8 @@ MonoBehaviour:
   monsterMob:
   - {fileID: 4633593796718978068, guid: d1dea695a05f9e042baa1291c90e72a4, type: 3}
   - {fileID: 3539824167348927310, guid: c2ff53deb0b04dd43813d4877db20a41, type: 3}
-  - {fileID: 7971824726434482527, guid: ffb6c38eac0a64a4aa18930ff7a4b958, type: 3}
-  - {fileID: 3241965682046880307, guid: 0e25abdc1b6fb324ca599def9af279a8, type: 3}
+  - {fileID: 3241965682046880307, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
+  - {fileID: 7971824726434482527, guid: 718afb0e1187ede48a3a3ca6b854bce5, type: 3}
   cellSize: 1
   spawnIndex: 0
   spawnEnd: 0
@@ -2037,7 +2037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934547815724479769, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7934547815724479770, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_RootOrder

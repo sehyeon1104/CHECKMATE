@@ -101,6 +101,10 @@ MonoBehaviour:
   arrow: 0
   LookObj: {fileID: 4309323238610286701, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}
   spriteR: {fileID: 7971824726434482525}
+  colorSet:
+  - {r: 1, g: 1, b: 0.21960784, a: 1}
+  - {r: 1, g: 0.627451, b: 0.25882354, a: 1}
+  - {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
   beat: 3
 --- !u!114 &6679981253731768646
 MonoBehaviour:
