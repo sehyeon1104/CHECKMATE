@@ -287,7 +287,7 @@ public class SwipeUI : MonoBehaviour
                     SceneManager.LoadScene("EasyScene");
                     break;
                 case 3:
-                    SceneManager.LoadScene("NormalScene");
+                    SceneManager.LoadScene("GijooScene");
                     break;
                 case 4:
                     SceneManager.LoadScene("HardScene");
