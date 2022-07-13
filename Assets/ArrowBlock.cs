@@ -43,7 +43,7 @@ public class ArrowBlock : MonoBehaviour
                     collision.gameObject.SetActive(false);
                     GameManager.Instance.TimeScale = 0f;
 
-                    Sync_Gijoo.Instance.IsDeadTik();
+                   Sync_Gijoo.Instance.IsDeadTik();
                     //텍스트를 띄우는 함수
                    
                     //화면 가까이 하는 코드

@@ -50,9 +50,8 @@ public class KingExplosion : MonoBehaviour
         //다시 시작되게
 
         CheckMateGameOver.Instance.GameObjectSet(true);
-
+        CountDownControllder.Instance.TextStart();
         //일드리턴
-        Loader.Load(Loader.Scene.Seunghun);
 
     }
 

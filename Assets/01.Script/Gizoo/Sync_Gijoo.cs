@@ -53,11 +53,12 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
         {
 
             test.CancleCameraShake();
+            yield break;
         }
 
-        yield break;
+        
         //¹¹¹¹ÇÏ¸é ¾ø¾Ö±â
-        Debug.Log(nextTime);
+        //Debug.Log(nextTime);
         test.TestOffset();
         yield return new WaitForSeconds(tikTime);
     }
