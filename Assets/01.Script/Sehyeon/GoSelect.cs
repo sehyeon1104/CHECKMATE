@@ -10,7 +10,7 @@ public class GoSelect : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Return))
         {
             LoadingSceneController.LoadScene("SelectScene");
-           // SceneManager.LoadScene("SelectScene", LoadSceneMode.Additive);
+           //SceneManager.LoadScene("SelectScene", LoadSceneMode.Additive);
         }
     }
 }

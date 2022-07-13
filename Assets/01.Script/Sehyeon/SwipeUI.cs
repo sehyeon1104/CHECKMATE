@@ -16,7 +16,8 @@ public class SwipeUI : MonoBehaviour
     // 음악관련
     public AudioSource[] difAudio = null;
 
-    private float timer = 0;
+    private float swipeTimer = 0;
+    private float notSwipeTime = 0.25f;
     bool isswipe;
     private float[] scrollPageValues;           // 각 페이지의 위치 값 [0.0 - 1.0]
     private float valueDistance = 0;            // 각 페이지 사이의 거리
@@ -59,6 +60,8 @@ public class SwipeUI : MonoBehaviour
 
     private void Update()
     {
+        swipeTimer += Time.deltaTime;
+        print(swipeTimer);
         NextScene();
         UpdateInput();
 
@@ -71,6 +74,10 @@ public class SwipeUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            if(swipeTimer < notSwipeTime)
+            {
+                return;
+            }
             if (currentPage <= 0)
             {
                 return;
@@ -81,6 +88,10 @@ public class SwipeUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+            if (swipeTimer < notSwipeTime)
+            {
+                return;
+            }
             if (currentPage >= maxPage - 1)
             {
                 return;
@@ -131,7 +142,11 @@ public class SwipeUI : MonoBehaviour
 
     private void UpdateSwipe()
     {
-
+        if(swipeTimer<notSwipeTime)
+        {
+            StartCoroutine(OnSwipeOneStep(currentPage));
+            return;
+        }
         // 너무 작은 거리를 움직였을 때는 Swipe X
         if (Mathf.Abs(startTouchX - endTouchX) < swipeDistance)
         {
@@ -171,6 +186,8 @@ public class SwipeUI : MonoBehaviour
     /// </summary>
     private IEnumerator OnSwipeOneStep(int index)
     {
+       
+        swipeTimer = 0;
         float start = scrollBar.value;
         float timedelt = 0;
         float current = 0;
@@ -179,6 +196,7 @@ public class SwipeUI : MonoBehaviour
         isSwipeMode = true;
         while (percent < 1)
         {
+            
             current += Time.deltaTime;
             percent = current / swipeTime;
 
@@ -186,15 +204,17 @@ public class SwipeUI : MonoBehaviour
 
             yield return null;
         }
-        while(true)
-        {
-            if(timedelt>3f)
-            {
-                isSwipeMode = false;
-                yield break;
-            }
-            timedelt += Time.deltaTime;
-        }
+        isSwipeMode = false;
+        swipeTimer = 0;
+        //while(true)
+        //{
+        //    if(timedelt>3f)
+        //    {
+        //        isSwipeMode = false;
+        //        yield break;
+        //    }
+        //    timedelt += Time.deltaTime;
+        //}
     }
 
      bool check = true;
