@@ -3,26 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class LookChess : MonoBehaviour
+public class LookChess : ChessMal
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private void OnEnable()
-=======
-<<<<<<< HEAD
-    public Transform Player;
-    private void OnEnable()
-=======
     private Transform playerTransform;
     private float blockRadius = 1f;
 
-    private void Start()
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
-    private void OnEnable()
->>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    private IEnumerator Start()
     {
-        transform.DOMove(new Vector2(GameManager.Instance.Player.position.x, GameManager.Instance.Player.position.y), 1f).SetEase(Ease.OutQuart);
+        playerTransform = GameObject.FindWithTag("Player").transform;
+        yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+        Move(playerTransform, blockRadius);
     }
+
+    private void Update()
+    {
+        if (transform.position == playerTransform.position)
+        {
+            Destroy(gameObject, Sync_Gijoo.Instance.tikTime);
+        }
+    }
+
+    public void Move(Transform playerTransform, float tileRad)
+    {
+        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale), Sync_Gijoo.Instance.tikTime).SetEase(Ease.Linear);
+    }
+
+    public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)
+    {
+        base.ArrowCopySW(chessArrow);
+    }
+
+    public override ChessSpawnArrowEnum.ChessArrow GetArrowState()
+    {
+        return base.GetArrowState();
+    }
+
 }

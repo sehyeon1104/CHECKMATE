@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : MonoBehaviour
+public class Pawn : ChessMal
 {
     private Transform playerTransform;
-    private float blockRadius = 1f;
+    private float blockRadius = 2f;
 
     private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+
+
+        //StopCoroutine(PawnM());
         StartCoroutine(PawnM());
     }
 
@@ -17,6 +20,7 @@ public class Pawn : MonoBehaviour
     {
         while (true)
         {
+            
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
             Move(playerTransform, blockRadius);
         }
@@ -24,8 +28,19 @@ public class Pawn : MonoBehaviour
 
     public void Move(Transform playerTransform, float tileRad)
     {
-      transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0? -1 : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * tileRad);
+      transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0? -1 * GameManager.Instance.TimeScale : 0 * tileRad , (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad);
     }
 
+
+    public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)
+    {
+        base.ArrowCopySW(chessArrow); 
+    }
+
+    public override ChessSpawnArrowEnum.ChessArrow GetArrowState()
+    {
+        return base.GetArrowState();
+    }
+    //Get arrow 하는 인터페이스
 
 }

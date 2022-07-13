@@ -2,67 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
+using static ChessSpawnArrowEnum;
 public class Wave
 {
     public string type;//¸ó½ºÅÍ Á¾·ù
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public int x;
-    public int y;
-=======
-<<<<<<< HEAD
-    public int x;
-    public int y;
-    public float delay;
-
-=======
     //public int x;
     //public int y;
     public string keyboardArrow;
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
-    public int x;
-    public int y;
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
     public bool multi;
     public int childCount;
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
     // ½ºÆùµô·¹ÀÌ
 }
 
 public class Testing : MonoBehaviour
 {
-    private enum ChessMal {  Pawn, Knight, Bishop, Rook, King, Queen};
+    private enum ChessMal { Pawn, Knight, Bishop, Rook, King, Queen };
 
-    ChessMal chessState = ChessMal.Pawn; 
+    ChessMal chessState = ChessMal.Pawn;
 
+
+    public bool isSpawn;
+    public ChessArrow arrow;
     private void Awake()
     {
+
         spawnList = new List<Wave>();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
-        ReadSpawnFile("N1");
-        //int ran = Random.Range(0, 3);
-        //switch (ran)
-        //{
-        //    case 0:
-        //        ReadSpawnFile("patternA");
-        //        break;
-        //    case 1:
-        //        ReadSpawnFile("patternB");
-        //        break;
-        //    case 2:
-        //        ReadSpawnFile("patternC");
-        //        break;
-        //}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-        int ran = Random.Range(0, 3);
+        int ran = Random.Range(0, 8);
         switch (ran)
         {
             case 0:
@@ -74,30 +39,41 @@ public class Testing : MonoBehaviour
             case 2:
                 ReadSpawnFile("N3");
                 break;
+            case 3:
+                ReadSpawnFile("N4");
+                break;
+            case 4:
+                ReadSpawnFile("N5");
+                break;
+            case 5:
+                ReadSpawnFile("N6");
+                break;
+            case 6:
+                ReadSpawnFile("N7");
+                break;
+            case 7:
+                ReadSpawnFile("N8");
+                break;
         }
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
 
-        ReadSpawnFile();
     }
     public List<GameObject> monsterMob = new List<GameObject>();
-    
+
 
     private Grid grid;
     public float cellSize;
 
     private int[,] arr;
-   
+
     private int[,] gridArray;
     void Start()
     {
+
         grid = new Grid(5, 5, cellSize, new Vector3(transform.position.x, transform.position.y));
 
         gridArray = new int[5, 5];
 
-        
+
 
         //ÀûµéÀ» ´ã´Â °É ¼ÒÈ¯ 
         //ÅØ½ºÆ®·Î ¸¸µé¾î³õÀ½
@@ -106,70 +82,36 @@ public class Testing : MonoBehaviour
 
     }
 
- 
+
 
     public List<Wave> spawnList;
     public int spawnIndex; //´ÙÀ½³à¼® ´ÙÀ½³à¼®
     public bool spawnEnd;
 
-    public int bpm;
     double currentTime = 0d;
 
-    
 
+    bool isMultiSPawn = true;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        currentTime += Time.deltaTime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-        if(currentTime >=  (60d / bpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
-=======
-<<<<<<< HEAD
 
-        if(currentTime >= 60d / bpm && !spawnEnd)
+        if (isSpawn == false)
+        {
+            return;
+        }
+        currentTime += Time.deltaTime;
+
+        if (currentTime >= (60f / Sync_Gijoo.Instance.realMusicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
         {
             MonsterSpawn();
-            currentTime -= 60d / bpm;
-=======
-
-        if (currentTime >= (60f / Sync_Gijoo.Instance.musicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-        {
-=======
-        
-        if(currentTime >=  (60d / bpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
-        {
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
-            MonsterSpawn(); 
-            currentTime -=  60d / bpm;
+            currentTime -= 60f / Sync_Gijoo.Instance.realMusicBpm;
             //25 - 5; 
 
         }
-        else if(spawnEnd == true && isRead == true)
+        else if (spawnEnd == true && isRead == true)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
-            //int ran = Random.Range(0, 3);
-            //switch(ran)
-            //{
-            //    case 0:
-            //        ReadSpawnFile("patternA");
-            //        break;
-            //    case 1:
-            //        ReadSpawnFile("patternB");
-            //        break;
-            //    case 2:
-            //        ReadSpawnFile("patternC");
-            //        break;
-            //}
-           
-<<<<<<< HEAD
-=======
-            int ran = Random.Range(0, 3);
+            int ran = Random.Range(0, 8);
             switch (ran)
             {
                 case 0:
@@ -181,62 +123,55 @@ public class Testing : MonoBehaviour
                 case 2:
                     ReadSpawnFile("N3");
                     break;
+                case 3:
+                    ReadSpawnFile("N4");
+                    break;
+                case 4:
+                    ReadSpawnFile("N5");
+                    break;
+                case 5:
+                    ReadSpawnFile("N6");
+                    break;
+                case 6:
+                    ReadSpawnFile("N7");
+                    break;
+                case 7:
+                    ReadSpawnFile("N8");
+                    break;
             }
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
         }
     }
-    void ReadSpawnFile()
+
+    bool isRead;
+    void ReadSpawnFile(string patern)
     {
+        isRead = false;
         spawnList.Clear(); //¸ğµÎ Å¬¸®¾î
 
         spawnIndex = 0;
         spawnEnd = false; //º¯¼ö ÃÊ±âÈ­
 
         // ¸®½ºÆù ÆÄÀÏ ÀĞ±â'
-        TextAsset textFile = Resources.Load("tutorial") as TextAsset;//ÅØ½ºÆ® ÆÄÀÏ ¿¡¼Â Å¬·¡½º
+        TextAsset textFile = Resources.Load(patern) as TextAsset;//ÅØ½ºÆ® ÆÄÀÏ ¿¡¼Â Å¬·¡½º
         StringReader stringReader = new StringReader(textFile.text); //ÆÄÀÏ ³»ÀÇ ¹®ÀÚ¿­ ÀĞ±â Å¬·¡½º
 
-
-        while(stringReader != null)
+        while (stringReader != null)
         {
             string line = stringReader.ReadLine(); //ÇÑÁÙ¾¿ ¹İÈ¯
 
-            Debug.Log(line);
 
-            if(line == null)
+            if (line == null)
             {
-                break; 
+                break;
             }
             Wave spawnData = new Wave();
             spawnData.type = line.Split(',')[0];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
-            spawnData.x = int.Parse(line.Split(',')[1]);
-            spawnData.y = int.Parse(line.Split(',')[2]);
-            spawnData.multi = bool.Parse(line.Split(',')[3]);
-            spawnData.childCount = int.Parse(line.Split(',')[4]);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            spawnData.x = int.Parse(line.Split(',')[1]);
-            spawnData.y = int.Parse(line.Split(',')[2]);
-            spawnData.delay = float.Parse(line.Split(',')[3]);
-=======
             //spawnData.x = int.Parse(line.Split(',')[1]);
             //spawnData.y = int.Parse(line.Split(',')[2]);
             spawnData.keyboardArrow = line.Split(',')[1];
             spawnData.multi = bool.Parse(line.Split(',')[2]);
             spawnData.childCount = int.Parse(line.Split(',')[3]);
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
             spawnList.Add(spawnData); //º¯¼ö¸¦ ÃÊ±âÈ­ÇÏ°í º¯¼ö¸¦ ³ÖÀº°É Ãß°¡ÇÑ´Ù.
         }
 
@@ -244,24 +179,187 @@ public class Testing : MonoBehaviour
         stringReader.Close();
 
 
-
+        isRead = true;
     }
 
     //
+    private bool isMulti;
+    private int count;
+
+    int i;
     void MonsterSpawn()
     {
-        int enemyIndex = 0;
 
-        Debug.Log(spawnList[spawnIndex].type);
-        switch(spawnList[spawnIndex].type)
+        if (isMultiSPawn == false) return;
+        isMulti = spawnList[spawnIndex].multi;
+
+
+
+
+        if (isMulti == true)
         {
-<<<<<<< HEAD
+            isMulti = false;
+            isMultiSPawn = false;
+            count = spawnList[spawnIndex].childCount;
+            //
+            for (i = 0; i < count; i++)
+            {
+
+                int enemyIndex = 0;
+
+
+                //
+                SelectChess(ref enemyIndex);
+
+                if (enemyIndex == 5)
+                {
+                    spawnIndex++;
+
+
+                    if (spawnIndex == spawnList.Count)
+                    {
+                        spawnEnd = true;
+                        return;
+                    }
+                    return;
+                }
+
+                GameObject enemy = monsterMob[enemyIndex];
+
+                int X = 0;
+                int Y = 0;
+
+                //Debug.Log(  "EnemyPointX"  + enemyPointX);
+                //Debug.Log("EnemyPointY" + enemyPointY);
+
+                KeyBoardArrowSW(ref X, ref Y);
+
+                //ÅØ½ºÆ®·Î Àû¼ÒÈ¯Â÷±â
+                Vector2 monsterSpawnPostion;
+                Vector2 monsterPostionSet;
+                if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
+                {
+                    monsterSpawnPostion = grid.GetWorldPosition(X, Y);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
+                }
+                else
+                {
+                    monsterSpawnPostion = grid.GetWorldPosition(X, Y);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
+                }
+
+
+                Debug.Log(grid.GetWorldPosition(X, Y));
+                //Prefab¸¦ °¡Á®¿Â´Ù. 
+                //EnumÀ¸·Î °¡Á®¿À´Â ¿ÀºêÁ§Æ®¸¦ Á¤ÇÏ´Â°Å¾ß
+                GameObject enmeyObj =  Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+
+                IArrow arr = enmeyObj.GetComponent<IArrow>();
+
+                Debug.Log(arrow);
+                if (arr != null)
+                {
+                    arr.ArrowCopySW(arrow);
+                }
+                //¿¡³Ê¹ÌÀÇ ÇÔ¼ö¸¦ ½ÇÇà½ÃÅ°ÀÚ ½ÇÇà½ÃÅ°¸é ÀÚ±â¿¡°Ôµµ ±×°ÔÀÖ´Âµ¥ ±×°É ÇÔ¼ö¸¦ Àü´ŞÇÏ´Â °Å¾ß
+                //¿©±â¿¡ enumÀ» ³Ö¾î°¡Áö°í »óÅÂ¸¦ ¹°·ÁÁÖÀÚ
+                spawnIndex++;
+
+
+
+                if (spawnIndex == spawnList.Count)
+                {
+                    spawnEnd = true;
+                    isMultiSPawn = true;
+                    return;
+                }
+
+            }
+            isMultiSPawn = true;
+
+        }
+        else if (isMulti == false)
+        {
+            int enemyIndex = 0;
+
+            SelectChess(ref enemyIndex);
+
+            if (enemyIndex == 5)
+            {
+                spawnIndex++;
+
+
+                if (spawnIndex == spawnList.Count)
+                {
+                    spawnEnd = true;
+                    return;
+                }
+                return;
+            }
+
+
+
+
+            GameObject enemy = monsterMob[enemyIndex];
+            int X = 0;
+            int Y = 0;
+
+
+            KeyBoardArrowSW(ref X, ref Y);
+
+
+            Vector2 monsterSpawnPostion;
+            Vector2 monsterPostionSet;
+
+            //¼ÒÈ¯ÇÏ´Â °ÔÀÓ¿ÀºêÁ§Æ®¿¡´Ù°¡ x,y¿¡µû¶ó Arrow¸¦ ¼³Á¤ÇØÁÖ´Â ÇÔ¼ö¸¦ ³Ö¾îÁÖ´Â 
+            if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
+            {
+                monsterSpawnPostion = grid.GetWorldPosition(X, Y);
+                monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
+            }
+            else
+            {
+                monsterSpawnPostion = grid.GetWorldPosition(X, Y);
+                monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
+            }
+            //Prefab¸¦ °¡Á®¿Â´Ù. 
+            //EnumÀ¸·Î °¡Á®¿À´Â ¿ÀºêÁ§Æ®¸¦ Á¤ÇÏ´Â°Å¾ß
+            GameObject enmeyObj = Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+
+            IArrow arr = enmeyObj.GetComponent<IArrow>();
+
+            //±×·¯°íº¸´Ï ½ÅÈ£´Â ±×°Ô ¾øÀİ¾Æ?
+            Debug.Log(arrow);
+            if (arr != null)
+            {
+
+                Debug.Log("¾ÈµÇ´Â °Ç°¡");
+                arr.ArrowCopySW(arrow);
+            }
+
+            spawnIndex++;
+
+            if (spawnIndex == spawnList.Count)
+            {
+                spawnEnd = true;
+                return;
+            }
+
+        }
+
+
+
+    }
+
+    private void SelectChess(ref int enemyIndex)
+    {
+        switch (spawnList[spawnIndex].type)
+        {
             case "P":
                 chessState = ChessMal.Pawn;
                 enemyIndex = 0;
                 break;
             case "K":
-                Debug.Log("ºñ¼ó¼ÒÈ¯");
                 chessState = ChessMal.Knight;
                 enemyIndex = 1;
                 break;
@@ -277,174 +375,70 @@ public class Testing : MonoBehaviour
                 chessState = ChessMal.Queen;
                 enemyIndex = 4;
                 break;
+            case "N":
+                enemyIndex = 5;
+                break;
         }
-=======
-            isMulti = false;
-            isMultiSPawn = false;
-            count = spawnList[spawnIndex].childCount;
-            //
-            for (i = 0; i < count; i++)
-            {
-                //3¹ø¹İº¹ÀÌ ¾ÈµÇ³×
-                //3°³°¡ µÇ³ª
-               
-                //ÀÚ½ÄÁß¿¡ ¸ÖÆ¼ÇÏ´Â°Ô ÀÖ´Ù¸éÀº 
-
-                
-                Debug.Log(spawnList[spawnIndex].childCount);
-                int enemyIndex = 0;
-
-                Debug.Log(spawnList[spawnIndex].type);
-                switch (spawnList[spawnIndex].type)
-                {
-                    case "P":
-                        chessState = ChessMal.Pawn;
-                        enemyIndex = 0;
-                        break;
-                    case "K":
-                        Debug.Log("ºñ¼ó¼ÒÈ¯");
-                        chessState = ChessMal.Knight;
-                        enemyIndex = 1;
-                        break;
-                    case "B":
-                        chessState = ChessMal.Bishop;
-                        enemyIndex = 2;
-                        break;
-                    case "R":
-                        chessState = ChessMal.Rook;
-                        enemyIndex = 3;
-                        break;
-                    case "Q":
-                        chessState = ChessMal.Queen;
-                        enemyIndex = 4;
-                        break;
-                    case "N":
-                        enemyIndex = 5;
-                        break;
-                }
-
-                if(enemyIndex == 5)
-                {
-                    spawnIndex++;
-                    return;
-                }
-
-                GameObject enemy = monsterMob[enemyIndex];
-
-                int enemyPointX = spawnList[spawnIndex].x; 
-                int enemyPointY = spawnList[spawnIndex].y;
-
-                Debug.Log(  "EnemyPointX"  + enemyPointX);
-                Debug.Log("EnemyPointY" + enemyPointY);
-
-                //ÅØ½ºÆ®·Î Àû¼ÒÈ¯Â÷±â
-                Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
-                Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
-
-                Debug.Log(grid.GetWorldPosition(enemyPointX, enemyPointY));
-                //Prefab¸¦ °¡Á®¿Â´Ù. 
-                //EnumÀ¸·Î °¡Á®¿À´Â ¿ÀºêÁ§Æ®¸¦ Á¤ÇÏ´Â°Å¾ß
-                Instantiate(enemy, monsterPostionSet, Quaternion.identity);
-
-
-                spawnIndex++;
-
-                //isMulti = false;
-                //isMulti = spawnList[spawnIndex].multi;
-                //if (isMulti == true)
-                //{
-                //    //i¿Í Ä«¿îÆ®¸¦ ´Ù½Ã Á¶Á¤
-                //    i = 0;
-                //    count = spawnList[spawnIndex].childCount;
-                //    //±×·³ ´Ù½Ã for¹®À» µµ³ª?
-                //}
-
-
-
-            
-
-             
-
-
-
-
-                if (spawnIndex == spawnList.Count)
-                {
-                    spawnEnd = true;
-                    isMultiSPawn = true;
-                    return;
-                }
-
-            }
-           isMultiSPawn = true;
-
-        }
-        else if(isMulti == false)
-        {
-            int enemyIndex = 0;
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
-
-
-        GameObject enemy = monsterMob[enemyIndex];
-
-        int enemyPointX = spawnList[spawnIndex].x;
-        int enemyPointY = spawnList[spawnIndex].y;
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
-        //ÅØ½ºÆ®·Î Àû¼ÒÈ¯Â÷±â
-        Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
-        Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 1, monsterSpawnPostion.y + 1);
-        //Prefab¸¦ °¡Á®¿Â´Ù. 
-        //EnumÀ¸·Î °¡Á®¿À´Â ¿ÀºêÁ§Æ®¸¦ Á¤ÇÏ´Â°Å¾ß
-        Instantiate(enemy, monsterPostionSet, Quaternion.identity);
-
-
-        spawnIndex++;
-=======
-
-
->>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
-=======
->>>>>>> parent of 8c7228c (ìŠ¤í° ì‹œìŠ¤í…œ ì¡°ì •)
-            GameObject enemy = monsterMob[enemyIndex];
-
-            int enemyPointX = spawnList[spawnIndex].x;
-            int enemyPointY = spawnList[spawnIndex].y;
-
-
-
-            //ÅØ½ºÆ®·Î Àû¼ÒÈ¯Â÷±â
-            Debug.Log(enemyPointX);
-            Debug.Log(enemyPointY);
-            Vector2 monsterSpawnPostion = grid.GetWorldPosition(enemyPointX, enemyPointY);
-            Vector2 monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
-            //Prefab¸¦ °¡Á®¿Â´Ù. 
-            //EnumÀ¸·Î °¡Á®¿À´Â ¿ÀºêÁ§Æ®¸¦ Á¤ÇÏ´Â°Å¾ß
-            Instantiate(enemy, monsterPostionSet, Quaternion.identity);
-
-
-            spawnIndex++;
-
-            if (spawnIndex == spawnList.Count)
-            {
-                spawnEnd = true;
-                return;
-            }
->>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
-
-        if(spawnIndex == spawnList.Count)
-        {
-            spawnEnd = true;
-            return;
-        }
-
-       
-
     }
-  
+
+
+    //w¸é w¸¸ÀÇ ÀÎµ¦½º¸¦ °¡Áö°Ô ¸¸µé·Á¸é 
+    private void KeyBoardArrowSW(ref int X, ref int Y)
+    {
+        switch (spawnList[spawnIndex].keyboardArrow)
+        {
+            case "W":
+                //¼ÒÈ¯ÀÌ µÇ°Ô ¸¸µé¾î
+                //¼ÒÈ¯µÉ‹š //¼ÒÈ¯µÇ´Â ¿ÀºêÁ§Æ®´Ù°¡ ½ºÅ©¸³Æ®¸¦ ºÙÀÌ°Ô ÇÒ¼öÀÖÁö ¾ÊÀ»±î 
+                //Ã¼½º µÇ¾îÀÖ°í, W·Î ÇÏ°í,  W¸¸ÀÇ ÀÎµ¦½º¸¦ °¡Áü
+                //ÀÎµ¦½º¸¦ °¡Áö°Ô ¸¸µé¾î ½ºÅ×ÀÌÆ®¸¦? 
+                //
+                //¿¡³Ê¹ÌÀÇ »óÅÂ¸¦ °áÁ¤ÇÏ´Â ÇÔ¼ö¸¦ ¸¸µé¾î¾ß ÇÔ
+                arrow = ChessArrow.W;
+                X = 2;
+                Y = 4;
+                break;
+            case "S":
+                
+                arrow = ChessArrow.S;
+                X = 2;
+                Y = 0;
+                break;
+            case "A":
+                arrow = ChessArrow.A;
+                X = 0;
+                Y = 2;
+                break;
+            case "D":
+                arrow = ChessArrow.D;
+                X = 4;
+                Y = 2;
+                break;
+            case "AW":
+            case "WA":
+                arrow = ChessArrow.AW;
+                X = 0;
+                Y = 4;
+                break;
+            case "DW":
+            case "WD":
+                arrow = ChessArrow.DW;
+                X = 4;
+                Y = 4;
+                break;
+            case "SA":
+            case "AS":
+                arrow = ChessArrow.SA;
+                X = 0;
+                Y = 0;
+                break;
+            case "SD":
+            case "DS":
+                arrow = ChessArrow.SD;
+                X = 4;
+                Y = 0;
+                break;
+        }
+    }
+
 }
