@@ -30,11 +30,19 @@ public class ArrowRotate : MonoBehaviour
     bool isRight;
     bool isLeft;
     bool isDown;
+    bool isUpRight;
+    bool isUpLeft;
+    bool isDownLeft;
+    bool isDownRight;
 
     Vector3 arrowAxis;
+
+    bool isdiagonal;
+
     // Update is called once per frame
     void Update()
     {
+        if (isdiagonal == true) return;
         //if (Input.GetMouseButtonDown(0))
         //{
         //    Debug.Log("마우스버튼");
@@ -42,34 +50,62 @@ public class ArrowRotate : MonoBehaviour
         //if (check)
         //{
 
-        
+        //x = Input.GetAxisRaw("Horizontal");
+        //y = Input.GetAxisRaw("Vertical")
 
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            isUpLeft = true;
+            isdiagonal = true;
+            arrow = ChessArrow.AW;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
+        {
+            arrow = ChessArrow.DW;
+            isUpRight = true;
+            isdiagonal = true;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            isDownLeft = true;
+            isdiagonal = true;
+            arrow = ChessArrow.SA;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
+        {
+            arrow = ChessArrow.SD;
+            isDownRight = true;
+            isdiagonal = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             isUp = true;
             arrow = ChessArrow.W;
-                Debug.Log("출력");
-
+            isdiagonal = true;
+            Debug.Log("출력");
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             arrow = ChessArrow.D;
             isRight = true;
+            isdiagonal = true;
 
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             arrow = ChessArrow.A;
             isLeft = true;
+            isdiagonal = true;
 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             arrow = ChessArrow.S;
             isDown = true;
+            isdiagonal = true;
 
         }
+        
         
 
 
@@ -112,16 +148,40 @@ public class ArrowRotate : MonoBehaviour
                 y = -1;
                 x = 0;
             }
-
-            if (x == 1 && y == 1)
+            else if(isUpLeft)
             {
-                Debug.Log("출");
+                arrow = ChessArrow.AW;
+                y = 1;
+                x = -1;
             }
+            else if (isUpRight)
+            {
+                arrow = ChessArrow.DW;
+                y = 1;
+                x = 1;
+            }
+            else if (isDownLeft)
+            {
+                arrow = ChessArrow.SA;
+                y = -1;
+                x = -1;
+            }
+            else if (isDownRight)
+            {
+                arrow = ChessArrow.SD;
+                y = -1;
+                x = 1;
+            }
+
             isUp = false;
             isRight = false;
             isLeft = false;
             isDown = false;
-
+            isUpRight = false;
+            isUpLeft = false;
+            isDownLeft = false;
+            isDownRight = false;
+            isdiagonal = false;
             arrowAxis = new Vector3(x, y, 0);
 
             angle = Mathf.Atan2(arrowAxis.y, arrowAxis.x) * Mathf.Rad2Deg;
