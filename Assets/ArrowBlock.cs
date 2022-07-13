@@ -44,7 +44,8 @@ public class ArrowBlock : MonoBehaviour
                     Debug.Log("µÇ´Ï");
                     CheckMateGameOver.Instance.GameObjectSet(true);
                     testing.isSpawn = false;
-                    CountDownControllder.Instance.TextStart();
+                    //CountDownControllder.Instance.TextStart();
+                    
                     //SceanM.Instance.SeceanChange("Seunghun");
                 }
 
