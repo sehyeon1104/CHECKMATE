@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CountDownControllder : MonoSingleton<CountDownControllder>
@@ -44,7 +45,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         //텍스트 애니메이션 이 끝나면
         yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
-        SceanM.Instance.SeceanChange("Seunghun");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         countDownDisPlay.gameObject.SetActive(false);
     }
