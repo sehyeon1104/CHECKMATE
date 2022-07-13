@@ -8,12 +8,15 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
+  - {fileID: 7}
+  - {fileID: 9}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -22,8 +25,21 @@ MonoBehaviour:
     height: 939
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
+<<<<<<< HEAD
+  vertical: 0
+  controlID: -1
+=======
   vertical: 1
-  controlID: 54
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 8659
+=======
+  controlID: 17050
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  controlID: 8659
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -32,29 +48,201 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
+  m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Text: Game
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 540
-    width: 743
-    height: 451
+<<<<<<< HEAD
+<<<<<<< HEAD
+    y: 546
+    width: 832
+    height: 445
+=======
+<<<<<<< HEAD
+    y: 448
+    width: 724.6
+    height: 335.4
+=======
+    y: 441.6
+    width: 551
+    height: 341.8
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    y: 546
+    width: 832
+    height: 445
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: -140032
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_TargetSize: {x: 2560, y: 1080}
+=======
+<<<<<<< HEAD
+  m_TargetSize: {x: 905.75, y: 393}
+=======
+  m_TargetSize: {x: 1920, y: 1080}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  m_TargetSize: {x: 2560, y: 1080}
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_SelectedSizes: 0b000000000000000000000000000000000000000000000000000000000000000000000000000000
+=======
+<<<<<<< HEAD
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+=======
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  m_SelectedSizes: 0b000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    m_HBaseRangeMin: -1280
+    m_HBaseRangeMax: 1280
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    m_HBaseRangeMin: -362.30002
+    m_HBaseRangeMax: 362.30002
+    m_VBaseRangeMin: -157.2
+    m_VBaseRangeMax: 157.2
+=======
+    m_HBaseRangeMin: -768
+    m_HBaseRangeMax: 768
+    m_VBaseRangeMin: -432
+    m_VBaseRangeMax: 432
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 0
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+      width: 832
+      height: 424
+    m_Scale: {x: 0.325, y: 0.325}
+    m_Translation: {x: 416, y: 212}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      width: 724.6
+      height: 314.4
+    m_Scale: {x: 0.99999994, y: 0.9999999}
+    m_Translation: {x: 362.3, y: 157.2}
+=======
+      width: 551
+      height: 320.8
+    m_Scale: {x: 0.35872397, y: 0.35872397}
+    m_Translation: {x: 275.5, y: 160.4}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+      x: -1280
+      y: -652.30774
+      width: 2560
+      height: 1304.6155
+<<<<<<< HEAD
+    m_MinimalGUI: 1
+  m_defaultScale: 0.325
+  m_LastWindowPixelSize: {x: 832, y: 445}
+=======
+<<<<<<< HEAD
+      x: -362.30002
+      y: -157.20001
+      width: 724.60004
+      height: 314.40002
+    m_MinimalGUI: 1
+  m_defaultScale: 0.99999994
+  m_LastWindowPixelSize: {x: 905.75, y: 419.25}
+=======
+      x: -768
+      y: -447.14044
+      width: 1536
+      height: 894.2809
+    m_MinimalGUI: 1
+  m_defaultScale: 0.35872397
+  m_LastWindowPixelSize: {x: 688.75, y: 427.25}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_MinimalGUI: 1
+  m_defaultScale: 0.325
+  m_LastWindowPixelSize: {x: 832, y: 445}
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 00000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -69,9 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 4}
+<<<<<<< HEAD
+  - {fileID: 6}
+=======
+  - {fileID: 8}
   - {fileID: 10}
-  - {fileID: 12}
-  - {fileID: 16}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -81,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 55
+  controlID: 8660
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -96,18 +287,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 5}
-  - {fileID: 8}
+  - {fileID: 7}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 744
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 833
     height: 939
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 8638
+=======
+<<<<<<< HEAD
+    width: 725.6
+=======
+    width: 552
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+    height: 730.8
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+<<<<<<< HEAD
+  controlID: -1
+--- !u!114 &4
+=======
+  controlID: 17029
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    width: 833
+    height: 939
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 8638
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
 --- !u!114 &5
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,24 +336,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 744
-    height: 467
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 833
+    height: 473
+=======
+<<<<<<< HEAD
+    width: 725.6
+    height: 374.4
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 5}
+=======
+    width: 552
+    height: 368
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    width: 833
+    height: 473
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
   m_Panes:
-  - {fileID: 6}
-  - {fileID: 7}
+  - {fileID: 5}
   m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &6
+  m_LastSelected: 0
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,9 +391,26 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
     y: 73
-    width: 743
-    height: 446
+    width: 832
+    height: 452
+=======
+    y: 73.6
+<<<<<<< HEAD
+    width: 724.6
+    height: 353.4
+=======
+    width: 551
+    height: 347
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    y: 73
+    width: 832
+    height: 452
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -189,7 +442,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -265,7 +518,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -381,9 +634,27 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2721.9824, y: 475.72406, z: -10.065559}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: 1392.4155, y: 535.6082, z: -2.9024038}
     speed: 2
-    m_Value: {x: 2721.9824, y: 475.72406, z: -10.065559}
+    m_Value: {x: 1392.4155, y: 535.6082, z: -2.9024038}
+=======
+<<<<<<< HEAD
+    m_Target: {x: 4, y: 4, z: 0}
+    speed: 2
+    m_Value: {x: 4, y: 4, z: 0}
+=======
+    m_Target: {x: -4.6934605, y: -0.22620724, z: 0.62927574}
+    speed: 2
+    m_Value: {x: -4.6934605, y: -0.22620724, z: 0.62927574}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_Target: {x: 1392.4155, y: 535.6082, z: -2.9024038}
+    speed: 2
+    m_Value: {x: 1392.4155, y: 535.6082, z: -2.9024038}
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -434,9 +705,27 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4365.9697
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 308.01636
     speed: 2
-    m_Value: 4365.9697
+    m_Value: 308.01636
+=======
+<<<<<<< HEAD
+    m_Target: 0.71414286
+    speed: 2
+    m_Value: 0.71414286
+=======
+    m_Target: 4.620925
+    speed: 2
+    m_Value: 4.620925
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_Target: 308.01636
+    speed: 2
+    m_Value: 308.01636
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -461,6 +750,52 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+    y: 473
+    width: 833
+    height: 466
+=======
+<<<<<<< HEAD
+    y: 374.4
+    width: 725.6
+    height: 356.4
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+=======
+    y: 368
+    width: 552
+    height: 362.8
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    y: 473
+    width: 833
+    height: 466
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+  m_ActualView: {fileID: 2}
+  m_Panes:
+  - {fileID: 2}
+  m_Selected: 0
+  m_LastSelected: 0
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -469,206 +804,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animator
-    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 73
-    width: 743
-    height: 446
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_ViewTransforms:
-    m_KeySerializationHelper:
-    - {fileID: -3065995042446346065, guid: 655de0408655c3e4e8c2837251a89a82, type: 2}
-    - {fileID: -8650241650400916106, guid: b622080ae7c9d9d459993419fff36c1e, type: 2}
-    m_ValueSerializationHelper:
-    - e00: 1.027147
-      e01: 0
-      e02: 0
-      e03: -53.937805
-      e10: 0
-      e11: 1.027147
-      e12: 0
-      e13: 123.332985
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.74211377
-      e01: 0
-      e02: 0
-      e03: 68.72995
-      e10: 0
-      e11: 0.74211377
-      e12: 0
-      e13: 145.31308
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-  m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: b622080ae7c9d9d459993419fff36c1e, type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: -8650241650400916106, guid: b622080ae7c9d9d459993419fff36c1e, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
-  stateMachineGraph: {fileID: 0}
-  stateMachineGraphGUI: {fileID: 0}
-  blendTreeGraph: {fileID: 0}
-  blendTreeGraphGUI: {fileID: 0}
-  m_AutoLiveLink: 1
-  m_MiniTool: 0
-  m_LockTracker:
-    m_IsLocked: 0
-  m_CurrentEditor: 0
-  m_LayerEditor:
-    m_SelectedLayerIndex: 0
---- !u!114 &8
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 467
-    width: 744
-    height: 472
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 2}
-  m_Panes:
-  - {fileID: 9}
-  - {fileID: 2}
-  m_Selected: 1
-  m_LastSelected: 0
---- !u!114 &9
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 540
-    width: 743
-    height: 451
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
-  m_PlayModeViewName: GameView
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 2560, y: 1080}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 0
-  m_UseMipMap: 0
-  m_VSyncEnabled: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 0b000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    hZoomLockedByDefault: 0
-    vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -1280
-    m_HBaseRangeMax: 1280
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
-    m_EnableSliderZoomHorizontal: 0
-    m_EnableSliderZoomVertical: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 21
-      width: 743
-      height: 430
-    m_Scale: {x: 0.2902344, y: 0.2902344}
-    m_Translation: {x: 371.5, y: 215}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -1280
-      y: -740.7806
-      width: 2560
-      height: 1481.5612
-    m_MinimalGUI: 1
-  m_defaultScale: 0.2902344
-  m_LastWindowPixelSize: {x: 743, y: 451}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
-  m_XRRenderMode: 0
-  m_RenderTexture: {fileID: 0}
---- !u!114 &10
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -676,18 +811,37 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 744
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 833
+=======
+<<<<<<< HEAD
+    x: 725.6
     y: 0
-    width: 456
-    height: 939
+    width: 175.20001
+    height: 730.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 11}
+  m_ActualView: {fileID: 8}
+=======
+    x: 552
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+    y: 0
+=======
+    x: 833
+    y: 0
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    width: 331
+    height: 939
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 9}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
   m_Panes:
-  - {fileID: 11}
+  - {fileID: 8}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,10 +861,29 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 744
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    x: 833
     y: 73
-    width: 454
+    width: 329
     height: 918
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    x: 725.60004
+    y: 73.6
+    width: 173.20001
+=======
+    x: 552
+    y: 73.6
+    width: 214.79999
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+    height: 709.8
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -718,33 +891,45 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00ddfdff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4e49faff7249faff7449faff4a4efaffac61faffae61faffc662faff7463faff1c64faff0665faffde6efaff0ccdfdff0ecdfdff1ed6fdffeefcfdff88fdfdff0e02feffa404feff6005feff0a06feffb406feff3407feff0a08feff8c08feff6c42feff224afeff425dfeff265efeffde1effff402cffff4834ffff5e36ffff1037ffffec6dffff1293ffffc293ffffd894ffff8895ffff9e96ffff4e97ffff6498ffff6699ffff3ca0fffffaa2ffff66aeffff40d9ffff04fbffffd06e0000da6e00001c6f00006c6f000066940000709400009c940000b294000002950000249500004e950000d4ad0000f4ad0000
+<<<<<<< HEAD
+<<<<<<< HEAD
+      m_ExpandedIDs: a4d2fffff6faffff
+=======
+<<<<<<< HEAD
+      m_ExpandedIDs: 64e6feffbae6feff04e7feff56e7feff9ce7feff7ee8feff56eafeff30fbffff
+=======
+      m_ExpandedIDs: f4ffffff986e0000ce6e0000
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+      m_ExpandedIDs: a4d2fffff6faffff
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Image
-        m_OriginalName: Image
+        m_Name: Square
+        m_OriginalName: Square
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -374460
+        m_UserData: 27766
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 10}
+        m_ClientGUIView: {fileID: 7}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
-      m_IsLocked: 1
+      m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: c3859a98954cc884e8be73f01632d010
---- !u!114 &12
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -754,25 +939,61 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_Name: ConsoleWindow
+=======
+<<<<<<< HEAD
+  m_Name: 
+=======
   m_Name: ProjectBrowser
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  m_Name: ConsoleWindow
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1200
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1164
+=======
+<<<<<<< HEAD
+    x: 900.8
     y: 0
-    width: 465
-    height: 939
+    width: 303.2
+    height: 730.8
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 10}
   m_Panes:
-  - {fileID: 13}
-  - {fileID: 14}
-  - {fileID: 15}
+  - {fileID: 10}
   m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &13
+  m_LastSelected: 0
+--- !u!114 &10
+=======
+    x: 768.8
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+    y: 0
+=======
+    x: 1164
+    y: 0
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    width: 343
+    height: 939
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 12}
+  m_Panes:
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &11
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -792,10 +1013,29 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1200
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    x: 1164
     y: 73
-    width: 463
+    width: 341
     height: 918
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    x: 900.8
+    y: 73.6
+    width: 301.2
+=======
+    x: 768.8
+    y: 73.6
+    width: 446.8
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+    height: 709.8
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -813,22 +1053,64 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/02.Animation
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - Assets/Resources
+=======
+<<<<<<< HEAD
+    - Assets/Scenes
+=======
+    - Assets/01.Script/Seunghun
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    - Assets/Resources
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/02.Animation
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - Assets/Resources
+=======
+<<<<<<< HEAD
+  - Assets/Scenes
+=======
+  - Assets/01.Script/Seunghun
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  - Assets/Resources
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\USER\\OneDrive\\\uBB38\uC11C\\GameJam"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec710000
-    m_LastClickedID: 29164
-    m_ExpandedIDs: 00000000c0710000c2710000c4710000e8710000f8710000fe71000000ca9a3bffffff7f
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: 04710000
+    m_LastClickedID: 28932
+    m_ExpandedIDs: 000000003e6f000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    m_SelectedIDs: c86c0000
+    m_LastClickedID: 27848
+    m_ExpandedIDs: 00000000b46c0000ba6c0000aa6e0000ac6e0000ae6e0000b06e0000b26e000000ca9a3b
+=======
+    m_SelectedIDs: 1a720000
+    m_LastClickedID: 29210
+    m_ExpandedIDs: 00000000546f0000566f0000586f00005a6f00005c6f00005e6f0000606f0000626f0000646f000000ca9a3b
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_SelectedIDs: 04710000
+    m_LastClickedID: 28932
+    m_ExpandedIDs: 000000003e6f000000ca9a3bffffff7f
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 04.Sprites
@@ -839,12 +1121,12 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: 29168
+      m_UserData: 27840
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 9}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -856,7 +1138,19 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0710000c2710000c4710000
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 000000003e6f000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000b46c0000
+=======
+    m_ExpandedIDs: 00000000546f0000566f0000586f00005a6f00005c6f00005e6f0000606f0000626f0000646f000000ca9a3b
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_ExpandedIDs: 000000003e6f000000ca9a3bffffff7f
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -881,10 +1175,22 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 00ddfdff
-    m_LastClickedInstanceID: -140032
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 3a6e0000d69600000a970000ce86feff00000000f46e0000c86f00000ab70000347e0000
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedInstanceIDs: 3a6e0000d69600000a970000ce86feff
+=======
+<<<<<<< HEAD
+    m_ExpandedInstanceIDs: 806c0000
+=======
+    m_ExpandedInstanceIDs: 3a6e0000d69600000a970000ce86feff146f0000
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+    m_ExpandedInstanceIDs: 3a6e0000d69600000a970000ce86feff
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -900,7 +1206,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -911,8 +1217,12 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
+  m_DirectoriesAreaWidth: 115
+--- !u!114 &11
+=======
   m_DirectoriesAreaWidth: 128.79999
---- !u!114 &14
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -932,15 +1242,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1200
+    x: 1164
     y: 73
-    width: 463
+    width: 341
     height: 918
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &15
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -960,18 +1270,18 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1200
-    y: 73
-    width: 463
-    height: 918
+    x: 964
+    y: 81
+    width: 397
+    height: 902
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c86f0000
-    m_LastClickedID: 28616
+    m_SelectedIDs: 
+    m_LastClickedID: 28502
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -988,7 +1298,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1087,12 +1397,12 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 29
+      ID: 171
       splitterInitialOffset: 162
       currentActiveSplitter: -1
       realSizes:
-      - 215
-      - 248
+      - 184
+      - 213
       relativeSizes:
       - 0.46376812
       - 0.5362319
@@ -1102,7 +1412,7 @@ MonoBehaviour:
       maxSizes:
       - 0
       - 0
-      lastTotalSize: 463
+      lastTotalSize: 397
       splitSize: 6
       xOffset: 0
       m_Version: 1
@@ -1116,7 +1426,8 @@ MonoBehaviour:
   m_ShowReferencedBuses: 1
   m_ShowBusConnections: 0
   m_ShowBusConnectionsOfSelection: 0
---- !u!114 &16
+--- !u!114 &14
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1131,18 +1442,37 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1665
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1507
+=======
+<<<<<<< HEAD
+    x: 1204
     y: 0
-    width: 255
-    height: 939
+    width: 332
+    height: 730.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 12}
+=======
+    x: 1217.6
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+    y: 0
+=======
+    x: 1507
+    y: 0
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    width: 413
+    height: 939
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &17
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1162,10 +1492,29 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1665
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
+    x: 1507
     y: 73
-    width: 254
+    width: 412
     height: 918
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    x: 1204
+    y: 73.6
+    width: 331
+=======
+    x: 1217.6
+    y: 73.6
+    width: 317.40002
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+    height: 709.8
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1173,10 +1522,22 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_LastInspectedObjectInstanceID: 29882
+=======
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -1
+=======
+  m_LastInspectedObjectInstanceID: 29614
+>>>>>>> 8c7228c07f5a1705709f9a18458f6c5025638e75
+>>>>>>> ace609edff14e927174ec35c09eba4abd78deee7
+=======
+  m_LastInspectedObjectInstanceID: 29882
+>>>>>>> parent of 8c7228c (스폰 시스템 조정)
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
