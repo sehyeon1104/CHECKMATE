@@ -4,7 +4,6 @@ using UnityEngine;
 using DG.Tweening;
 using static ChessSpawnArrowEnum;
 
-
 public class ArrowRotate : MonoBehaviour
 {
     public ChessArrow arrow;
@@ -24,7 +23,7 @@ public class ArrowRotate : MonoBehaviour
     float x = 0f;
     float y = 0f;
 
-    float mijisu = 0.2f;
+    float mijisu = 0.3f;
 
     bool isRotate;
 

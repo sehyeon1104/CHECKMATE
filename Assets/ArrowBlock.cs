@@ -12,7 +12,7 @@ public class ArrowBlock : MonoBehaviour
     //닿았는데 체스가 내방향에 없다면 데미지 달게
     public ArrowRotate arrowRotate;
 
-
+    public ParticleSystem particle;
 
     //인터페이스로 그걸 만들까 
     private void OnTriggerStay2D(Collider2D collision)
@@ -29,7 +29,7 @@ public class ArrowBlock : MonoBehaviour
             {
                 if(arrowRotate.arrow == arr.GetArrowState())
                 {
-
+                    particle.Play();
                     
                     collision.gameObject.SetActive(false);
                 }
