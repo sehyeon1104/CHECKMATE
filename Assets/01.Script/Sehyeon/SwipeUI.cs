@@ -2,8 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class SwipeUI : MonoBehaviour
 {
+    
+    [SerializeField]
+    VolumeProfile volumeProfile; //포스트 프로세싱
+    Bloom bloom;
     [SerializeField]
     private Scrollbar scrollBar;                    // Scrollbar의 위치를 바탕으로 현재 페이지 검사
     [SerializeField]
@@ -30,6 +36,7 @@ public class SwipeUI : MonoBehaviour
 
     private void Awake()
     {
+        volumeProfile.TryGet(out bloom);
         // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메 모리 할당
         scrollPageValues = new float[transform.childCount];
 
@@ -60,6 +67,25 @@ public class SwipeUI : MonoBehaviour
 
     private void Update()
     {
+        int eie = currentPage;
+        switch(eie)
+        {
+            case 0:
+                bloom.tint.Override(Color.blue);
+                break;
+            case 1:
+                bloom.tint.Override(Color.green);
+                break;
+            case 2:
+                bloom.tint.Override(Color.red);
+                break;
+            case 3:
+                bloom.tint.Override(Color.cyan);
+                break;
+            case 4:
+                bloom.tint.Override(Color.yellow);
+                break;
+        }
         swipeTimer += Time.deltaTime;
         print(swipeTimer);
         NextScene();
@@ -72,7 +98,7 @@ public class SwipeUI : MonoBehaviour
 
     private void UpdateInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if(swipeTimer < notSwipeTime)
             {
@@ -84,9 +110,8 @@ public class SwipeUI : MonoBehaviour
             }
             --currentPage;
             StartCoroutine(OnSwipeOneStep(currentPage));
-
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (swipeTimer < notSwipeTime)
             {
