@@ -29,7 +29,7 @@ public class GoSelect : MonoBehaviour
         while(true)
         {
        textMeshProUGUI.color = Color.Lerp(textMeshProUGUI.color,randomColor,colorTime);
-            colorTime += Time.deltaTime/2;
+            colorTime += Time.deltaTime/7*4;
             if(colorTime>0.9f)
             {
                 randomColor = new Color32((byte)Random.Range(0, 256), (byte)Random.Range(0, 256), (byte)Random.Range(0, 256), 255);

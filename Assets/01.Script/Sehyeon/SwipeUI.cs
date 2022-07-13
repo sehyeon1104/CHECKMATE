@@ -10,6 +10,7 @@ public class SwipeUI : MonoBehaviour
     [SerializeField]
     VolumeProfile volumeProfile; //포스트 프로세싱
     Bloom bloom;
+    ChromaticAberration chromaticAberration;
     [SerializeField]
     private Scrollbar scrollBar;                    // Scrollbar의 위치를 바탕으로 현재 페이지 검사
     [SerializeField]
@@ -36,6 +37,7 @@ public class SwipeUI : MonoBehaviour
 
     private void Awake()
     {
+        volumeProfile.TryGet(out chromaticAberration);
         volumeProfile.TryGet(out bloom);
         // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메 모리 할당
         scrollPageValues = new float[transform.childCount];
@@ -71,19 +73,24 @@ public class SwipeUI : MonoBehaviour
         switch(eie)
         {
             case 0:
-                bloom.tint.Override(Color.blue);
+                chromaticAberration.intensity.Override(0.5f);
+                bloom.tint.Override(Color.magenta);
                 break;
             case 1:
-                bloom.tint.Override(Color.green);
+                chromaticAberration.intensity.Override(0.5f);
+                bloom.tint.Override(Color.magenta);
                 break;
             case 2:
-                bloom.tint.Override(Color.red);
+                chromaticAberration.intensity.Override(0.5f);
+                bloom.tint.Override(Color.blue);
                 break;
             case 3:
-                bloom.tint.Override(Color.cyan);
+                chromaticAberration.intensity.Override(0.5f);
+                bloom.tint.Override(Color.green);
                 break;
             case 4:
-                bloom.tint.Override(Color.yellow);
+                bloom.tint.Override(Color.red);
+                chromaticAberration.intensity.Override(1f);
                 break;
         }
         swipeTimer += Time.deltaTime;
@@ -332,7 +339,7 @@ public class SwipeUI : MonoBehaviour
             if (scrollBar.value < scrollPageValues[i] + (valueDistance / 2) && scrollBar.value > scrollPageValues[i] - (valueDistance / 2))
             {
                 circleContents[i].localScale = new Vector2(0.5f, 0.5f) * circleContentScale;
-                circleContents[i].GetComponent<Image>().color = Color.black;
+                circleContents[i].GetComponent<Image>().color =bloom.tint.value;
             }
         }
     }
