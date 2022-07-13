@@ -17,6 +17,11 @@ public class CameraShake : MonoBehaviour
         mainCamera = Camera.main;
     }
 
+
+    public void CancleShake()
+    {
+        CancelInvoke();
+    }
     public void Shake()
     {
         cameraPos = mainCamera.transform.position;

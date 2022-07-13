@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 
 public class ArrowBlock : MonoBehaviour
 {
@@ -14,10 +14,12 @@ public class ArrowBlock : MonoBehaviour
     public Testing testing;
 
     bool isActive = false;
+
+    public GameObject breakKing;
     //인터페이스로 그걸 만들까 
-    private void OnTriggerStay2D(Collider2D collision)
+    private IEnumerator OnTriggerStay2D(Collider2D collision)
     {
-        if (isActive == true) return;
+        if (isActive == true) yield break;
         Debug.Log("닿았다");
         //Debug.Log(collision.gameObject.GetComponent<IArrow>().GetArrowState());
         if (collision.gameObject.CompareTag("Chess") )
@@ -36,17 +38,34 @@ public class ArrowBlock : MonoBehaviour
                 }
                 else
                 {
+                    
                     isActive = true;
                     collision.gameObject.SetActive(false);
                     GameManager.Instance.TimeScale = 0f;
 
+                    Sync_Gijoo.Instance.IsDeadTik();
                     //텍스트를 띄우는 함수
-                    Debug.Log("되니");
-                    CheckMateGameOver.Instance.GameObjectSet(true);
-                    testing.isSpawn = false;
-                    //CountDownControllder.Instance.TextStart();
+                   
+                    //화면 가까이 하는 코드
+
+                    yield return StartCoroutine(CameraZoooooooooom.Instance.CameraZoom());
+
+
                     
-                    //SceanM.Instance.SeceanChange("Seunghun");
+                    //그리고 기주야 LookChess오류 나가지고 새로운 게임오브젝트만들고 Player태그달아 
+                    testing.isSpawn = false; //소환하지 말게
+                    //플레이어가 움지깅ㅁ
+                    transform.parent.gameObject.transform.DOShakePosition(0.75f, 0.3f, 24, 1f, false, true).OnComplete(()=>
+                    {
+                        //함수 호출해가지고 
+                        transform.parent.gameObject.SetActive(false); //플레이어 펄스(삭제와 같은)
+
+                        GameObject obj = Instantiate(breakKing, transform.position, Quaternion.identity);
+     
+                    });
+
+                    //
+
                 }
 
             }
@@ -54,4 +73,5 @@ public class ArrowBlock : MonoBehaviour
 
         }
     }
+
 }

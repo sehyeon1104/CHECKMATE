@@ -11,8 +11,16 @@ public class Test : MonoBehaviour
 
     public void TestOffset()
     {
+
         testSound.Play();
         cameraShake.ReSize();
         cameraShake.Shake();
+    
+    }
+
+    public void CancleCameraShake()
+    {
+        cameraShake.CancleShake();
+        cameraShake.CancelInvoke();
     }
 }

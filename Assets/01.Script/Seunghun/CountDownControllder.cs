@@ -44,7 +44,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         //텍스트 애니메이션 이 끝나면
         yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
-        SceanM.Instance.SeceanChange("Seunghun");
+        Loader.Load(Loader.Scene.Seunghun);
 
         countDownDisPlay.gameObject.SetActive(false);
     }
