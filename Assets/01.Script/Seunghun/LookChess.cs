@@ -25,7 +25,7 @@ public class LookChess : ChessMal
 
     public void Move(Transform playerTransform, float tileRad)
     {
-        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 : (playerTransform.position.x - transform.position.x) < 0 ? -4 : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 4 : (playerTransform.position.y - transform.position.y) < 0 ? -4 : 0 * tileRad), Sync_Gijoo.Instance.tikTime);
+        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale), Sync_Gijoo.Instance.tikTime).SetEase(Ease.Linear);
     }
 
     public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)

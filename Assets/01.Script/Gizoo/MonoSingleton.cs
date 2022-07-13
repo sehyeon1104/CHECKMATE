@@ -8,6 +8,8 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private static T instance = null;
     private static object locker = new object();
+
+   
     public static T Instance
     {
         get
@@ -28,10 +30,10 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                         instance = new GameObject(typeof(T).ToString()).AddComponent<T>();
                     }
 
-                   // DontDestroyOnLoad(instance.gameObject);
+                   //DontDestroyOnLoad(instance.gameObject);
 
                 }
-                else
+                else if(instance != null)
                 {
                     //Destroy(instance.gameObject);
                 }

@@ -19,7 +19,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
     {
         audioSource = GetComponent<AudioSource>();
         test = GetComponent<Test>();
-        audioSource.Play();
+        //audioSource.Play();
 
     }
 

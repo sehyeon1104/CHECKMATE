@@ -42,7 +42,7 @@ public class ArrowRotate : MonoBehaviour
         //if (check)
         //{
 
-
+        
 
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -70,6 +70,7 @@ public class ArrowRotate : MonoBehaviour
             isDown = true;
 
         }
+        
 
 
         isRotate = true;

@@ -203,7 +203,7 @@ public class Testing : MonoBehaviour
                 if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
                 {
                     monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 0.5f, monsterSpawnPostion.y * 2 + 0.5f);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 1.5f + 0.75f, monsterSpawnPostion.y * 1.5f + 0.75f);
                 }
                 else
                 {
@@ -271,7 +271,7 @@ public class Testing : MonoBehaviour
             if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
             {
                 monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 1f, monsterSpawnPostion.y * 2 + 1f);
+                monsterPostionSet = new Vector2(monsterSpawnPostion.x *1.5f  + 0.5f, monsterSpawnPostion.y * 1.5f + 0.5f);
             }
             else
             {

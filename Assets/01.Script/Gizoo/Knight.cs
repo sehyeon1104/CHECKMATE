@@ -44,7 +44,7 @@ public class Knight : ChessMal
         while (transform.position != playerTransform.position)
         {
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-            transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
+            transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * blockRadius * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * blockRadius * GameManager.Instance.TimeScale);
             //플레이어 위치(3,3) - 폰 위치(0,0)일 때, 폰은 (1,1)만큼 이동해야됨
             //그러니까 플레이어 위치의 X좌표 - 폰 위치의 X좌표가 0보다 크면 1만큼 이동, 0이면 이동 안함, 0보다 작으면 -1만큼 이동
             //
@@ -55,7 +55,7 @@ public class Knight : ChessMal
                 case 0:
                     if(playerTransform.position.y - transform.position.y == 0)
                     {
-                        transform.position += new Vector3(((playerTransform.position.x - transform.position.x) > 0 ? 1 : -1) * blockRadius, blockRadius); // 위로 오른쪽, 왼쪽 이동
+                        transform.position += new Vector3(((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : -1 * GameManager.Instance.TimeScale) * blockRadius * GameManager.Instance.TimeScale, blockRadius * GameManager.Instance.TimeScale); // 위로 오른쪽, 왼쪽 이동
                         
                         //오른쪽이면 오른
                         //왼쪽이면 왼
@@ -65,7 +65,7 @@ public class Knight : ChessMal
                     else
                     {
                         //r = (playerTransform.position.y - transform.position.y) > 0 ? 1 : -1;
-                        transform.position += new Vector3(blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 :  -1 * blockRadius); // 우방향으로, 아래쪽 위쪽 이동 
+                        transform.position += new Vector3(blockRadius * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale :  -1 * blockRadius * GameManager.Instance.TimeScale); // 우방향으로, 아래쪽 위쪽 이동 
                         //1이면 위쪽으로 
                         //-1이면 아래쪽으로
                     }
@@ -74,20 +74,20 @@ public class Knight : ChessMal
                 case 1:
                     if (playerTransform.position.y - transform.position.y == 0)
                     {
-                        transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : -1 * blockRadius, -blockRadius); //아래 오른쪽, 왼쪽 이동
+                        transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : -1 * blockRadius * GameManager.Instance.TimeScale , -blockRadius * GameManager.Instance.TimeScale); //아래 오른쪽, 왼쪽 이동
                         
                     }
                     else
                     {
-                        transform.position += new Vector3(-blockRadius, (playerTransform.position.y - transform.position.y) > 0 ? 1 : -1 * blockRadius); // 왼방향으로, 아래쪽 위쪽이동
+                        transform.position += new Vector3(-blockRadius * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : -1 * blockRadius * GameManager.Instance.TimeScale); // 왼방향으로, 아래쪽 위쪽이동
                         
                     }
                         
                     break;
             }
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-            transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0 * blockRadius, 
-                (playerTransform.position.y - transform.position.y) > 0 ? 1 : (playerTransform.position.y - transform.position.y) < 0 ? -1 : 0 * blockRadius);
+            transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * blockRadius * GameManager.Instance.TimeScale, 
+                (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * blockRadius * GameManager.Instance.TimeScale);
 
 
             rl = ( playerTransform.position.x - transform.position.x) > 0 ? 1 : (playerTransform.position.x - transform.position.x) < 0 ? -1 : 0;
