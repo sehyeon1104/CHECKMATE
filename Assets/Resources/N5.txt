@@ -1,7 +1,15 @@
+N,W, false, 0
 R,D, false, 0
+N,W, false, 0
 B,SA, false, 0
+N,W, false, 0
 R,A, false, 0
+N,W, false, 0
 B,SD, false, 0
+N,W, false, 0
+N,W, false, 0
+N,W, false, 0
+N,W, false, 0
 N,W, false, 0
 N,W, false, 0
 N,W, false, 0

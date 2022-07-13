@@ -240,7 +240,7 @@ public class Testing : MonoBehaviour
                 if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
                 {
                     monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                    monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 1f, monsterSpawnPostion.y * 2 + 1f);
+                    monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
                 }
                 else
                 {
@@ -315,7 +315,7 @@ public class Testing : MonoBehaviour
             if (chessState == ChessMal.Bishop || chessState == ChessMal.Rook)
             {
                 monsterSpawnPostion = grid.GetWorldPosition(X, Y);
-                monsterPostionSet = new Vector2(monsterSpawnPostion.x * 2 + 1f, monsterSpawnPostion.y * 2 + 1f);
+                monsterPostionSet = new Vector2(monsterSpawnPostion.x + 0.5f, monsterSpawnPostion.y + 0.5f);
             }
             else
             {
@@ -417,8 +417,8 @@ public class Testing : MonoBehaviour
             case "AW":
             case "WA":
                 arrow = ChessArrow.AW;
-                X = 4;
-                Y = 0;
+                X = 0;
+                Y = 4;
                 break;
             case "DW":
             case "WD":
