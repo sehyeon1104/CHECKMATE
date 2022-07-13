@@ -21,8 +21,10 @@ public class ArrowRotate : MonoBehaviour
     float angle = 0;
 
     bool check = true;
-    float x = 0;
-    float y = 0;
+    float x = 0f;
+    float y = 0f;
+
+    float mijisu = 0.2f;
 
     bool isRotate;
 
@@ -35,10 +37,10 @@ public class ArrowRotate : MonoBehaviour
 
     void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        x = Mathf.Lerp(x, h, 1f);
-        float v = Input.GetAxisRaw("Vertical");
-        y = Mathf.Lerp(y, v, 1f);
+        float h = (float)System.Math.Ceiling(Input.GetAxis("Horizontal") * 10f)/10;
+        x = Mathf.Lerp(0f, h, 1f);
+        float v = (float)System.Math.Ceiling(Input.GetAxis("Vertical") * 10f)/10;
+        y = Mathf.Lerp(0f, v, 1f);
 
         isRotate = true;
 
@@ -51,39 +53,56 @@ public class ArrowRotate : MonoBehaviour
     private void FixedUpdate()
     {
         Debug.Log($"X : {x}");
+        Debug.Log($"Y : {y}");
         if (isRotate)
         {
-            if(y >= 0.25f && x == 0)
+            if(y >= mijisu && x == 0)
             {
                 arrow = ChessArrow.W;
+                y = 1f;
+                x = 0f;
             }
-            if (y <= -0.25f && x == 0)
+            if (y <= -mijisu && x == 0)
             {
                 arrow = ChessArrow.S;
+                y = -1f;
+                x = 0f;
             }
-            if (y == 0 && x >= 0.25f)
+            if (y == 0 && x >= mijisu)
             {
                 arrow = ChessArrow.D;
+                y = 0f;
+                x = 1f;
             }
-            if (y == 0 && x <= -0.25f)
+            if (y == 0 && x <= -mijisu)
             {
                 arrow = ChessArrow.A;
+                y = 0f;
+                x = -1f;
             }
-            if (y >= 0.25f && x >= 0.25f)
+            if (y >= mijisu && x >= mijisu)
             {
                 arrow = ChessArrow.DW;
+                y = 1f;
+                x = 1f;
             }
-            if (y >= 0.25f && x <= -0.25f)
+            if (y >= mijisu && x <= -mijisu)
             {
                 arrow = ChessArrow.AW;
+                y = 1f;
+                x = -1f;
             }
-            if (y <= -0.25f && x >= 0.25f)
+            if (y <= -mijisu && x >= mijisu)
             {
                 arrow = ChessArrow.SD;
+                y = -1f;
+                x = 1f;
             }
-            if (y <= -0.25f && x <= -0.25f)
+            if (y <= -mijisu && x <= -mijisu)
             {
                 arrow = ChessArrow.SA;
+                y = -1f;
+                x = -1f;
             }
 
             if (x == 0 && y == 0)
