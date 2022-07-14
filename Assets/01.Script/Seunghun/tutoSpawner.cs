@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using static ChessSpawnArrowEnum;
-public class Wave
+public class WaveS
 {
     public string type;//몬스터 종류
     //public int x;
@@ -13,9 +13,9 @@ public class Wave
     public int childCount;
     // 스폰딜레이
 }
-
-public class Testing : MonoBehaviour
+public class tutoSpawner : MonoBehaviour
 {
+
     private enum ChessMal { Pawn, Knight, Bishop, Rook, King, Queen };
 
     ChessMal chessState = ChessMal.Pawn;
@@ -23,43 +23,7 @@ public class Testing : MonoBehaviour
 
     public bool isSpawn;
     public ChessArrow arrow;
-
-    private void Awake()
-    {
-
-        spawnList = new List<Wave>();
-        int ran = Random.Range(0, 8);
-        switch (ran)
-        {
-            case 0:
-                ReadSpawnFile("N1");
-                break;
-            case 1:
-                ReadSpawnFile("N2");
-                break;
-            case 2:
-                ReadSpawnFile("N3");
-                break;
-            case 3:
-                ReadSpawnFile("N4");
-                break;
-            case 4:
-                ReadSpawnFile("N5");
-                break;
-            case 5:
-                ReadSpawnFile("N6");
-                break;
-            case 6:
-                ReadSpawnFile("N7");
-                break;
-            case 7:
-                ReadSpawnFile("N8");
-                break;
-        }
-
-    }
     public List<GameObject> monsterMob = new List<GameObject>();
-
 
     private Grid grid;
     public float cellSize;
@@ -77,7 +41,6 @@ public class Testing : MonoBehaviour
     }
 
 
-
     public List<Wave> spawnList;
     public int spawnIndex; //다음녀석 다음녀석
     public bool spawnEnd;
@@ -86,58 +49,20 @@ public class Testing : MonoBehaviour
 
 
     bool isMultiSPawn = true;
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-        if (isSpawn == false)
-        {
-            return;
-        }
-        currentTime += Time.deltaTime;
-
-        if (currentTime >= (60f / Sync_Gijoo.Instance.realMusicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
-        {
-            MonsterSpawn();
-            currentTime -= 60f / Sync_Gijoo.Instance.realMusicBpm;
-            //25 - 5; 
-
-        }
-        else if (spawnEnd == true && isRead == true)
-        {
-            int ran = Random.Range(0, 8);
-            switch (ran)
-            {
-                case 0:
-                    ReadSpawnFile("N1");
-                    break;
-                case 1:
-                    ReadSpawnFile("N2");
-                    break;
-                case 2:
-                    ReadSpawnFile("N3");
-                    break;
-                case 3:
-                    ReadSpawnFile("N4");
-                    break;
-                case 4:
-                    ReadSpawnFile("N5");
-                    break;
-                case 5:
-                    ReadSpawnFile("N6");
-                    break;
-                case 6:
-                    ReadSpawnFile("N7");
-                    break;
-                case 7:
-                    ReadSpawnFile("N8");
-                    break;
-            }
-
-        }
-    }
 
     bool isRead;
+
+    private bool isMulti;
+    private int count;
+
+    int i;
+    private void Awake()
+    {
+        level = 0;
+        spawnList = new List<Wave>();
+
+    }
+
     void ReadSpawnFile(string patern)
     {
         isRead = false;
@@ -176,11 +101,54 @@ public class Testing : MonoBehaviour
         isRead = true;
     }
 
-    //
-    private bool isMulti;
-    private int count;
+    int level ;
+    void FixedUpdate()
+    {
 
-    int i;
+        if (isSpawn == false)
+        {
+            return;
+        }
+        currentTime += Time.deltaTime;
+
+        if (currentTime >= (60f / Sync_Gijoo.Instance.realMusicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
+        {
+            MonsterSpawn();
+            currentTime -= 60f / Sync_Gijoo.Instance.realMusicBpm;
+            //25 - 5; 
+
+        }
+        else if (spawnEnd == true && isRead == true)
+        {
+            tutoList(level);
+            level++;
+
+        }
+    }
+
+    public void tutoList(int l)
+    {
+        switch (l)
+        {
+            case 0:
+                ReadSpawnFile("tutorialText");
+                break;
+            case 1:
+                ReadSpawnFile("tutorialText1");
+                break;
+            case 2:
+                ReadSpawnFile("tutorialText2");
+                break;
+            case 3:
+                ReadSpawnFile("tutorialText3");
+                break;
+            case 4:
+                ReadSpawnFile("tutorialText4");
+                break;
+            
+        }
+    }
+
     void MonsterSpawn()
     {
 
@@ -246,7 +214,7 @@ public class Testing : MonoBehaviour
                 Debug.Log(grid.GetWorldPosition(X, Y));
                 //Prefab를 가져온다. 
                 //Enum으로 가져오는 오브젝트를 정하는거야
-                GameObject enmeyObj =  Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+                GameObject enmeyObj = Instantiate(enemy, monsterPostionSet, Quaternion.identity);
 
                 IArrow arr = enmeyObj.GetComponent<IArrow>();
 
@@ -376,7 +344,6 @@ public class Testing : MonoBehaviour
     }
 
 
-    //w면 w만의 인덱스를 가지게 만들려면 
     private void KeyBoardArrowSW(ref int X, ref int Y)
     {
         switch (spawnList[spawnIndex].keyboardArrow)
@@ -393,7 +360,7 @@ public class Testing : MonoBehaviour
                 Y = 4;
                 break;
             case "S":
-                
+
                 arrow = ChessArrow.S;
                 X = 2;
                 Y = 0;
@@ -434,5 +401,4 @@ public class Testing : MonoBehaviour
                 break;
         }
     }
-
 }
