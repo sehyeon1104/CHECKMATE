@@ -30,6 +30,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         vig.intensity.Override(0.65f);
 
         profile.TryGet(out motionBlur);
+        motionBlur.intensity.value = 1f;
     }
 
     bool isCount = false;
