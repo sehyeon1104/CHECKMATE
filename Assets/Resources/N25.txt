@@ -1,4 +1,5 @@
 N,W, false, 0
+N,W, false, 0
 B,WA, false, 0
 B,AS, false, 0
 B,SD, false, 0

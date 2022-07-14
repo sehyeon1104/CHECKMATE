@@ -8,14 +8,19 @@ public class Test : MonoBehaviour
     CameraShake cameraShake;
     [SerializeField]
     AudioSource testSound;
+    bool isParOn = false;
 
-    public void TestOffset()
+    public IEnumerator TestOffset()
     {
-
+        if (!isParOn)
+        {
+            isParOn = true;
+            yield return new WaitForSeconds(0f);
+        }
+        
         testSound.Play();
         cameraShake.ReSize();
         cameraShake.Shake();
-    
     }
 
     public void CancleCameraShake()
