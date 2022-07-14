@@ -24,7 +24,3 @@ N,W, false, 0
 N,W, false, 0
 N,W, false, 0
 N,W, false, 0
-N,W, false, 0
-N,W, false, 0
-N,W, false, 0
-N,W, false, 0

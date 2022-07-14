@@ -1,5 +1,6 @@
 N,W, false, 0
 R,W, false, 0
+P,S, false, 0
 N,W, false, 0
 N,W, false, 0
 P,W, false, 0
@@ -7,20 +8,21 @@ P,W, true, 2
 R,S, false, 0
 P,W, false, 0
 N,W, false, 0
+N,W, false, 0
 P,S, false, 0
 P,S, true, 2
 R,D, false,0
 P,S, false, 0
+N,W, false, 0
 N,W, false, 0
 P,D, false, 0
 P,D, true, 2
 R,A, false,0
 P,D, false, 0
 N,W, false, 0
-P,A, false, 0
-P,A, false, 0
-P,A, false, 0
 N,W, false, 0
-N,W, false, 0
+P,A, false, 0
+P,A, false, 0
+P,A, false, 0
 N,W, false, 0
 N,W, false, 0

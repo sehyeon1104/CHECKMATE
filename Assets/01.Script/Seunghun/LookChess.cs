@@ -8,10 +8,10 @@ public class LookChess : ChessMal
     private Transform playerTransform;
     private float blockRadius = 1f;
 
-    private IEnumerator Start()
+    private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
-        yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+        //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
         Move(playerTransform, blockRadius);
     }
 

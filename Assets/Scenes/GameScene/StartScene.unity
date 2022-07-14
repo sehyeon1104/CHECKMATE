@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4e7b5aeda82324f93705e033261352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 150
+  bpm: 75
   point: {x: 0, y: 0, z: 0}
 --- !u!82 &202764317
 AudioSource:

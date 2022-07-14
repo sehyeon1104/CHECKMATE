@@ -16,10 +16,19 @@ public class GoSelect : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
 
+Application.Quit();
+    
+#endif
+        }
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            LoadingSceneController.LoadScene("SelectScene");
+            SceneManager.LoadScene("SelectScene");
         }
     }
     IEnumerator ColorChange()
@@ -29,11 +38,11 @@ public class GoSelect : MonoBehaviour
         while(true)
         {
        textMeshProUGUI.color = Color.Lerp(textMeshProUGUI.color,randomColor,colorTime);
-            colorTime += Time.deltaTime/7*4;
+            colorTime += Time.deltaTime/52*22;
             if(colorTime>0.9f)
             {
                 randomColor = new Color32((byte)Random.Range(0, 256), (byte)Random.Range(0, 256), (byte)Random.Range(0, 256), 255);
-                colorTime = 0;
+                colorTime = 0f; // ==colorTime = colorTime - 0.9f
             }
             yield return null;
         }

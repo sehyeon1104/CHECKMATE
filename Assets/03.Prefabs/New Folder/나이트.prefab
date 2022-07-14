@@ -120,9 +120,9 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.7
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
-  m_Intensity: 10
-  m_LightVolumeIntensity: 10
+  m_Color: {r: 0.4392157, g: 0.4392157, b: 0.56078434, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 1660402174, guid: 26829e0e67f160443a9f4a52ee9053ed, type: 3}
@@ -203,7 +203,7 @@ TrailRenderer:
   m_Time: 2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.8
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -230,8 +230,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 1, a: 1}
-      key1: {r: 0, g: 0, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 0.5019608}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -254,7 +254,7 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
