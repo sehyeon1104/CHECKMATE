@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer : MonoSingleton<Timer>
 {
     enum ColorMode
     {
@@ -14,12 +14,10 @@ public class Timer : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI[] textTimers;
-    private float timer = 0;
-    public int colors = 0;
+    public float timer = 0;
     ColorMode colorMode = ColorMode.DEFAULT;
-    public bool feverTime = false;
 
-    public UnityEngine.Rendering.Universal.Light2D pawn, kinght, bishop, rook, king, arrow, global;
+    public UnityEngine.Rendering.Universal.Light2D pawn, kinght, bishop, rook, king, arrow, global, cautionR, cautionB;
 
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class Timer : MonoBehaviour
     {
         textTimers[0].text = $"{(int)timer / 60 % 60:00} : ";
         textTimers[1].text = $"{(int)timer % 60:00}";
-        timer += Time.deltaTime;
+        timer += Time.deltaTime * 3;
 
         if (timer >= 48)
             colorMode = ColorMode.CLIMAX;
@@ -54,15 +52,19 @@ public class Timer : MonoBehaviour
                 king.color = Color.red;
                 arrow.color = Color.red;
                 global.color = Color.cyan;
+                cautionR.color = Color.red;
+                cautionB.color = Color.red;
                 break;
             case ColorMode.MIDDLE:
-                pawn.color = Color.red;
-                kinght.color = Color.red;
-                bishop.color = Color.red;
-                rook.color = Color.red;
+                pawn.color = Color.cyan;
+                kinght.color = Color.cyan;
+                bishop.color = Color.cyan;
+                rook.color = Color.cyan;
                 king.color = Color.magenta;
                 arrow.color = Color.magenta;
                 global.color = Color.blue;
+                cautionR.color = Color.magenta;
+                cautionB.color = Color.magenta;
                 break;
             case ColorMode.CLIMAX:
                 pawn.color = Color.red;
@@ -71,7 +73,9 @@ public class Timer : MonoBehaviour
                 rook.color = Color.red;
                 king.color = Color.blue;
                 arrow.color = Color.blue;
-                global.color = Color.yellow;
+                global.color = Color.magenta;
+                cautionR.color = Color.blue;
+                cautionB.color = Color.blue;
                 break;
         }
     }    

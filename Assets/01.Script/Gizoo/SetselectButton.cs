@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class SetselectButton : MonoBehaviour
 {
@@ -35,13 +36,13 @@ public class SetselectButton : MonoBehaviour
                 isPause = false;
                 Time.timeScale = 1f;
             }
-            pausePanel.SetActive(isPause);
         }
+        pausePanel.SetActive(isPause);
         if (pausePanel.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                Debug.Log("안도ㅒ!!!!!!!!!!!!!!!!!");
+                Debug.Log("안도!");
                 EventSystem.current.SetSelectedGameObject(pauseButtons[0]);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
@@ -62,5 +63,16 @@ public class SetselectButton : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void OnClickContBtn()
+    {
+        isPause = false;
+        Time.timeScale = 1f;
+    }
+
+    public void OnClickDiffBtn()
+    {
+        LoadingSceneController.LoadScene("SelectScene");
     }
 }
