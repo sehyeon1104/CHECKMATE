@@ -27,7 +27,7 @@ public class Testing : MonoBehaviour
     {
 
         spawnList = new List<Wave>();
-        int ran = Random.Range(0, 8);
+        int ran = Random.Range(0, 30);
         switch (ran)
         {
             case 0:
@@ -53,6 +53,72 @@ public class Testing : MonoBehaviour
                 break;
             case 7:
                 ReadSpawnFile("N8");
+                break;
+            case 8:
+                ReadSpawnFile("N9");
+                break;
+            case 9:
+                ReadSpawnFile("N10");
+                break;
+            case 10:
+                ReadSpawnFile("N11");
+                break;
+            case 11:
+                ReadSpawnFile("N12");
+                break;
+            case 12:
+                ReadSpawnFile("N13");
+                break;
+            case 13:
+                ReadSpawnFile("N14");
+                break;
+            case 14:
+                ReadSpawnFile("N15");
+                break;
+            case 15:
+                ReadSpawnFile("N16");
+                break;
+            case 16:
+                ReadSpawnFile("N17");
+                break;
+            case 17:
+                ReadSpawnFile("N18");
+                break;
+            case 18:
+                ReadSpawnFile("N19");
+                break;
+            case 19:
+                ReadSpawnFile("N20");
+                break;
+            case 20:
+                ReadSpawnFile("N21");
+                break;
+            case 21:
+                ReadSpawnFile("N22");
+                break;
+            case 22:
+                ReadSpawnFile("N23");
+                break;
+            case 23:
+                ReadSpawnFile("N24");
+                break;
+            case 24:
+                ReadSpawnFile("N25");
+                break;
+            case 25:
+                ReadSpawnFile("N26");
+                break;
+            case 26:
+                ReadSpawnFile("N27");
+                break;
+            case 27:
+                ReadSpawnFile("N28");
+                break;
+            case 28:
+                ReadSpawnFile("N29");
+                break;
+            case 29:
+                ReadSpawnFile("N30");
                 break;
         }
 
@@ -111,7 +177,7 @@ public class Testing : MonoBehaviour
         }
         else if (spawnEnd == true && isRead == true)
         {
-            int ran = Random.Range(0, 8);
+            int ran = Random.Range(0, 30);
             switch (ran)
             {
                 case 0:
@@ -137,6 +203,72 @@ public class Testing : MonoBehaviour
                     break;
                 case 7:
                     ReadSpawnFile("N8");
+                    break;
+                case 8:
+                    ReadSpawnFile("N9");
+                    break;
+                case 9:
+                    ReadSpawnFile("N10");
+                    break;
+                case 10:
+                    ReadSpawnFile("N11");
+                    break;
+                case 11:
+                    ReadSpawnFile("N12");
+                    break;
+                case 12:
+                    ReadSpawnFile("N13");
+                    break;
+                case 13:
+                    ReadSpawnFile("N14");
+                    break;
+                case 14:
+                    ReadSpawnFile("N15");
+                    break;
+                case 15:
+                    ReadSpawnFile("N16");
+                    break;
+                case 16:
+                    ReadSpawnFile("N17");
+                    break;
+                case 17:
+                    ReadSpawnFile("N18");
+                    break;
+                case 18:
+                    ReadSpawnFile("N19");
+                    break;
+                case 19:
+                    ReadSpawnFile("N20");
+                    break;
+                case 20:
+                    ReadSpawnFile("N21");
+                    break;
+                case 21:
+                    ReadSpawnFile("N22");
+                    break;
+                case 22:
+                    ReadSpawnFile("N23");
+                    break;
+                case 23:
+                    ReadSpawnFile("N24");
+                    break;
+                case 24:
+                    ReadSpawnFile("N25");
+                    break;
+                case 25:
+                    ReadSpawnFile("N26");
+                    break;
+                case 26:
+                    ReadSpawnFile("N27");
+                    break;
+                case 27:
+                    ReadSpawnFile("N28");
+                    break;
+                case 28:
+                    ReadSpawnFile("N29");
+                    break;
+                case 29:
+                    ReadSpawnFile("N30");
                     break;
             }
 

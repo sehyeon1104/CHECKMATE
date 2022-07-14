@@ -10,6 +10,7 @@ public class ArrowBlock : MonoBehaviour
     //체스가 내방향에 있다면 성공
     //닿았는데 체스가 내방향에 없다면 데미지 달게
     public ArrowRotate arrowRotate;
+    public AudioSource audioSource;
     public ParticleSystem particle;
 
     public Testing testing;
@@ -43,9 +44,9 @@ public class ArrowBlock : MonoBehaviour
                 }
                 else
                 {
-                    
                     isActive = true;
-                    collision.gameObject.SetActive(false);
+                    //collision.gameObject.SetActive(false);
+                    audioSource.Stop();
                     GameManager.Instance.TimeScale = 0f;
 
                    Sync_Gijoo.Instance.IsDeadTik();
