@@ -15,12 +15,12 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
     public float tikTime = 0f;
     public float nextTime = 0f;
-
+    bool isParOn = false;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         test = GetComponent<Test>();
-        audioSource.Play();
+        
         StartCoroutine(BpmSpeedUp());
 
     }
@@ -34,6 +34,11 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
         if (nextTime >= tikTime)
         {
+            if (!isParOn)
+            {
+                isParOn = true;
+                audioSource.Play();
+            }
             StartCoroutine(PlayTik(tikTime));
 
             nextTime -= stdBpm / realMusicBpm;
@@ -59,7 +64,8 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
         
         //¹¹¹¹ÇÏ¸é ¾ø¾Ö±â
         //Debug.Log(nextTime);
-        test.TestOffset();
+        //test.TestOffset();
+        StartCoroutine(test.TestOffset());
         yield return new WaitForSeconds(tikTime);
     }
 
