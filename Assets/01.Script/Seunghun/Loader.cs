@@ -14,6 +14,8 @@ public static class Loader
     {
         Seunghun,
         TestScene,
+        GijooScene,
+
 
     }
 

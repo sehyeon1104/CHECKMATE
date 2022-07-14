@@ -150,6 +150,7 @@ public class Testing : MonoBehaviour
         TextAsset textFile = Resources.Load(patern) as TextAsset;//텍스트 파일 에셋 클래스
         StringReader stringReader = new StringReader(textFile.text); //파일 내의 문자열 읽기 클래스
 
+        
         while (stringReader != null)
         {
             string line = stringReader.ReadLine(); //한줄씩 반환
