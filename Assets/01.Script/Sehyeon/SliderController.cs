@@ -11,25 +11,27 @@ public class SliderController : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     private void Update()
     {
-        if (volumeSlider.value == -18)
+        print(ArrowRotate.rotationTime);
+        if (volumeSlider.value == -14)
             soundimage.sprite = sprites[0];
-        else if (-18 < volumeSlider.value && volumeSlider.value < -5)
+        else if (-18 < volumeSlider.value && volumeSlider.value < -7)
             soundimage.sprite = sprites[1];
-        else if (-5 <= volumeSlider.value && volumeSlider.value < 9)
+        else if (-5 <= volumeSlider.value && volumeSlider.value < 0)
             soundimage.sprite = sprites[2];
-        else if (volumeSlider.value == 9)
+        else if (volumeSlider.value == 7)
             soundimage.sprite = sprites[3];
         
         
     }
-    public void TurnOffOnAudio()
+    public void RotateArrow()
     {
-
+         ArrowRotate.rotationTime=volumeSlider.value;
+        
     }
     public void SoundControl()
     {
         float sound = volumeSlider.value;
-        if (sound == -18) audioMixer.SetFloat(parameterName, -80);
+        if (sound == -14) audioMixer.SetFloat(parameterName, -80);
         else audioMixer.SetFloat(parameterName, sound);
     }
 }

@@ -45,15 +45,6 @@ public class ArrowRotate : MonoBehaviour
     void Update()
     {
         if (isdiagonal == true) return;
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Debug.Log("마우스버튼");
-        ////}
-        //if (check)
-        //{
-
-        //x = Input.GetAxisRaw("Horizontal");
-        //y = Input.GetAxisRaw("Vertical")
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {

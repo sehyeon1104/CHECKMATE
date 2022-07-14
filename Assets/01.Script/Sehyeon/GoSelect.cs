@@ -16,10 +16,19 @@ public class GoSelect : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
 
+Application.Quit();
+    
+#endif
+        }
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            LoadingSceneController.LoadScene("SelectScene");
+            SceneManager.LoadScene("SelectScene");
         }
     }
     IEnumerator ColorChange()

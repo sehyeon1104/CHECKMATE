@@ -99,7 +99,6 @@ public class SwipeUI : MonoBehaviour
                 break;
         }
         swipeTimer += Time.deltaTime;
-        print(swipeTimer);
         NextScene();
         UpdateInput();
 
@@ -107,9 +106,12 @@ public class SwipeUI : MonoBehaviour
         UpdateCircleContent();
         CurrChag();
     }
-
     private void UpdateInput()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("StartScene");
+        }
         if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if(swipeTimer < notSwipeTime)
