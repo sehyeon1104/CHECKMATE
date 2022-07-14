@@ -628,12 +628,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1100
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1100
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -657,11 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1100
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1100
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3318,6 +3322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f51734da0f8cb4dbfca0a7186d02fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogPanel: {fileID: 0}
   player: {fileID: 1972543205}
 --- !u!4 &1537830394
 Transform:
