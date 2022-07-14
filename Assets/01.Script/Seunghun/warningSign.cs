@@ -30,7 +30,7 @@ public class warningSign : ChessMal
 
         }
 
-        GameObject obj = Instantiate(LookObj, transform.position + transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(LookObj, transform.position + transform.position , Quaternion.identity);
 
 
         IArrow arr = obj.GetComponent<IArrow>();
