@@ -27,7 +27,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
     private void Awake()
     {
         profile.TryGet(out vig);
-
+        vig.intensity.Override(0.65f);
 
         profile.TryGet(out motionBlur);
     }
@@ -50,7 +50,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
                 vig.intensity.Override(0.467f);
                 break;
             case 1:
-                vig.intensity.Override(0.7f);
+                vig.intensity.Override(0.65f);
                 break;
                 
         }

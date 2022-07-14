@@ -12,6 +12,7 @@ public class warningSign : ChessMal
     int toggle;
     private void OnEnable()
     {
+        toggle = 0;
         StartCoroutine(Ienum());
     }
 
@@ -20,8 +21,9 @@ public class warningSign : ChessMal
     {
         for(int i = 0; i < beat; i++)
         {
-            toggle = toggle % 3;
 
+            //toggle = toggle % 4;
+            Debug.Log(toggle);
             spriteR.color = colorSet[toggle];
             toggle++;
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
@@ -29,6 +31,8 @@ public class warningSign : ChessMal
             //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
         }
+
+        //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
         GameObject obj = Instantiate(LookObj, transform.position + transform.position , Quaternion.identity);
 

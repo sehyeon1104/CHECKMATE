@@ -39,7 +39,7 @@ public class ArrowRotate : MonoBehaviour
 
     bool isdiagonal;
 
-    public static float rotationTime = 0f;
+    public static float rotationTime = 0.2f;
 
     // Update is called once per frame
     void Update()
