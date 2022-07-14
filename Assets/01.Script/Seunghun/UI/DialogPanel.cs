@@ -5,31 +5,43 @@ using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
+using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class DialogPanel : MonoBehaviour
 {
+    [SerializeField]
+    VolumeProfile volume;
+    Vignette vign;
+    public RectTransform sss;
+    public Sprite[] changeImage;
+    public Image image;
+
     private List<TextVO> list;
-    private RectTransform panel; //��ȭ â �г�
+    private RectTransform panel;
 
-    public TMP_Text dialogText; // �ؽ�Ʈ�Ž� ������ ���̾�α� â
-    private WaitForSeconds shortWs = new WaitForSeconds(0.2f); //���ڰ� ������ �ӵ�
+    public TMP_Text dialogText;
+    private WaitForSeconds shortWs = new WaitForSeconds(0.08f);
 
-    private bool clickToNext = false; // ���� ��ȭ�� �ѱ�� ���� Ŭ���� ��Ÿ���°�?
-    private bool isOpen = false; //��ȭâ�� ���ȴ°�?
+    private bool clickToNext = false;
+    private bool isOpen = false;
 
-    public GameObject nextIcon; //�������� �ѱ�� ������
-    public Image profileImage; //������
-    public AudioSource typeClip; //Ÿ�����ϴ� �Ҹ�
+    public GameObject nextIcon;
+    public Image profileImage;
+    public AudioSource typeClip;
 
-    private int currentIndex; //���� ��ȭ �ε���
-    private RectTransform textTransform; //�ؽ�Ʈ â�� ũ��
+    private int currentIndex;
+    private RectTransform textTransform;
 
     private Dictionary<int, Sprite> imageDictionary = new Dictionary<int, Sprite>();
 
     private Action endDialogCallback = null;
-
+    int level = 0;
     private void Awake()
     {
+        volume.TryGet(out vign);
         panel = GetComponent<RectTransform>();
         textTransform = dialogText.GetComponent<RectTransform>();
     }
@@ -41,6 +53,42 @@ public class DialogPanel : MonoBehaviour
         ShowDialog();
     }
 
+    
+    public void ChessMalChangeDial(int Level)
+    {
+        switch(Level)
+        {
+            case 0:case 5:
+                vign.color.Override(Color.yellow);
+                    break;
+            case 1:
+                vign.color.Override(Color.magenta);
+                break;
+            case 2:
+                vign.color.Override(Color.green);
+                break;
+            case 3:
+                vign.color.Override(Color.red);
+                break;
+            case 4:
+                vign.color.Override(Color.blue);
+                break;
+                    
+        }
+        if (Level > 0&&level<=4)    
+        {
+            image.sprite = changeImage[0];
+        }
+        else
+        {
+            image.sprite = changeImage[2];
+        }
+        GameManager.ShowDialog(Level);
+    }
+    void GoScene()
+    {
+        SceneManager.LoadScene("tutorialgamescene");
+    }
     public void ShowDialog()
     {
         currentIndex = 0;
@@ -48,7 +96,7 @@ public class DialogPanel : MonoBehaviour
         
         profileImage.sprite = null;
         dialogText.text = "";
-
+        SpriteSet(list[currentIndex]);
         panel.DOScale(new Vector3(1, 1, 1), 0.8f).OnComplete(() =>
         {
             TypeIt(list[currentIndex]);
@@ -56,10 +104,10 @@ public class DialogPanel : MonoBehaviour
         });
     }
 
-    public void TypeIt(TextVO vo)
+
+    public void SpriteSet(TextVO vo)
     {
         int idx = vo.icon;
-        //�̹��� ��ųʸ����� �̹����� ã�ƴٰ� �����ִ� ������ ������ ��.
 
         if (!imageDictionary.ContainsKey(idx))
         {
@@ -68,6 +116,10 @@ public class DialogPanel : MonoBehaviour
         }
 
         profileImage.sprite = imageDictionary[idx];
+    }
+    public void TypeIt(TextVO vo)
+    {
+        
 
         dialogText.text = vo.msg;
         nextIcon.SetActive(false);
@@ -77,21 +129,14 @@ public class DialogPanel : MonoBehaviour
 
     IEnumerator Typing()
     {
-        dialogText.ForceMeshUpdate(); //�̰� �ؽ�Ʈ ����
+        dialogText.ForceMeshUpdate(); 
         dialogText.maxVisibleCharacters = 0;
-
-        
-        // 20����
-        int totalVisibleChar = dialogText.textInfo.characterCount; //������ �ؽ�Ʈ�� ���� �� ��ü
+        int totalVisibleChar = dialogText.textInfo.characterCount; 
         for(int i = 1; i <= totalVisibleChar; i++)
         {
             typeClip.Play();
             dialogText.maxVisibleCharacters = i;
 
-            //Vector3 pos = dialogText.textInfo.characterInfo[i - 1].bottomRight;
-            //Vector3 tPos = textTransform.TransformPoint(pos);
-
-            //������� 
 
             if (clickToNext)
             {
@@ -100,32 +145,46 @@ public class DialogPanel : MonoBehaviour
             }
             yield return shortWs;
         }
-        //������� �Դٸ� �Ѱ��� �ؽ�Ʈ�� ����Ȱ�
+      
         currentIndex++;
         clickToNext = true;
         nextIcon.SetActive(true);
     }
 
+    
+
     private void Update()
     {
+        print(level);
+        if (level == 6)
+        {
+            Invoke("GoScene", 3f);
+        }
         if (!isOpen) return;
 
-        //�ؽ�Ʈ �ϳ��� �� ����Ǿ��� �����̽� Ű�� ������쿡 �ش�
-        if(Input.GetButtonDown("Jump") && clickToNext)
+        if (Input.GetButtonDown("Jump") && clickToNext)
         {
             if(currentIndex >= list.Count)
             {
+                
                 panel.DOScale(new Vector3(0, 0, 1), 0.8f).OnComplete(() =>
-                 {
-                     // ���ӸŴ����� �ð� ��������� ������ ��
-                     GameManager.Instance.TimeScale = 1f;
-                     isOpen = false;
-                     if(endDialogCallback != null)
-                     {
-                         endDialogCallback();
-                     }
-                 });
-            }else
+                {
+                    GameManager.Instance.TimeScale = 1f;
+                    isOpen = false;
+                    if (endDialogCallback != null)
+                    {
+
+                        endDialogCallback();
+                    }
+                    ++level;
+                    ChessMalChangeDial(level);
+              
+
+                });
+            
+
+            }
+            else
             {
                 TypeIt(list[currentIndex]);
             }

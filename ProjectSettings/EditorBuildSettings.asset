@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SehyeonScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/tutorialgamescene.unity
+    guid: 38fa2c22d4f54934dbde3c2ee1e58c84
   m_configObjects: {}
