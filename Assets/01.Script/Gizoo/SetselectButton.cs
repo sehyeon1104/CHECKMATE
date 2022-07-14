@@ -74,5 +74,7 @@ public class SetselectButton : MonoBehaviour
     public void OnClickDiffBtn()
     {
         LoadingSceneController.LoadScene("SelectScene");
+        //SceneManager.LoadScene("SelectScene");
+        Time.timeScale = 1f;
     }
 }
