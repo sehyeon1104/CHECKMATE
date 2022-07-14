@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 public class SwipeUI : MonoBehaviour
 {
-    
+    public TestSync testBpm;
     [SerializeField]
     VolumeProfile volumeProfile; //포스트 프로세싱
     Bloom bloom;
@@ -73,22 +73,27 @@ public class SwipeUI : MonoBehaviour
         switch(eie)
         {
             case 0:
+                testBpm.musicBpm = 75;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.magenta);
                 break;
             case 1:
+                testBpm.musicBpm = 75;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.magenta);
                 break;
             case 2:
+                testBpm.musicBpm = 110;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.blue);
                 break;
             case 3:
+                testBpm.musicBpm = 128;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.green);
                 break;
             case 4:
+                testBpm.musicBpm = 151;
                 bloom.tint.Override(Color.red);
                 chromaticAberration.intensity.Override(1f);
                 break;
@@ -220,8 +225,7 @@ public class SwipeUI : MonoBehaviour
     {
        
         swipeTimer = 0;
-        float start = scrollBar.value;
-        float timedelt = 0;
+        float start = scrollBar.value;  
         float current = 0;
         float percent = 0;
 
@@ -238,15 +242,6 @@ public class SwipeUI : MonoBehaviour
         }
         isSwipeMode = false;
         swipeTimer = 0;
-        //while(true)
-        //{
-        //    if(timedelt>3f)
-        //    {
-        //        isSwipeMode = false;
-        //        yield break;
-        //    }
-        //    timedelt += Time.deltaTime;
-        //}
     }
 
      bool check = true;

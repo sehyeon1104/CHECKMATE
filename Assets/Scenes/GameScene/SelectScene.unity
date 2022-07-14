@@ -2028,6 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcfccbdffac0444c97b078108963662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testBpm: {fileID: 1132261493}
   volumeProfile: {fileID: 11400000, guid: 51b02773250119a4aafb02f137c0286c, type: 2}
   scrollBar: {fileID: 401376454}
   circleContents:
@@ -2720,7 +2721,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 69db6be1ea5ce3a4daa31f73b371aad8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2839,7 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5135900f3043e4445a7d535298f74320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicBpm: 128
+  musicBpm: 75
   musicTemp: 0
   tikTime: 4
   nextTime: 0
@@ -4687,7 +4688,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7718464023854150417, guid: 1406df76a6602db4bb684f182ddce750, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5f92ac009cb6c8b46976e38aa2834836, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bed443af3ad70174c9d8146eb7a1cec4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
