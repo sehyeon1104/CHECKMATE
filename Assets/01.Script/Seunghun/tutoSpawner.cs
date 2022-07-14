@@ -102,8 +102,16 @@ public class tutoSpawner : MonoBehaviour
     }
 
     int level ;
+
+
+    
     void FixedUpdate()
     {
+        if (GameManager.Instance.dialogPanel.isOpen)
+        {
+            return; //열려있다면 소환금지
+        }
+
 
         if (isSpawn == false)
         {
@@ -123,6 +131,7 @@ public class tutoSpawner : MonoBehaviour
             tutoList(level);
             level++;
 
+            //스폰이 끝나고 그뭐냐 대화가 끝나면 소환
         }
     }
 

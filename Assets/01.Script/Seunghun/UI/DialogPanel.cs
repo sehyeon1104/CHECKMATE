@@ -15,7 +15,7 @@ public class DialogPanel : MonoBehaviour
     private WaitForSeconds shortWs = new WaitForSeconds(0.2f); //���ڰ� ������ �ӵ�
 
     private bool clickToNext = false; // ���� ��ȭ�� �ѱ�� ���� Ŭ���� ��Ÿ���°�?
-    private bool isOpen = false; //��ȭâ�� ���ȴ°�?
+    public bool isOpen = false; //��ȭâ�� ���ȴ°�?
 
     public GameObject nextIcon; //�������� �ѱ�� ������
     public Image profileImage; //������

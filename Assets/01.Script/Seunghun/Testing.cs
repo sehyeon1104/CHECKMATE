@@ -132,6 +132,7 @@ public class Testing : MonoBehaviour
                 case 7:
                     ReadSpawnFile("N8");
                     break;
+
             }
 
         }

@@ -56,5 +56,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         //해당 인덱스 의 대화를 재생하도록 함.
         Instance.dialogPanel.StartDialog(Instance.dialogTextDictionary[index], callback);
+
+
     }
 }
