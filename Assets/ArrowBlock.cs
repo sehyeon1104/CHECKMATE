@@ -40,6 +40,7 @@ public class ArrowBlock : MonoBehaviour
                     GameManager.Instance.TimeScale = 0f;
 
                     //텍스트를 띄우는 함수
+                    PlayerPrefs.GetFloat("Timer");
                     Debug.Log("되니");
                     CheckMateGameOver.Instance.GameObjectSet(true);
                     testing.isSpawn = false;

@@ -43,7 +43,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
 
 
         //텍스트 애니메이션 이 끝나면
-        yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+        //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

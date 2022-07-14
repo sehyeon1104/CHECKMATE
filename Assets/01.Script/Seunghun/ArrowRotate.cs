@@ -39,6 +39,8 @@ public class ArrowRotate : MonoBehaviour
 
     bool isdiagonal;
 
+    public static float rotationTime = 0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -241,7 +243,7 @@ public class ArrowRotate : MonoBehaviour
             Quaternion rookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
             Vector3 rooVec = rookRotation.eulerAngles;
             //transform.rotation = Quaternion.Lerp(transform.rotation, rookRotation, 0.5f * Time.deltaTime * sped);
-            transform.DORotate(rooVec, 0.2f, RotateMode.Fast);
+            transform.DORotate(rooVec, rotationTime, RotateMode.Fast);
         }
 
         isRotate = false;
