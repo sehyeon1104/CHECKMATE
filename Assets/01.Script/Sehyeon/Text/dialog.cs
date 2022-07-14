@@ -1,25 +1,22 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class dialog : MonoBehaviour
 {
-    public static dialog instance;
-
-    TextMeshProUGUI dialogueText;
-    public GameObject nextText;
+    public string[] a;
+    TextMeshProUGUI dialogueText;   
     public Queue<string> sentences;
     bool istyping;
     public float typeSpeed=0.1f;
     string currenSentence;
     private void Awake()
     {
-        instance = this;
         sentences = new Queue<string>();
     }
     void Start()
     {
-        
+        Ondialogue(a);
     }
     public void Ondialogue(string[]lines)
     {
@@ -48,11 +45,5 @@ public class dialog : MonoBehaviour
             yield return new WaitForSeconds(typeSpeed);
         }
     }
-    void Update()
-    {
-        if(dialogueText.text.Equals(currenSentence))
-        {
-            istyping=false;
-        }
-    }
+    
 }
