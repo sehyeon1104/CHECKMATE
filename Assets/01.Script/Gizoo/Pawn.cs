@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class Pawn : ChessMal
 {
     private Transform playerTransform;
@@ -29,7 +29,11 @@ public class Pawn : ChessMal
 
     public void Move(Transform playerTransform, float tileRad)
     {
-      transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0? -1 * GameManager.Instance.TimeScale : 0 * tileRad , (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad);
+
+
+        //transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad), Sync_Gijoo.Instance.tikTime);
+
+        transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0? -1 * GameManager.Instance.TimeScale : 0 * tileRad , (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad);
     }
 
 
