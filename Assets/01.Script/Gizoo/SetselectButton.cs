@@ -46,7 +46,7 @@ public class SetselectButton : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(pauseButtons[0]);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            {
+            {   
                 EventSystem.current.SetSelectedGameObject(pauseButtons[1]);
             }
             if (Input.GetKeyDown(KeyCode.KeypadEnter))
@@ -73,6 +73,8 @@ public class SetselectButton : MonoBehaviour
 
     public void OnClickDiffBtn()
     {
-        LoadingSceneController.LoadScene("SelectScene");
+        //LoadingSceneController.LoadScene("SelectScene");
+        SceneManager.LoadScene("SelectScene");
+        Time.timeScale = 1f;
     }
 }
