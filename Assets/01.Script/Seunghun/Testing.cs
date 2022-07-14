@@ -23,6 +23,7 @@ public class Testing : MonoBehaviour
 
     public bool isSpawn;
     public ChessArrow arrow;
+
     private void Awake()
     {
 
@@ -72,13 +73,6 @@ public class Testing : MonoBehaviour
         grid = new Grid(5, 5, cellSize, new Vector3(transform.position.x, transform.position.y));
 
         gridArray = new int[5, 5];
-
-
-
-        //적들을 담는 걸 소환 
-        //텍스트로 만들어놓음
-
-
 
     }
 

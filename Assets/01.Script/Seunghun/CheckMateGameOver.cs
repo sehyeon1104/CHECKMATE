@@ -7,7 +7,7 @@ public class CheckMateGameOver : MonoSingleton<CheckMateGameOver>
     public Canvas Canv;
     private void Awake()
     {
-        Canv.enabled = false;   
+        Canv.enabled = false;
     }
 
     public void GameObjectSet(bool isSet)
@@ -20,5 +20,5 @@ public class CheckMateGameOver : MonoSingleton<CheckMateGameOver>
         //체크메이트가 뜨고, 3, 2 ,1를 시작하게 만듬
     }
 
-    
+
 }
