@@ -109,7 +109,7 @@ public class tutoSpawner : MonoBehaviour
     {
         if (GameManager.Instance.dialogPanel.isOpen)
         {
-            return; //열려있다면 소환금지
+            return; //열려있다면 소환금지ㅋ
         }
 
 
