@@ -7,6 +7,9 @@ public class warningSign : ChessMal
 
     public GameObject LookObj;
     public SpriteRenderer spriteR;
+    public Color[] colorSet;
+
+    int toggle;
     private void OnEnable()
     {
         StartCoroutine(Ienum());
@@ -17,14 +20,17 @@ public class warningSign : ChessMal
     {
         for(int i = 0; i < beat; i++)
         {
-            spriteR.color = Color.black;
+            toggle = toggle % 3;
+
+            spriteR.color = colorSet[toggle];
+            toggle++;
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-            spriteR.color = Color.white;
-            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+         
+            //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
         }
 
-        GameObject obj = Instantiate(LookObj, transform.position + transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(LookObj, transform.position + transform.position , Quaternion.identity);
 
 
         IArrow arr = obj.GetComponent<IArrow>();

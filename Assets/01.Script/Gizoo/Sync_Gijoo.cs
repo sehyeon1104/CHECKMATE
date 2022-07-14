@@ -41,9 +41,24 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
         }
     }
 
+    bool isDeadTik = false;
+
+    public void IsDeadTik()
+    {
+        isDeadTik = true;
+    }
     private IEnumerator PlayTik(float tikTime)
     {
-        Debug.Log(nextTime);
+        if (isDeadTik == true)
+        {
+
+            test.CancleCameraShake();
+            yield break;
+        }
+
+        
+        //¹¹¹¹ÇÏ¸é ¾ø¾Ö±â
+        //Debug.Log(nextTime);
         test.TestOffset();
         yield return new WaitForSeconds(tikTime);
     }
