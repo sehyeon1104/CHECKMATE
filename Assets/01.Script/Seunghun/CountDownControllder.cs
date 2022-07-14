@@ -67,6 +67,9 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
 
             cameraData.renderType = CameraRenderType.Overlay;
             motionBlur.intensity.value = 0f;
+
+
+            Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(uiCamera);
             StartCoroutine(CountDownToStart());
         }
         

@@ -10,6 +10,7 @@ public class ArrowBlock : MonoBehaviour
     //체스가 내방향에 있다면 성공
     //닿았는데 체스가 내방향에 없다면 데미지 달게
     public ArrowRotate arrowRotate;
+    public ParticleSystem particle;
 
     public Testing testing;
 
@@ -37,7 +38,7 @@ public class ArrowBlock : MonoBehaviour
                 if(arrowRotate.arrow == arr.GetArrowState())
                 {
 
-                    
+                    particle.Play();
                     collision.gameObject.SetActive(false);
                 }
                 else
