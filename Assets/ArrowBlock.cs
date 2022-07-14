@@ -63,6 +63,7 @@ public class ArrowBlock : MonoBehaviour
                             break;
                         case TimerChek.normal:
 
+
                             Timer.Instance.copyNormalCheckTimer();
                             if (Timer.Instance.normalCheckTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                             {

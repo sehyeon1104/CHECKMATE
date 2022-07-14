@@ -1064,6 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScore: {fileID: 1928575791}
+  timerCheck: 1
 --- !u!1 &556583283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1621,6 @@ GameObject:
   m_Component:
   - component: {fileID: 717921688}
   - component: {fileID: 717921687}
-  - component: {fileID: 717921686}
   - component: {fileID: 717921685}
   m_Layer: 0
   m_Name: Camera
@@ -1662,14 +1662,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &717921686
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717921684}
-  m_Enabled: 1
 --- !u!20 &717921687
 Camera:
   m_ObjectHideFlags: 0
@@ -2155,6 +2147,7 @@ MonoBehaviour:
   arrowRotate: {fileID: 1484784791}
   audioSource: {fileID: 556583288}
   particle: {fileID: 670369226}
+  timerCheck: 1
   testing: {fileID: 271188385}
   spriteK: {fileID: 2089614390}
   spriteArrow: {fileID: 1988306453}
@@ -3535,7 +3528,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1632769865}
   - component: {fileID: 1632769864}
-  - component: {fileID: 1632769863}
   - component: {fileID: 1632769862}
   m_Layer: 5
   m_Name: uiCamera
@@ -3577,14 +3569,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1632769863
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632769861}
-  m_Enabled: 1
 --- !u!20 &1632769864
 Camera:
   m_ObjectHideFlags: 0
@@ -3816,6 +3800,9 @@ MonoBehaviour:
   - {fileID: 1819190994}
   particle: {fileID: 1017077284}
   timer: 0
+  normalCheckTimer: 0
+  easyCheckTimer: 0
+  hardCheckTimer: 0
   pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
   kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
   bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}

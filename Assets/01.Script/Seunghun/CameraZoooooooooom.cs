@@ -20,9 +20,7 @@ public class CameraZoooooooooom : MonoSingleton<CameraZoooooooooom>
         {
             
             minusSpeed += Time.deltaTime / 2;
-            Debug.Log("ZOom 하기1");
             yield return null;
-            Debug.Log("ZOom 하기2");
             mainCamera.fieldOfView -= minusSpeed;
         }
         minusSpeed = 0.5f;

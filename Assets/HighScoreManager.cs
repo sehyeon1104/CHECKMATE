@@ -6,10 +6,10 @@ using static TimerEnum;
 public class HighScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI highScore;
-    TimerChek timerCheck;
+    public TimerChek timerCheck;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
 
@@ -17,15 +17,17 @@ public class HighScoreManager : MonoBehaviour
         {
             case TimerChek.easy:
                 TimePlayerpersManager.Instance.EasyLoad();
-                highScore.text = "highScore : " + Timer.Instance.normalCheckTimer.ToString();
+                highScore.text = "highScore : " + Timer.Instance.easyCheckTimer.ToString();
                 break;
             case TimerChek.normal:
+
+                Debug.Log("µÇÁö>");
                 TimePlayerpersManager.Instance.NormalLoad();
                 highScore.text = "highScore : " + Timer.Instance.normalCheckTimer.ToString();
                 break;
             case TimerChek.hard:
                 TimePlayerpersManager.Instance.HardLoad();
-                highScore.text = "highScore : " + Timer.Instance.normalCheckTimer.ToString();
+                highScore.text = "highScore : " + Timer.Instance.hardCheckTimer.ToString();
                 break;
             default:
                 break;
@@ -33,9 +35,5 @@ public class HighScoreManager : MonoBehaviour
  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }
