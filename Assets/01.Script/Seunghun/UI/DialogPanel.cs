@@ -106,6 +106,7 @@ public class DialogPanel : MonoBehaviour
         nextIcon.SetActive(true);
     }
 
+
     private void Update()
     {
         if (!isOpen) return;
@@ -115,13 +116,15 @@ public class DialogPanel : MonoBehaviour
         {
             if(currentIndex >= list.Count)
             {
+           
                 panel.DOScale(new Vector3(0, 0, 1), 0.8f).OnComplete(() =>
                  {
                      // ���ӸŴ����� �ð� ��������� ������ ��
                      GameManager.Instance.TimeScale = 1f;
                      isOpen = false;
-                     if(endDialogCallback != null)
+                     if (endDialogCallback != null)
                      {
+                    
                          endDialogCallback();
                      }
                  });

@@ -6,12 +6,9 @@ using static ChessSpawnArrowEnum;
 public class WaveS
 {
     public string type;//몬스터 종류
-    //public int x;
-    //public int y;
     public string keyboardArrow;
     public bool multi;
     public int childCount;
-    // 스폰딜레이
 }
 public class tutoSpawner : MonoBehaviour
 {
@@ -40,31 +37,33 @@ public class tutoSpawner : MonoBehaviour
 
     }
 
+   
 
-    public List<Wave> spawnList;
+    public List<WaveS> spawnList;
     public int spawnIndex; //다음녀석 다음녀석
     public bool spawnEnd;
 
     double currentTime = 0d;
 
 
-    bool isMultiSPawn = true;
+    public bool isMultiSPawn = true;
 
-    bool isRead;
+    public bool isRead;
 
     private bool isMulti;
     private int count;
 
     int i;
     private void Awake()
-    {
-        level = 0;
-        spawnList = new List<Wave>();
-
+    { 
+        spawnList = new List<WaveS>();
+        //ReadSpawnFile("tutorialText");
     }
 
     void ReadSpawnFile(string patern)
     {
+
+        Debug.Log("읽기");
         isRead = false;
         spawnList.Clear(); //모두 클리어
 
@@ -77,6 +76,7 @@ public class tutoSpawner : MonoBehaviour
 
         while (stringReader != null)
         {
+            Debug.Log("읽기반복");
             string line = stringReader.ReadLine(); //한줄씩 반환
 
 
@@ -84,27 +84,39 @@ public class tutoSpawner : MonoBehaviour
             {
                 break;
             }
-            Wave spawnData = new Wave();
+            WaveS spawnData = new WaveS();
             spawnData.type = line.Split(',')[0];
-            //spawnData.x = int.Parse(line.Split(',')[1]);
-            //spawnData.y = int.Parse(line.Split(',')[2]);
+ 
             spawnData.keyboardArrow = line.Split(',')[1];
             spawnData.multi = bool.Parse(line.Split(',')[2]);
             spawnData.childCount = int.Parse(line.Split(',')[3]);
             spawnList.Add(spawnData); //변수를 초기화하고 변수를 넣은걸 추가한다.
         }
+        Debug.Log("isRoad: " + isRead);
+        isRead = true;
 
+        Debug.Log("isRoad: " + isRead);
         //#. 텍스트 파일 닫기
         stringReader.Close();
 
-
-        isRead = true;
     }
 
-    int level ;
 
 
-    
+    bool isTrue =true;
+    public void StartSpawn()
+    {
+        isSpawn = true;
+        if (isTrue == true)
+        {
+            isTrue = false;
+            tutoList(TutoDialogManager.Instance.tuto.Level);//다이얼로그가 끝나면 해주는 함수
+            isRead = true;
+
+            Debug.Log("isRead StartSpawn" + isRead);
+        }
+
+    }
     void FixedUpdate()
     {
         if (GameManager.Instance.dialogPanel.isOpen)
@@ -112,15 +124,20 @@ public class tutoSpawner : MonoBehaviour
             return; //열려있다면 소환금지ㅋ
         }
 
+     
+
 
         if (isSpawn == false)
         {
             return;
         }
-        currentTime += Time.deltaTime;
 
+        currentTime += Time.deltaTime;
+        isRead = true;
         if (currentTime >= (60f / Sync_Gijoo.Instance.realMusicBpm) && !spawnEnd && isMultiSPawn == true && isRead == true)
         {
+
+            Debug.Log("라라");
             MonsterSpawn();
             currentTime -= 60f / Sync_Gijoo.Instance.realMusicBpm;
             //25 - 5; 
@@ -128,38 +145,53 @@ public class tutoSpawner : MonoBehaviour
         }
         else if (spawnEnd == true && isRead == true)
         {
-            tutoList(level);
-            level++;
+            //그리고 플레이어한테 죽고 다시 스타트해주면 
+            //이걸해주는걸 다이얼로그가 끝나고
+
+
+            TutoDialogManager.Instance.tuto.Level++;
+            tutoList(TutoDialogManager.Instance.tuto.Level);
+        
 
             //스폰이 끝나고 그뭐냐 대화가 끝나면 소환
         }
+    
+        
+
     }
 
     public void tutoList(int l)
     {
+        Debug.Log("읽기리스트");
         switch (l)
         {
             case 0:
                 ReadSpawnFile("tutorialText");
+                Debug.Log("읽기리스트0");
                 break;
             case 1:
                 ReadSpawnFile("tutorialText1");
+                Debug.Log("읽기리스트1");
                 break;
             case 2:
                 ReadSpawnFile("tutorialText2");
+                Debug.Log("읽기리스트2");
                 break;
             case 3:
-                ReadSpawnFile("tutorialText3");
-                break;
-            case 4:
-                ReadSpawnFile("tutorialText4");
+                ReadSpawnFile("tutorialTextR");
+                Debug.Log("읽기리스트R");
                 break;
             
         }
+
+        isRead = true;
+        Debug.Log("isRead tutoList: " + isRead);
     }
 
     void MonsterSpawn()
     {
+
+        Debug.Log("몬스터 스폰");
 
         if (isMultiSPawn == false) return;
         isMulti = spawnList[spawnIndex].multi;

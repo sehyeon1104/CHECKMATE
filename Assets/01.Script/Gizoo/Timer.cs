@@ -27,6 +27,9 @@ public class Timer : MonoSingleton<Timer>
     private ParticleSystem particle;
     private bool isParOn = false;
     public float timer = 0;
+    public float normalCheckTimer = 0;
+    public float easyCheckTimer = 0;
+    public float hardCheckTimer = 0;
     ColorMode colorMode = ColorMode.DEFAULT;
 
     public UnityEngine.Rendering.Universal.Light2D pawn, kinght, bishop, rook, king, arrow, global, cautionR, cautionB;
@@ -47,12 +50,29 @@ public class Timer : MonoSingleton<Timer>
     }
 
 
+    public void copyNormalCheckTimer()
+    {
+        normalCheckTimer = timer;
+    }
+    public void copyEasyCheckTimer()
+    {
+        easyCheckTimer = timer;
+
+    }
+    public void copyHardCheckTimer()
+    {
+        hardCheckTimer = timer;
+    }
+
     private void FixedUpdate()
     {
+ 
         textTimers[0].text = $"{(int)timer / 60 % 60:00} : ";
         textTimers[1].text = $"{(int)timer % 60:00}";
         if(GameManager.Instance.TimeScale != 0)
         timer += Time.deltaTime;
+        
+
 
         if (timer >= 76.1f)
         {

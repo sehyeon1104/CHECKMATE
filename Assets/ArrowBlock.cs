@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using static TimerEnum;
 public class ArrowBlock : MonoBehaviour
 {
     //화살방향 // bool같은것을 받아가지고
@@ -13,6 +13,8 @@ public class ArrowBlock : MonoBehaviour
     public AudioSource audioSource;
     public ParticleSystem particle;
 
+
+    public TimerChek timerCheck;
     public Testing testing;
 
     bool isActive = false;
@@ -41,9 +43,51 @@ public class ArrowBlock : MonoBehaviour
 
                     particle.Play();
                     collision.gameObject.SetActive(false);
+
+
+                    //적이 막거나
                 }
                 else
                 {
+
+                    switch (timerCheck)
+                    {
+                        case TimerChek.easy:
+                            Timer.Instance.copyEasyCheckTimer();
+                            if (Timer.Instance.easyCheckTimer > TimePlayerpersManager.Instance.GetCheckEasyLoad())
+                            {
+
+
+                                TimePlayerpersManager.Instance.SaveEasy();
+                            }
+                            break;
+                        case TimerChek.normal:
+
+                            Timer.Instance.copyNormalCheckTimer();
+                            if (Timer.Instance.normalCheckTimer > TimePlayerpersManager.Instance.GetCheckLoad())
+                            {
+
+
+                                TimePlayerpersManager.Instance.SaveNormal();
+                            }
+                            break;
+                        case TimerChek.hard:
+
+
+                            Timer.Instance.copyHardCheckTimer();
+                            if (Timer.Instance.hardCheckTimer > TimePlayerpersManager.Instance.GetCheckHardLoad())
+                            {
+
+
+                                TimePlayerpersManager.Instance.SaveHard();
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                   
+                   
+
                     isActive = true;
                     //collision.gameObject.SetActive(false);
                     audioSource.Stop();
@@ -59,7 +103,8 @@ public class ArrowBlock : MonoBehaviour
 
                     
                     //그리고 기주야 LookChess오류 나가지고 새로운 게임오브젝트만들고 Player태그달아 
-                    testing.isSpawn = false; //소환하지 말게
+                    testing.isSpawn = false;
+                    
                     //플레이어가 움지깅ㅁ
                     transform.parent.gameObject.transform.DOShakePosition(0.4f, 0.2f, 24, 1f, false, true).OnComplete(()=>
                     {
