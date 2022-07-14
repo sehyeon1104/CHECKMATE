@@ -9,7 +9,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public DialogPanel dialogPanel; //다이얼로그 패널 제어용 스크립트
     private Dictionary<int, List<TextVO>> dialogTextDictionary = new Dictionary<int, List<TextVO>>();
-    public tutoSpawner tuSpawner;
+
 
     public Transform Player
     {

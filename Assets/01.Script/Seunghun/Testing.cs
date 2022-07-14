@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using static ChessSpawnArrowEnum;
+
 public class Wave
 {
     public string type;//몬스터 종류
@@ -13,7 +14,6 @@ public class Wave
     public int childCount;
     // 스폰딜레이
 }
-
 public class Testing : MonoBehaviour
 {
     private enum ChessMal { Pawn, Knight, Bishop, Rook, King, Queen };
