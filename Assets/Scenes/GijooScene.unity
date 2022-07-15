@@ -600,7 +600,7 @@ MonoBehaviour:
   monsterMob:
   - {fileID: 1078674225509795294, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
   - {fileID: 2573757792446775520, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
-  - {fileID: 7971824726434482527, guid: 718afb0e1187ede48a3a3ca6b854bce5, type: 3}
+  - {fileID: 3241965682046880307, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
   - {fileID: 3241965682046880307, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
   cellSize: 1
   spawnIndex: 0
@@ -3757,9 +3757,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   n: 0
-  bluem: {r: 0, g: 0, b: 1, a: 1}
-  redm: {r: 1, g: 0, b: 0, a: 1}
-  cyanm: {r: 0, g: 1, b: 1, a: 1}
+  enemyColor: {r: 0, g: 0, b: 1, a: 1}
+  kingColor: {r: 1, g: 0, b: 0, a: 1}
+  globalColor: {r: 0, g: 1, b: 1, a: 1}
   textTimers:
   - {fileID: 664719714}
   - {fileID: 1819190994}

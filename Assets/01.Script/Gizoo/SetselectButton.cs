@@ -24,17 +24,20 @@ public class SetselectButton : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (GameManager.Instance.TimeScale != 0)
         {
-            if (!isPause)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                isPause = true;
-                Time.timeScale = 0f;
-            }
-            else
-            {
-                isPause = false;
-                Time.timeScale = 1f;
+                if (!isPause)
+                {
+                    isPause = true;
+                    Time.timeScale = 0f;
+                }
+                else
+                {
+                    isPause = false;
+                    Time.timeScale = 1f;
+                }
             }
         }
         pausePanel.SetActive(isPause);

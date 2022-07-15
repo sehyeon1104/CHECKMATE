@@ -1,0 +1,9 @@
+N,W, false, 0
+N,W, false, 0
+P,W, false, 0
+P,W, false, 0
+P,W, true, 2
+K,W, false, 0
+N,W, false, 0
+N,W, false, 0
+N,W, false, 0

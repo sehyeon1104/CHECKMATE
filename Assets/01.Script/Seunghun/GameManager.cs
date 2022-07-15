@@ -10,6 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     public DialogPanel dialogPanel; //다이얼로그 패널 제어용 스크립트
     private Dictionary<int, List<TextVO>> dialogTextDictionary = new Dictionary<int, List<TextVO>>();
 
+
     public Transform Player
     {
         get
@@ -44,7 +45,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             dialogTextDictionary.Add(vo.code, vo.text);
         }
-    }
+    }   
 
 
     public static void ShowDialog(int index, Action callback = null)
@@ -56,5 +57,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         //해당 인덱스 의 대화를 재생하도록 함.
         Instance.dialogPanel.StartDialog(Instance.dialogTextDictionary[index], callback);
+
+
     }
 }

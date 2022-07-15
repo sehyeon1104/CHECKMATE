@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene/SelectScene.unity
     guid: 3accadbd39ee17a4e979440ee7003260
   - enabled: 1
-    path: Assets/Scenes/GameScene/TutorialScene.unity
-    guid: 6a57bf6a55cc36e4c92e0618a05339f1
-  - enabled: 1
     path: Assets/Scenes/GameScene/EasyScene.unity
     guid: 8b039964d4ae43242bd3f4797d98a594
   - enabled: 1
@@ -44,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SehyeonScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 6ec8f021e0926b2449bacc3272db9281
   m_configObjects: {}
