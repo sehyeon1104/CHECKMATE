@@ -36,8 +36,6 @@ public class warningSign : ChessMal
         //그러고보니 신호는 그게 없잖아?
         if (arr != null)
         {
-
-            Debug.Log("안되는 건가");
             arr.ArrowCopySW(arrow);
         }
         gameObject.SetActive(false);

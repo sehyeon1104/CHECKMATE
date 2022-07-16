@@ -20,8 +20,6 @@ public class HighScoreManager : MonoBehaviour
                 highScore.text = "Best : " + Timer.Instance.easyCheckTimer.ToString() + " sec";
                 break;
             case TimerChek.normal:
-
-                Debug.Log("µÇÁö>");
                 TimePlayerpersManager.Instance.NormalLoad();
                 highScore.text = "Best : " + Timer.Instance.normalCheckTimer.ToString() + " sec";
                 break;

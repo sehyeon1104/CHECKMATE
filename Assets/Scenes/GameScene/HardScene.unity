@@ -5034,7 +5034,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123330608}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1123330611
 Camera:
   m_ObjectHideFlags: 0
@@ -5100,6 +5100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2648593193332015892, guid: 29d46d879e223064d979ed9f3ea5b43e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2648593193332015893, guid: 29d46d879e223064d979ed9f3ea5b43e, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -6148,7 +6152,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751652174}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1751652177
 Camera:
   m_ObjectHideFlags: 0

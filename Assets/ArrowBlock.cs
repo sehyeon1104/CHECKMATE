@@ -25,14 +25,12 @@ public class ArrowBlock : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (isActive == true) return;
-        Debug.Log("닿았다");
         //Debug.Log(collision.gameObject.GetComponent<IArrow>().GetArrowState());
         if (collision.gameObject.CompareTag("Chess"))
         {
             IArrow arr = collision.gameObject.GetComponent<IArrow>();
 
 
-            Debug.Log("에너미 arrow " + arr.GetArrowState());
             if (arr != null)
             {
                 if (arrowRotate.arrow == arr.GetArrowState())
@@ -88,7 +86,6 @@ public class ArrowBlock : MonoBehaviour
                     GameManager.Instance.TimeScale = 0f;
 
                     //텍스트를 띄우는 함수
-                    Debug.Log("되니");
                     CheckMateGameOver.Instance.GameObjectSet(true);
                     testing.isSpawn = false;
                     CountDownControllder.Instance.TextStart();
