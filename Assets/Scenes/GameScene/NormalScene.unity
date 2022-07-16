@@ -219,6 +219,9 @@ MonoBehaviour:
   particle: {fileID: 1803688417}
   testing: {fileID: 1623377670}
   timerCheck: 1
+  spriteK: {fileID: 1060809478}
+  spriteArrow: {fileID: 899290922}
+  breakKing: {fileID: 8247141131196580586, guid: ec4097014bab45e46b968b751de0ba72, type: 3}
 --- !u!50 &63368128
 Rigidbody2D:
   serializedVersion: 4
@@ -6610,61 +6613,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 415
-      objectReference: {fileID: 0}
-    - target: {fileID: 524017102241229038, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5881375977574650346, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1506229096}
-    - target: {fileID: 5881375977574650346, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881375977574650346, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1747329153
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -415
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570723019910314053, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7934547815724479769, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934547815724479769, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7934547815724479770, guid: 295834046ba165b49987a639fd3ccecb, type: 3}
       propertyPath: m_RootOrder

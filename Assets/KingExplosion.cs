@@ -51,6 +51,7 @@ public class KingExplosion : MonoBehaviour
 
         CheckMateGameOver.Instance.GameObjectSet(true);
         CountDownControllder.Instance.TextStart();
+
         //일드리턴
 
     }

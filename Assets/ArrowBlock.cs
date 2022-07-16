@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static TimerEnum;
-
+using DG.Tweening;
 
 public class ArrowBlock : MonoBehaviour
 {
@@ -18,13 +18,15 @@ public class ArrowBlock : MonoBehaviour
 
     public TimerChek timerCheck;
 
-
+    public GameObject spriteK;
+    public GameObject spriteArrow;
+    public GameObject breakKing;
 
 
     //인터페이스로 그걸 만들까 
-    private void OnTriggerStay2D(Collider2D collision)
+    private IEnumerator OnTriggerStay2D(Collider2D collision)
     {
-        if (isActive == true) return;
+        if (isActive == true) yield break;
         //Debug.Log(collision.gameObject.GetComponent<IArrow>().GetArrowState());
         if (collision.gameObject.CompareTag("Chess"))
         {
@@ -84,12 +86,26 @@ public class ArrowBlock : MonoBehaviour
                     isActive = true;
                     collision.gameObject.SetActive(false);
                     GameManager.Instance.TimeScale = 0f;
-
+                    spriteArrow.SetActive(false);
+                    Sync_Gijoo.Instance.IsDeadTik();
                     //텍스트를 띄우는 함수
-                    CheckMateGameOver.Instance.GameObjectSet(true);
+                    //CheckMateGameOver.Instance.GameObjectSet(true);
                     testing.isSpawn = false;
-                    CountDownControllder.Instance.TextStart();
+                    //CountDownControllder.Instance.TextStart();
                     //SceanM.Instance.SeceanChange("Seunghun");
+                    yield return StartCoroutine(CameraZoooooooooom.Instance.CameraZoom());
+
+                    transform.parent.gameObject.transform.DOShakePosition(0.4f, 0.2f, 24, 1f, false, true).OnComplete(() =>
+                    {
+                        //함수 호출해가지고 
+                        //transform.parent.gameObject.SetActive(false); //플레이어 펄스(삭제와 같은)
+
+
+                        spriteK.SetActive(false);
+
+                        GameObject obj = Instantiate(breakKing, transform.position, Quaternion.identity);
+
+                    });
                 }
 
             }
