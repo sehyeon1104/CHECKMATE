@@ -173,6 +173,9 @@ MonoBehaviour:
   particle: {fileID: 1519306966}
   testing: {fileID: 1172826945}
   timerCheck: 2
+  spriteK: {fileID: 553210485}
+  spriteArrow: {fileID: 247324812}
+  breakKing: {fileID: 8247141131196580586, guid: ec4097014bab45e46b968b751de0ba72, type: 3}
 --- !u!50 &72157415
 Rigidbody2D:
   serializedVersion: 4
