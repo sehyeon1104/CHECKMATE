@@ -15,7 +15,7 @@ public class ArrowBlock : MonoBehaviour
 
 
     public TimerChek timerCheck;
-    public Testing testing;
+    public GameObject testing;
 
     bool isActive = false;
     public GameObject spriteK;
@@ -50,10 +50,12 @@ public class ArrowBlock : MonoBehaviour
                 else
                 {
 
+                    //플레이어 죽음 이벤트 큐 발생
                     switch (timerCheck)
                     {
                         case TimerChek.easy:
                             Timer.Instance.copyEasyCheckTimer();
+                            testing.GetComponent<Testing_E>().isSpawn = false;
                             if (Timer.Instance.easyCheckTimer > TimePlayerpersManager.Instance.GetCheckEasyLoad())
                             {
 
@@ -63,7 +65,7 @@ public class ArrowBlock : MonoBehaviour
                             break;
                         case TimerChek.normal:
 
-
+                            testing.GetComponent<Testing>().isSpawn = false;
                             Timer.Instance.copyNormalCheckTimer();
                             if (Timer.Instance.normalCheckTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                             {
@@ -74,7 +76,7 @@ public class ArrowBlock : MonoBehaviour
                             break;
                         case TimerChek.hard:
 
-
+                            testing.GetComponent<Testing_H>().isSpawn = false;
                             Timer.Instance.copyHardCheckTimer();
                             if (Timer.Instance.hardCheckTimer > TimePlayerpersManager.Instance.GetCheckHardLoad())
                             {
@@ -86,27 +88,20 @@ public class ArrowBlock : MonoBehaviour
                         default:
                             break;
                     }
-                   
-                   
 
+
+                    GameEvents.current.playerHpHealthTriggerEnter(); //데드틱
                     isActive = true;
-                    //collision.gameObject.SetActive(false);
+                    collision.gameObject.SetActive(false);
                     audioSource.Stop();
                     GameManager.Instance.TimeScale = 0f;
 
-                   Sync_Gijoo.Instance.IsDeadTik();
-                    //텍스트를 띄우는 함수
+         
 
                     //화면 가까이 하는 코드
                     spriteArrow.SetActive(false);
                     yield return StartCoroutine(CameraZoooooooooom.Instance.CameraZoom());
-
-
                     
-                    //그리고 기주야 LookChess오류 나가지고 새로운 게임오브젝트만들고 Player태그달아 
-                    testing.isSpawn = false;
-                    
-                    //플레이어가 움지깅ㅁ
                     transform.parent.gameObject.transform.DOShakePosition(0.4f, 0.2f, 24, 1f, false, true).OnComplete(()=>
                     {
                         //함수 호출해가지고 

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+
 using static ChessSpawnArrowEnum;
-public class Wave
+public class Wave_E
 {
     public string type;//몬스터 종류
     //public int x;
@@ -13,11 +14,9 @@ public class Wave
     public int childCount;
     // 스폰딜레이
 }
-
-public class Testing : MonoBehaviour
+public class Testing_E : MonoBehaviour
 {
     private enum ChessMal { Pawn, Knight, Bishop, Rook, King, Queen };
-
     ChessMal chessState = ChessMal.Pawn;
 
 
@@ -27,98 +26,80 @@ public class Testing : MonoBehaviour
     {
 
         spawnList = new List<Wave>();
-        int ran = Random.Range(0, 30);
+        int ran = Random.Range(0, 24);
         switch (ran)
         {
             case 0:
-                ReadSpawnFile("N1");
+                ReadSpawnFile("E1");
                 break;
             case 1:
-                ReadSpawnFile("N2");
+                ReadSpawnFile("E2");
                 break;
             case 2:
-                ReadSpawnFile("N3");
+                ReadSpawnFile("E3");
                 break;
             case 3:
-                ReadSpawnFile("N4");
+                ReadSpawnFile("E4");
                 break;
             case 4:
-                ReadSpawnFile("N5");
+                ReadSpawnFile("E5");
                 break;
             case 5:
-                ReadSpawnFile("N6");
+                ReadSpawnFile("E6");
                 break;
             case 6:
-                ReadSpawnFile("N7");
+                ReadSpawnFile("E7");
                 break;
             case 7:
-                ReadSpawnFile("N8");
+                ReadSpawnFile("E8");
                 break;
             case 8:
-                ReadSpawnFile("N9");
+                ReadSpawnFile("E9");
                 break;
             case 9:
-                ReadSpawnFile("N10");
+                ReadSpawnFile("E10");
                 break;
             case 10:
-                ReadSpawnFile("N11");
+                ReadSpawnFile("N2");
                 break;
             case 11:
-                ReadSpawnFile("N12");
+                ReadSpawnFile("N3");
                 break;
             case 12:
-                ReadSpawnFile("N13");
+                ReadSpawnFile("N6");
                 break;
             case 13:
-                ReadSpawnFile("N14");
+                ReadSpawnFile("N7");
                 break;
             case 14:
-                ReadSpawnFile("N15");
+                ReadSpawnFile("N9");
                 break;
             case 15:
-                ReadSpawnFile("N16");
+                ReadSpawnFile("N10");
                 break;
             case 16:
-                ReadSpawnFile("N17");
+                ReadSpawnFile("N11");
                 break;
             case 17:
-                ReadSpawnFile("N18");
+                ReadSpawnFile("N12");
                 break;
             case 18:
-                ReadSpawnFile("N19");
+                ReadSpawnFile("N13");
                 break;
             case 19:
-                ReadSpawnFile("N20");
+                ReadSpawnFile("N17");
                 break;
             case 20:
-                ReadSpawnFile("N21");
+                ReadSpawnFile("N20");
                 break;
             case 21:
-                ReadSpawnFile("N22");
+                ReadSpawnFile("N21");
                 break;
             case 22:
-                ReadSpawnFile("N23");
+                ReadSpawnFile("N22");
                 break;
             case 23:
-                ReadSpawnFile("N24");
-                break;
-            case 24:
-                ReadSpawnFile("N25");
-                break;
-            case 25:
-                ReadSpawnFile("N26");
-                break;
-            case 26:
-                ReadSpawnFile("N27");
-                break;
-            case 27:
-                ReadSpawnFile("N28");
-                break;
-            case 28:
-                ReadSpawnFile("N29");
-                break;
-            case 29:
-                ReadSpawnFile("N30");
+                ReadSpawnFile("N23");
                 break;
         }
 
@@ -178,101 +159,84 @@ public class Testing : MonoBehaviour
         }
         else if (spawnEnd == true && isRead == true)
         {
-            int ran = Random.Range(0, 30);
+            int ran = Random.Range(0, 24);
             switch (ran)
             {
                 case 0:
-                    ReadSpawnFile("N1");
+                    ReadSpawnFile("E1");
                     break;
                 case 1:
-                    ReadSpawnFile("N2");
+                    ReadSpawnFile("E2");
                     break;
                 case 2:
-                    ReadSpawnFile("N3");
+                    ReadSpawnFile("E3");
                     break;
                 case 3:
-                    ReadSpawnFile("N4");
+                    ReadSpawnFile("E4");
                     break;
                 case 4:
-                    ReadSpawnFile("N5");
+                    ReadSpawnFile("E5");
                     break;
                 case 5:
-                    ReadSpawnFile("N6");
+                    ReadSpawnFile("E6");
                     break;
                 case 6:
-                    ReadSpawnFile("N7");
+                    ReadSpawnFile("E7");
                     break;
                 case 7:
-                    ReadSpawnFile("N8");
+                    ReadSpawnFile("E8");
                     break;
                 case 8:
-                    ReadSpawnFile("N9");
+                    ReadSpawnFile("E9");
                     break;
                 case 9:
-                    ReadSpawnFile("N10");
+                    ReadSpawnFile("E10");
                     break;
                 case 10:
-                    ReadSpawnFile("N11");
+                    ReadSpawnFile("N2");
                     break;
                 case 11:
-                    ReadSpawnFile("N12");
+                    ReadSpawnFile("N3");
                     break;
                 case 12:
-                    ReadSpawnFile("N13");
+                    ReadSpawnFile("N6");
                     break;
                 case 13:
-                    ReadSpawnFile("N14");
+                    ReadSpawnFile("N7");
                     break;
                 case 14:
-                    ReadSpawnFile("N15");
+                    ReadSpawnFile("N9");
                     break;
                 case 15:
-                    ReadSpawnFile("N16");
+                    ReadSpawnFile("N10");
                     break;
                 case 16:
-                    ReadSpawnFile("N17");
+                    ReadSpawnFile("N11");
                     break;
                 case 17:
-                    ReadSpawnFile("N18");
+                    ReadSpawnFile("N12");
                     break;
                 case 18:
-                    ReadSpawnFile("N19");
+                    ReadSpawnFile("N13");
                     break;
                 case 19:
-                    ReadSpawnFile("N20");
+                    ReadSpawnFile("N17");
                     break;
                 case 20:
-                    ReadSpawnFile("N21");
+                    ReadSpawnFile("N20");
                     break;
                 case 21:
-                    ReadSpawnFile("N22");
+                    ReadSpawnFile("N21");
                     break;
                 case 22:
-                    ReadSpawnFile("N23");
+                    ReadSpawnFile("N22");
                     break;
                 case 23:
-                    ReadSpawnFile("N24");
-                    break;
-                case 24:
-                    ReadSpawnFile("N25");
-                    break;
-                case 25:
-                    ReadSpawnFile("N26");
-                    break;
-                case 26:
-                    ReadSpawnFile("N27");
-                    break;
-                case 27:
-                    ReadSpawnFile("N28");
-                    break;
-                case 28:
-                    ReadSpawnFile("N29");
-                    break;
-                case 29:
-                    ReadSpawnFile("N30");
+                    ReadSpawnFile("N23");
                     break;
             }
         }
+
     }
 
     bool isRead;
@@ -384,7 +348,7 @@ public class Testing : MonoBehaviour
                 Debug.Log(grid.GetWorldPosition(X, Y));
                 //Prefab를 가져온다. 
                 //Enum으로 가져오는 오브젝트를 정하는거야
-                GameObject enmeyObj =  Instantiate(enemy, monsterPostionSet, Quaternion.identity);
+                GameObject enmeyObj = Instantiate(enemy, monsterPostionSet, Quaternion.identity);
 
                 IArrow arr = enmeyObj.GetComponent<IArrow>();
 
@@ -531,7 +495,7 @@ public class Testing : MonoBehaviour
                 Y = 4;
                 break;
             case "S":
-                
+
                 arrow = ChessArrow.S;
                 X = 2;
                 Y = 0;
@@ -572,5 +536,4 @@ public class Testing : MonoBehaviour
                 break;
         }
     }
-
 }

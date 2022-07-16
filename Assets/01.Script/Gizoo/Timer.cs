@@ -28,6 +28,9 @@ public class Timer : MonoSingleton<Timer>
     protected ParticleSystem particle;
     protected bool isParOn = false;
     public float timer = 0;
+    public float normalCheckTimer = 0;
+    public float easyCheckTimer = 0;
+    public float hardCheckTimer = 0;
     protected ColorMode colorMode = ColorMode.DEFAULT;
 
     public UnityEngine.Rendering.Universal.Light2D pawn, kinght, bishop, rook, king, arrow, global, cautionR, cautionB;
@@ -46,7 +49,19 @@ public class Timer : MonoSingleton<Timer>
     {
         n++;
     }
+    public void copyNormalCheckTimer()
+    {
+        normalCheckTimer = timer;
+    }
+    public void copyEasyCheckTimer()
+    {
+        easyCheckTimer = timer;
 
+    }
+    public void copyHardCheckTimer()
+    {
+        hardCheckTimer = timer;
+    }
 
     private void FixedUpdate()
     {

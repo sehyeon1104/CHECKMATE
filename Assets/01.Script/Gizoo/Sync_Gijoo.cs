@@ -22,6 +22,8 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
         test = GetComponent<Test>();
         
         StartCoroutine(BpmSpeedUp());
+        GameEvents.current.onPlayerHealthTriggerEnter += IsDeadTik;
+
 
     }
 

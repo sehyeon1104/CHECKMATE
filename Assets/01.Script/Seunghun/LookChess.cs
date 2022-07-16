@@ -8,6 +8,8 @@ public class LookChess : ChessMal
     private Transform playerTransform;
     private float blockRadius = 1f;
 
+    public enum RookorBishop { Rook , Bishop}
+    public RookorBishop rookorBishop;
     private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
@@ -25,7 +27,13 @@ public class LookChess : ChessMal
 
     public void Move(Transform playerTransform, float tileRad)
     {
-        transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale), Sync_Gijoo.Instance.tikTime).SetEase(Ease.Linear);
+
+        if (rookorBishop == RookorBishop.Rook)
+            transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 6 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -6 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 6 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -6 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale), Sync_Gijoo.Instance.tikTime).SetEase(Ease.Linear);
+        else if (rookorBishop == RookorBishop.Bishop)
+        {
+            transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale, (playerTransform.position.y - transform.position.y) > 0 ? 4 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -4 * GameManager.Instance.TimeScale : 0 * tileRad * GameManager.Instance.TimeScale), Sync_Gijoo.Instance.tikTime).SetEase(Ease.Linear);
+        }
     }
 
     public override void ArrowCopySW(ChessSpawnArrowEnum.ChessArrow chessArrow)
