@@ -19,22 +19,16 @@ public class warningSign : ChessMal
     public int beat;
     IEnumerator Ienum()
     {
-        for(int i = 0; i < beat; i++)
+        for (int i = 0; i < beat; i++)
         {
-
-            //toggle = toggle % 4;
-            Debug.Log(toggle);
-            spriteR.color = colorSet[toggle];
-            toggle++;
+            spriteR.color = Color.white;
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-         
-            //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
+            spriteR.color = Color.red;
+            yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
         }
 
-        //yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
-
-        GameObject obj = Instantiate(LookObj, transform.position + transform.position , Quaternion.identity);
+        GameObject obj = Instantiate(LookObj, transform.position + transform.position / 3, Quaternion.identity);
 
 
         IArrow arr = obj.GetComponent<IArrow>();
@@ -42,8 +36,6 @@ public class warningSign : ChessMal
         //그러고보니 신호는 그게 없잖아?
         if (arr != null)
         {
-
-            Debug.Log("안되는 건가");
             arr.ArrowCopySW(arrow);
         }
         gameObject.SetActive(false);

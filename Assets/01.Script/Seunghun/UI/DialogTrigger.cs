@@ -13,9 +13,9 @@ public class DialogTrigger : MonoSingleton<DialogTrigger>
     {
         GameManager.ShowDialog(code);
 
-        
+
     }
 
-    
+
 
 }

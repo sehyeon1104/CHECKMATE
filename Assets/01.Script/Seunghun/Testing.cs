@@ -29,6 +29,7 @@ public class Testing : MonoBehaviour
 
         spawnList = new List<Wave>();
         int ran = Random.Range(0, 30);
+        Debug.Log($"현재 채보 : {ran + 1}");
         switch (ran)
         {
             case 0:
@@ -172,6 +173,7 @@ public class Testing : MonoBehaviour
         else if (spawnEnd == true && isRead == true)
         {
             int ran = Random.Range(0, 30);
+            Debug.Log($"현재 채보 : {ran + 1}");
             switch (ran)
             {
                 case 0:
@@ -456,11 +458,8 @@ public class Testing : MonoBehaviour
             IArrow arr = enmeyObj.GetComponent<IArrow>();
 
             //그러고보니 신호는 그게 없잖아?
-            Debug.Log(arrow);
             if (arr != null)
             {
-
-                Debug.Log("안되는 건가");
                 arr.ArrowCopySW(arrow);
             }
 

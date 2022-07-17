@@ -106,7 +106,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 0, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
-  beat: 4
+  beat: 3
 --- !u!114 &-3918835494435083620
 MonoBehaviour:
   m_ObjectHideFlags: 0

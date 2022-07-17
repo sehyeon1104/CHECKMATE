@@ -27,6 +27,10 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 
     private void FixedUpdate()
     {
+       if(GameManager.Instance.TimeScale == 0)
+       {
+            audioSource.Stop();
+       }
 
         tikTime = stdBpm / realMusicBpm;
 

@@ -846,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &345497668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1263,7 +1263,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2410,7 +2410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Enter To Tutorial
+  m_text: Press Enter To Normal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}
   m_sharedMaterial: {fileID: -1756501961472831446, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}
@@ -3421,7 +3421,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7718464023854150417, guid: 1406df76a6602db4bb684f182ddce750, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8f088dcc5ba576d4282eca87e83db4a6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 55e423a48e0ed064a8ee3d192c4164bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3802,8 +3802,8 @@ RectTransform:
   m_Father: {fileID: 1016753169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 154.61, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
