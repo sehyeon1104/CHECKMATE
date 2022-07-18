@@ -85,12 +85,12 @@ public class SwipeUI : MonoBehaviour
             case 2:
                 testBpm.musicBpm = 110;
                 chromaticAberration.intensity.Override(0.5f);
-                bloom.tint.Override(Color.blue);
+                bloom.tint.Override(Color.green);
                 break;
             case 3:
                 testBpm.musicBpm = 128;
                 chromaticAberration.intensity.Override(0.5f);
-                bloom.tint.Override(Color.green);
+                bloom.tint.Override(Color.blue);
                 break;
             case 4:
                 testBpm.musicBpm = 151;
