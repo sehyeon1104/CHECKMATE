@@ -36,6 +36,7 @@ public class DialogPanel : MonoBehaviour
     private RectTransform textTransform;
 
     private Dictionary<int, Sprite> imageDictionary = new Dictionary<int, Sprite>();
+    private bool isText = true;
 
     private Action endDialogCallback = null;
     int level = 0;
@@ -45,7 +46,10 @@ public class DialogPanel : MonoBehaviour
         panel = GetComponent<RectTransform>();
         textTransform = dialogText.GetComponent<RectTransform>();
     }
-
+    private void Start()
+    {
+        vign.color.Override(Color.yellow);
+    }
     public void StartDialog(List<TextVO> list, Action callback = null)
     {
         endDialogCallback = callback;
@@ -56,9 +60,9 @@ public class DialogPanel : MonoBehaviour
 
     public void ChessMalChangeDial(int Level)
     {
-        switch (Level)
+        switch (level)
         {
-            case 0:
+
             case 5:
                 vign.color.Override(Color.yellow);
                 break;
@@ -92,6 +96,7 @@ public class DialogPanel : MonoBehaviour
     }
     public void ShowDialog()
     {
+        isText = false;
         currentIndex = 0;
         GameManager.Instance.TimeScale = 0f;
 
@@ -100,8 +105,10 @@ public class DialogPanel : MonoBehaviour
         SpriteSet(list[currentIndex]);
         panel.DOScale(new Vector3(1, 1, 1), 0.8f).OnComplete(() =>
         {
+           isText = true;
             TypeIt(list[currentIndex]);
             isOpen = true;
+           
         });
     }
 
@@ -142,6 +149,7 @@ public class DialogPanel : MonoBehaviour
             if (clickToNext)
             {
                 dialogText.maxVisibleCharacters = totalVisibleChar;
+                isText = true;
                 break;
             }
             yield return shortWs;
@@ -156,30 +164,30 @@ public class DialogPanel : MonoBehaviour
 
     private void Update()
     {
-        print(level);
         if (level == 6)
         {
-            Invoke("GoScene", 1f);
+            Invoke("GoScene",0);
         }
         if (!isOpen) return;
 
-        if ((Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Return)) && clickToNext)
+        if ((Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Return)) && clickToNext && isText)
         {
             if (currentIndex >= list.Count)
             {
-
+                
+                    isText = false;
                 panel.DOScale(new Vector3(0, 0, 1), 0.8f).OnComplete(() =>
                 {
                     GameManager.Instance.TimeScale = 1f;
                     isOpen = false;
                     if (endDialogCallback != null)
                     {
-
+                       
                         endDialogCallback();
                     }
                     ++level;
                     ChessMalChangeDial(level);
-
+                   
 
                 });
 
@@ -190,7 +198,7 @@ public class DialogPanel : MonoBehaviour
                 TypeIt(list[currentIndex]);
             }
         }
-        else if (Input.GetButtonDown("Jump"))
+        else if (Input.GetKeyDown(KeyCode.Return)||Input.GetButtonDown("Jump")&&isText)
         {
             clickToNext = true;
         }
