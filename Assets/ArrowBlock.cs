@@ -22,6 +22,13 @@ public class ArrowBlock : MonoBehaviour
     public GameObject spriteArrow;
     public GameObject breakKing;
 
+    private AudioSource audioSource;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     //인터페이스로 그걸 만들까 
     private IEnumerator OnTriggerStay2D(Collider2D collision)
@@ -37,6 +44,7 @@ public class ArrowBlock : MonoBehaviour
             {
                 if (arrowRotate.arrow == arr.GetArrowState())
                 {
+                    audioSource.Play();
                     particle.Play();
                     collision.gameObject.SetActive(false);
                 }
