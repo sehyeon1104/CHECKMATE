@@ -101,6 +101,7 @@ public class SwipeUI : MonoBehaviour
                 if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 60f)
                 {
                     diffLockPanels[0].SetActive(false);
+                    diffLockPanels[1].SetActive(false);
                 }
                 else
                 {
@@ -115,6 +116,7 @@ public class SwipeUI : MonoBehaviour
                 if (PlayerPrefs.GetInt("TiemrScore") >= 60f)
                 {
                     diffLockPanels[1].SetActive(false);
+                    diffLockPanels[0].SetActive(false);
                 }
                 else
                 {
