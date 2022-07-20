@@ -4357,8 +4357,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6827,9 +6827,9 @@ MonoBehaviour:
   countDownTime: 3
   countDownDisPlay: {fileID: 1129340576}
   color:
-  - {r: 1, g: 0.86731225, b: 0.32452828, a: 1}
-  - {r: 1, g: 0.7130868, b: 0.2584905, a: 1}
-  - {r: 1, g: 0.35330868, b: 0.3339622, a: 1}
+  - {r: 0.31078953, g: 0.6792453, b: 0.25247416, a: 1}
+  - {r: 0.17160673, g: 0.4811321, b: 0.13344607, a: 1}
+  - {r: 0.1934496, g: 0.41509432, b: 0.24793653, a: 1}
   backGroundImage: {fileID: 828574957}
   uiCamera: {fileID: 1742328444}
   motionBlur: {fileID: 0}
