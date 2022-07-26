@@ -45,7 +45,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             dialogTextDictionary.Add(vo.code, vo.text);
         }
-    }
+    }   
 
 
     public static void ShowDialog(int index, Action callback = null)

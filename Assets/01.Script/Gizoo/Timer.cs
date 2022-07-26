@@ -31,6 +31,7 @@ public class Timer : MonoSingleton<Timer>
     public float normalCheckTimer = 0;
     public float easyCheckTimer = 0;
     public float hardCheckTimer = 0;
+
     protected ColorMode colorMode = ColorMode.DEFAULT;
 
     public UnityEngine.Rendering.Universal.Light2D pawn, kinght, bishop, rook, king, arrow, global, cautionR, cautionB;
@@ -40,15 +41,7 @@ public class Timer : MonoSingleton<Timer>
         colorMode = ColorMode.DEFAULT;
         CheckState();
     }
-    public void Start()
-    {
-        InvokeRepeating("NPlus", 0f, 0.1f);
-    }
 
-    public void NPlus()
-    {
-        n++;
-    }
     public void copyNormalCheckTimer()
     {
         normalCheckTimer = timer;
@@ -62,6 +55,17 @@ public class Timer : MonoSingleton<Timer>
     {
         hardCheckTimer = timer;
     }
+
+    public void Start()
+    {
+        InvokeRepeating("NPlus", 0f, 0.1f);
+    }
+
+    public void NPlus()
+    {
+        n++;
+    }
+
 
     private void FixedUpdate()
     {

@@ -19,6 +19,8 @@ public class SwipeUI : MonoBehaviour
     private float swipeTime = 0.2f;         // 페이지가 Swipe 되는 시간
     [SerializeField]
     private float swipeDistance = 0;        // 페이지가 Swipe되기 위해 움직여야 하는 최소 거리
+    [SerializeField]
+    private GameObject[] diffLockPanels;         //페이지의 기록에 따른 제한
 
     // 음악관련
     public AudioSource[] difAudio = null;
@@ -37,6 +39,9 @@ public class SwipeUI : MonoBehaviour
 
     private void Awake()
     {
+        diffLockPanels[0].SetActive(false);
+        diffLockPanels[1].SetActive(false);
+
         volumeProfile.TryGet(out chromaticAberration);
         volumeProfile.TryGet(out bloom);
         // 스크롤 되는 페이지의 각 value 값을 저장하는 배열 메 모리 할당
@@ -86,16 +91,38 @@ public class SwipeUI : MonoBehaviour
                 testBpm.musicBpm = 110;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.green);
+                diffLockPanels[0].SetActive(false);
+                diffLockPanels[1].SetActive(false);
                 break;  
             case 3:
                 testBpm.musicBpm = 128;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.blue);
+                if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 60f)
+                {
+                    diffLockPanels[0].SetActive(false);
+                    diffLockPanels[1].SetActive(false);
+                }
+                else
+                {
+                    diffLockPanels[1].SetActive(false);
+                    diffLockPanels[0].SetActive(true);
+                }
                 break;
             case 4:
                 testBpm.musicBpm = 146;
                 bloom.tint.Override(Color.red);
                 chromaticAberration.intensity.Override(1f);
+                if (PlayerPrefs.GetInt("TiemrScore") >= 60f)
+                {
+                    diffLockPanels[1].SetActive(false);
+                    diffLockPanels[0].SetActive(false);
+                }
+                else
+                {
+                    diffLockPanels[0].SetActive(false);
+                    diffLockPanels[1].SetActive(true);
+                }
                 break;
         }
         swipeTimer += Time.deltaTime;
@@ -316,10 +343,12 @@ public class SwipeUI : MonoBehaviour
                     SceneManager.LoadScene("EasyScene");
                     break;
                 case 3:
-                    SceneManager.LoadScene("GijooScene");
+                    if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 60f)
+                        SceneManager.LoadScene("NormalScene");
                     break;
                 case 4:
-                    SceneManager.LoadScene("HardScene");
+                    if (PlayerPrefs.GetInt("TiemrScore") >= 60f)
+                        SceneManager.LoadScene("HardScene");
                     break;
             }
         }

@@ -128,7 +128,6 @@ public class ArrowRotate : MonoBehaviour
             isUp = true;
             arrow = ChessArrow.W;
             isdiagonal = true;
-            Debug.Log("Ãâ·Â");
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
