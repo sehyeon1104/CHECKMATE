@@ -74,6 +74,7 @@ public class SwipeUI : MonoBehaviour
 
     private void Update()
     {
+        print($"이지 {PlayerPrefs.GetInt("TiemrScoreEasy")} 노말 {PlayerPrefs.GetInt("TiemrScore")}");
         int eie = currentPage;
         switch(eie)
         {
@@ -98,7 +99,7 @@ public class SwipeUI : MonoBehaviour
                 testBpm.musicBpm = 128;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.blue);
-                if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 60f)
+                if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 30f)
                 {
                     diffLockPanels[0].SetActive(false);
                     diffLockPanels[1].SetActive(false);
@@ -113,7 +114,7 @@ public class SwipeUI : MonoBehaviour
                 testBpm.musicBpm = 146;
                 bloom.tint.Override(Color.red);
                 chromaticAberration.intensity.Override(1f);
-                if (PlayerPrefs.GetInt("TiemrScore") >= 60f)
+                if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
                 {
                     diffLockPanels[1].SetActive(false);
                     diffLockPanels[0].SetActive(false);
@@ -343,11 +344,11 @@ public class SwipeUI : MonoBehaviour
                     SceneManager.LoadScene("EasyScene");
                     break;
                 case 3:
-                    if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 60f)
+                    if(PlayerPrefs.GetInt("TiemrScoreEasy") >=30f)
                         SceneManager.LoadScene("NormalScene");
                     break;
                 case 4:
-                    if (PlayerPrefs.GetInt("TiemrScore") >= 60f)
+                    if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
                         SceneManager.LoadScene("HardScene");
                     break;
             }

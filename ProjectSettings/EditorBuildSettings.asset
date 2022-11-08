@@ -6,42 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameScene/StartScene.unity
+    path: Assets/00.Scenes/GameScene/StartScene.unity
     guid: 30f1dc14077f8574eb136341b81a555c
   - enabled: 1
-    path: Assets/Scenes/Seunghun.unity
+    path: Assets/00.Scenes/Seunghun.unity
     guid: 03173a013cf4d7b4bb88f55a7a0ba28e
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/00.Scenes/TestScene.unity
     guid: 33d37d65a4f57d947b626839a5c3f685
   - enabled: 1
-    path: Assets/Scenes/GameScene/LoadingScene.unity
+    path: Assets/00.Scenes/GameScene/LoadingScene.unity
     guid: d559341bee50b0a4c8783726988fd9a9
   - enabled: 1
-    path: Assets/Scenes/GameScene/SelectScene.unity
+    path: Assets/00.Scenes/GameScene/SelectScene.unity
     guid: 3accadbd39ee17a4e979440ee7003260
   - enabled: 1
-    path: Assets/Scenes/GameScene/EasyScene.unity
+    path: Assets/00.Scenes/GameScene/EasyScene.unity
     guid: 8b039964d4ae43242bd3f4797d98a594
   - enabled: 1
-    path: Assets/Scenes/GameScene/NormalScene.unity
+    path: Assets/00.Scenes/GameScene/NormalScene.unity
     guid: 89ff6bb06d1f4294bb378c72d8893be2
   - enabled: 1
-    path: Assets/Scenes/GameScene/HardScene.unity
+    path: Assets/00.Scenes/GameScene/HardScene.unity
     guid: 2ee70447fe286fc449d771578fb348ff
   - enabled: 1
-    path: Assets/Scenes/GijooScene.unity
+    path: Assets/00.Scenes/GijooScene.unity
     guid: ffb41552d2eb3e448a2b3d75987491e8
   - enabled: 1
-    path: Assets/Scenes/Jeonghwan.unity
+    path: Assets/00.Scenes/Jeonghwan.unity
     guid: d6bb4ba517497dd4caba2ff364fa5b0c
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/00.Scenes/SampleScene.unity
     guid: 2a857d07b0b06d64eb22aa2d962a4737
   - enabled: 1
-    path: Assets/Scenes/SehyeonScene.unity
+    path: Assets/00.Scenes/SehyeonScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
+    path: Assets/00.Scenes/TutorialScene.unity
     guid: 6ec8f021e0926b2449bacc3272db9281
   m_configObjects: {}
