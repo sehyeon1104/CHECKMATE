@@ -44,7 +44,7 @@ public class ArrowBlock : MonoBehaviour
             {
                 if (arrowRotate.arrow == arr.GetArrowState())
                 {
-                    audioSource.Play();
+                    //audioSource.Play();
                     particle.Play();
                     collision.gameObject.SetActive(false);
                 }
