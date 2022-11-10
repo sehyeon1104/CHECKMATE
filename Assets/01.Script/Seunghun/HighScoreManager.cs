@@ -9,24 +9,9 @@ public class HighScoreManager : MonoSingleton<HighScoreManager>
 
     // Start is called before the first frame update
     void Awake()
-    { 
-        switch (timerCheck)
-        {
-            case TimerCheck.easy:
-                TimePlayerpersManager.Instance.EasyLoad();
-                highScore.text = "Best : " + Timer.Instance.easyCheckTimer.ToString() + " sec";
-                break;
-            case TimerCheck.normal:
-                TimePlayerpersManager.Instance.NormalLoad();
-                highScore.text = "Best : " + Timer.Instance.normalCheckTimer.ToString() + " sec";
-                break;
-            case TimerCheck.hard:
-                TimePlayerpersManager.Instance.HardLoad();
-                highScore.text = "Best : " + Timer.Instance.hardCheckTimer.ToString() + " sec";
-                break;
-            default:
-                break;
-        }
+    {
+        TimePlayerpersManager.Instance.Load();
+        highScore.text = "Best : " + Timer.Instance.checkTimer.ToString() + " sec";
 
     }
 

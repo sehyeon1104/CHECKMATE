@@ -49,40 +49,12 @@ public class ArrowBlock : MonoBehaviour
                 }
                 else
                 {
-
-                    switch (timerCheck)
+                    Timer.Instance.copyCheckTimer();
+                    testing.GetComponent<Testing>().isSpawn = false;
+                    if (Timer.Instance.checkTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                     {
-                        case TimerCheck.easy:
-                            Timer.Instance.copyEasyCheckTimer();
-                            testing.GetComponent<Testing_E>().isSpawn = false;
-                            if (Timer.Instance.easyCheckTimer > TimePlayerpersManager.Instance.GetCheckEasyLoad())
-                            {
-                                TimePlayerpersManager.Instance.SaveEasy();
-                            }
-                            break;
-                        case TimerCheck.normal:
-
-                            testing.GetComponent<Testing>().isSpawn = false;
-                            Timer.Instance.copyNormalCheckTimer();
-                            if (Timer.Instance.normalCheckTimer > TimePlayerpersManager.Instance.GetCheckLoad())
-                            {
-                                TimePlayerpersManager.Instance.SaveNormal();
-                            }
-                            break;
-                        case TimerCheck.hard:
-
-                            testing.GetComponent<Testing_H>().isSpawn = false;
-                            Timer.Instance.copyHardCheckTimer();
-                            if (Timer.Instance.hardCheckTimer > TimePlayerpersManager.Instance.GetCheckHardLoad())
-                            {
-                                TimePlayerpersManager.Instance.SaveHard();
-                            }
-                            break;
-                        default:
-                            break;
+                        TimePlayerpersManager.Instance.Save();
                     }
-
-
 
                     isActive = true;
                     collision.gameObject.SetActive(false);

@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
 {
-
-
-    public void SaveNormal()
+    public void Save()
     {
-        PlayerPrefs.SetInt("TiemrScore", (int)Timer.Instance.normalCheckTimer);
-
-    }
-    public void SaveEasy()
-    {
-        PlayerPrefs.SetInt("TiemrScoreEasy", (int)Timer.Instance.easyCheckTimer);
-
-    }
-    public void SaveHard()
-    {
-        PlayerPrefs.SetInt("TiemrScoreHard", (int)Timer.Instance.hardCheckTimer);
-
+        switch(HighScoreManager.Instance.timerCheck)
+        {
+            case TimerCheck.easy:
+                PlayerPrefs.SetInt("TiemrScoreEasy", (int)Timer.Instance.checkTimer);
+                break;
+            case TimerCheck.normal:
+                PlayerPrefs.SetInt("TiemrScore", (int)Timer.Instance.checkTimer);
+                break;
+            case TimerCheck.hard:
+                PlayerPrefs.SetInt("TiemrScoreHard", (int)Timer.Instance.checkTimer);
+                break;
+        }
     }
 
-    public void NormalLoad()
+    public void Load()
     {
-        Timer.Instance.normalCheckTimer = PlayerPrefs.GetInt("TiemrScore");
-    }
-    public void EasyLoad()
-    {
-        Timer.Instance.easyCheckTimer = PlayerPrefs.GetInt("TiemrScoreEasy");
-    }
-    public void HardLoad()
-    {
-        Timer.Instance.hardCheckTimer = PlayerPrefs.GetInt("TiemrScoreHard");
+        switch (HighScoreManager.Instance.timerCheck)
+        {
+            case TimerCheck.easy:
+                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScoreEasy");
+                break;
+            case TimerCheck.normal:
+                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScore");
+                break;
+            case TimerCheck.hard:
+                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScoreHard");
+                break;
+        }
     }
 
     public int GetCheckLoad()
     {
-        return PlayerPrefs.GetInt("TiemrScore");
-    }
-
-    public int GetCheckEasyLoad()
-    {
-        return PlayerPrefs.GetInt("TiemrScoreEasy");
-    }
-
-    public int GetCheckHardLoad()
-    {
-        return PlayerPrefs.GetInt("TiemrScoreHard");
+        switch (HighScoreManager.Instance.timerCheck)
+        {
+            case TimerCheck.easy:
+                return PlayerPrefs.GetInt("TiemrScoreEasy");
+            case TimerCheck.normal:
+                return PlayerPrefs.GetInt("TiemrScore");
+            case TimerCheck.hard:
+                return PlayerPrefs.GetInt("TiemrScoreHard");
+        }
+        return 0;
     }
 }

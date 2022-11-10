@@ -3737,9 +3737,7 @@ MonoBehaviour:
   - {fileID: 1205172678}
   particle: {fileID: 333648484}
   timer: 0
-  normalCheckTimer: 0
-  easyCheckTimer: 0
-  hardCheckTimer: 0
+  checkTimer: 0
   pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
   kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
   bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}
@@ -5296,7 +5294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1172826946}
   - component: {fileID: 1172826945}
-  - component: {fileID: 1172826947}
   m_Layer: 0
   m_Name: SpawnTest
   m_TagString: Untagged
@@ -5311,7 +5308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172826944}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cce337a5098e1ba4eb8392858f4f5edf, type: 3}
   m_Name: 
@@ -5341,28 +5338,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1172826947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172826944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4a941780fe116448ea152cb4de890b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSpawn: 1
-  arrow: 0
-  monsterMob:
-  - {fileID: 1078674225509795294, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
-  - {fileID: 2573757792446775520, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
-  - {fileID: 7971824726434482527, guid: 718afb0e1187ede48a3a3ca6b854bce5, type: 3}
-  - {fileID: 3241965682046880307, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
-  cellSize: 1
-  spawnIndex: 0
-  spawnEnd: 0
 --- !u!1 &1173085129
 GameObject:
   m_ObjectHideFlags: 0

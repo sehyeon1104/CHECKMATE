@@ -28,9 +28,7 @@ public class Timer : MonoSingleton<Timer>
     protected ParticleSystem particle;
     protected bool isParOn = false;
     public float timer = 0;
-    public float normalCheckTimer = 0;
-    public float easyCheckTimer = 0;
-    public float hardCheckTimer = 0;
+    public float checkTimer = 0;
 
     protected ColorMode colorMode = ColorMode.DEFAULT;
 
@@ -42,18 +40,9 @@ public class Timer : MonoSingleton<Timer>
         CheckState();
     }
 
-    public void copyNormalCheckTimer()
+    public void copyCheckTimer()
     {
-        normalCheckTimer = timer;
-    }
-    public void copyEasyCheckTimer()
-    {
-        easyCheckTimer = timer;
-
-    }
-    public void copyHardCheckTimer()
-    {
-        hardCheckTimer = timer;
+        checkTimer = timer;
     }
 
     public void Start()
