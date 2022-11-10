@@ -2961,6 +2961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0937f67d385932c439878003b46772a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 1478352638}
   musicBpm: 128
   realMusicBpm: 0
   musicTemp: 4

@@ -6,6 +6,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 {
     Hit test;
     AudioSource audioSource;
+    [SerializeField] private Timer timer;
 
     public float musicBpm;
     public float realMusicBpm;
@@ -19,16 +20,23 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
     
     private void Awake()
     {
+        timer.GetComponent<EasyTimer>().enabled = false;
+        timer.GetComponent<NormalTimer>().enabled = false;
+        timer.GetComponent<HardTimer>().enabled = false;
+
         switch (HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
                 musicBpm = 110f;
+                timer.GetComponent<EasyTimer>().enabled = true;
                 break;
             case TimerCheck.normal:
                 musicBpm = 128f;
+                timer.GetComponent<NormalTimer>().enabled = true;
                 break;
             case TimerCheck.hard:
                 musicBpm = 146f;
+                timer.GetComponent<HardTimer>().enabled = true;
                 break;
         }
 
