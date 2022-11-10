@@ -7,6 +7,7 @@ using DG.Tweening;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
+
 public class CountDownControllder : MonoSingleton<CountDownControllder>
 {
     [SerializeField]
@@ -15,15 +16,12 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
     public int countDownTime;
     MotionBlur volum;
     public TextMeshProUGUI countDownDisPlay;
-    // public Sprite[] image;
     public Color[] color;
     public Image backGroundImage;
-    //public Image numberImage;
 
     public Camera uiCamera;
     public MotionBlur motionBlur;
 
-    //public Sprite[] sprites;
     private void Awake()
     {
         profile.TryGet(out vig);
@@ -31,6 +29,17 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
 
         profile.TryGet(out motionBlur);
         motionBlur.intensity.value = 1f;
+
+        switch (HighScoreManager.Instance.timerCheck)
+        {
+            case TimerCheck.easy:
+                break;
+            case TimerCheck.normal:
+                break;
+            case TimerCheck.hard:
+                break;
+        }
+
     }
 
     bool isCount = false;
@@ -82,12 +91,8 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
        
         while(countDownTime > 0)
         {
-
-       
             countDownDisPlay.text = countDownTime.ToString();
-            //backGroundImage.sprite = image[0];
             backGroundImage.color = color[spriteColor];
-            //numberImage.sprite = sprites[spriteColor];
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 
             countDownTime--;

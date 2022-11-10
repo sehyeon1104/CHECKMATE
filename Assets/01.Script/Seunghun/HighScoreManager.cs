@@ -2,28 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static TimerEnum;
-public class HighScoreManager : MonoBehaviour
+public class HighScoreManager : MonoSingleton<HighScoreManager>
 {
     public TextMeshProUGUI highScore;
-    public TimerChek timerCheck;
+    public TimerCheck timerCheck;
 
     // Start is called before the first frame update
     void Awake()
-    {
-
-
+    { 
         switch (timerCheck)
         {
-            case TimerChek.easy:
+            case TimerCheck.easy:
                 TimePlayerpersManager.Instance.EasyLoad();
                 highScore.text = "Best : " + Timer.Instance.easyCheckTimer.ToString() + " sec";
                 break;
-            case TimerChek.normal:
+            case TimerCheck.normal:
                 TimePlayerpersManager.Instance.NormalLoad();
                 highScore.text = "Best : " + Timer.Instance.normalCheckTimer.ToString() + " sec";
                 break;
-            case TimerChek.hard:
+            case TimerCheck.hard:
                 TimePlayerpersManager.Instance.HardLoad();
                 highScore.text = "Best : " + Timer.Instance.hardCheckTimer.ToString() + " sec";
                 break;

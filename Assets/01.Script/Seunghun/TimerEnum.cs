@@ -1,9 +1,4 @@
-
-
-public static  class TimerEnum 
+public enum TimerCheck
 {
-    public enum TimerChek
-    {
-        easy, normal, hard
-    }
+    easy, normal, hard
 }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TimerEnum;
 using DG.Tweening;
 
 public class ArrowBlock : MonoBehaviour
@@ -16,7 +15,7 @@ public class ArrowBlock : MonoBehaviour
 
     bool isActive = false;
 
-    public TimerChek timerCheck;
+    public TimerCheck timerCheck;
 
     public GameObject spriteK;
     public GameObject spriteArrow;
@@ -53,7 +52,7 @@ public class ArrowBlock : MonoBehaviour
 
                     switch (timerCheck)
                     {
-                        case TimerChek.easy:
+                        case TimerCheck.easy:
                             Timer.Instance.copyEasyCheckTimer();
                             testing.GetComponent<Testing_E>().isSpawn = false;
                             if (Timer.Instance.easyCheckTimer > TimePlayerpersManager.Instance.GetCheckEasyLoad())
@@ -61,7 +60,7 @@ public class ArrowBlock : MonoBehaviour
                                 TimePlayerpersManager.Instance.SaveEasy();
                             }
                             break;
-                        case TimerChek.normal:
+                        case TimerCheck.normal:
 
                             testing.GetComponent<Testing>().isSpawn = false;
                             Timer.Instance.copyNormalCheckTimer();
@@ -70,7 +69,7 @@ public class ArrowBlock : MonoBehaviour
                                 TimePlayerpersManager.Instance.SaveNormal();
                             }
                             break;
-                        case TimerChek.hard:
+                        case TimerCheck.hard:
 
                             testing.GetComponent<Testing_H>().isSpawn = false;
                             Timer.Instance.copyHardCheckTimer();
