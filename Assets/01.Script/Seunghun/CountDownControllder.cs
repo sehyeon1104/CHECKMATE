@@ -14,9 +14,11 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
     VolumeProfile profile;
     Vignette vig;    
     public int countDownTime;
-    MotionBlur volum;
     public TextMeshProUGUI countDownDisPlay;
-    public Color[] color;
+    static private Color[] color;
+    public Color[] easyColor;
+    public Color[] normalColor;
+    public Color[] hardColor;
     public Image backGroundImage;
 
     public Camera uiCamera;
@@ -30,13 +32,16 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         profile.TryGet(out motionBlur);
         motionBlur.intensity.value = 1f;
 
-        switch (HighScoreManager.Instance.timerCheck)
+        switch (HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
+                color = easyColor;
                 break;
             case TimerCheck.normal:
+                color = normalColor;
                 break;
             case TimerCheck.hard:
+                color = hardColor;
                 break;
         }
 
@@ -85,10 +90,10 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         
     }
 
-    public int spriteColor;
+    public int spriteColor = 0;
     IEnumerator CountDownToStart()
     {
-       
+        
         while(countDownTime > 0)
         {
             countDownDisPlay.text = countDownTime.ToString();

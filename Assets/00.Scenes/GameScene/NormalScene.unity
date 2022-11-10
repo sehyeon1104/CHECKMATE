@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScore: {fileID: 256779010}
-  timerCheck: 1
 --- !u!4 &18643994
 Transform:
   m_ObjectHideFlags: 0
@@ -2856,7 +2855,6 @@ GameObject:
   - component: {fileID: 457605671}
   - component: {fileID: 457605670}
   - component: {fileID: 457605668}
-  - component: {fileID: 457605669}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2960,18 +2958,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &457605669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457605667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6aeaa7b7379b944a0cff3284a09819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &457605670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3002,7 +2988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 457605672}
-  testSound: {fileID: 1833605729}
 --- !u!114 &457605672
 MonoBehaviour:
   m_ObjectHideFlags: 0

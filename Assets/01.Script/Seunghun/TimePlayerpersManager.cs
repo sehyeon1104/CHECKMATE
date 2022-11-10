@@ -6,7 +6,7 @@ public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
 {
     public void Save()
     {
-        switch(HighScoreManager.Instance.timerCheck)
+        switch(HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
                 PlayerPrefs.SetInt("TiemrScoreEasy", (int)Timer.Instance.checkTimer);
@@ -22,7 +22,7 @@ public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
 
     public void Load()
     {
-        switch (HighScoreManager.Instance.timerCheck)
+        switch (HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
                 Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScoreEasy");
@@ -38,7 +38,7 @@ public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
 
     public int GetCheckLoad()
     {
-        switch (HighScoreManager.Instance.timerCheck)
+        switch (HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
                 return PlayerPrefs.GetInt("TiemrScoreEasy");

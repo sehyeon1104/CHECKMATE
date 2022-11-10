@@ -6,8 +6,6 @@ public class Hit : MonoBehaviour
 {
     [SerializeField]
     CameraShake cameraShake;
-    [SerializeField]
-    AudioSource testSound;
     bool isParOn = false;
 
     public IEnumerator TestOffset()
@@ -17,8 +15,6 @@ public class Hit : MonoBehaviour
             isParOn = true;
             yield return new WaitForSeconds(0f);
         }
-        
-        testSound.Play();
         cameraShake.ReSize();
         cameraShake.Shake();
     }

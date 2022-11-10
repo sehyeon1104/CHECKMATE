@@ -11,7 +11,6 @@ public class SliderController : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     private void Update()
     {
-        print(ArrowRotate.rotationTime);
         if (volumeSlider.value == -14)
             soundimage.sprite = sprites[0];
         else if (-18 < volumeSlider.value && volumeSlider.value < -7)

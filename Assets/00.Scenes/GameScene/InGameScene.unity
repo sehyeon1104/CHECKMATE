@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScore: {fileID: 256779010}
-  timerCheck: 1
 --- !u!4 &18643994
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,7 +2846,6 @@ GameObject:
   - component: {fileID: 457605671}
   - component: {fileID: 457605670}
   - component: {fileID: 457605668}
-  - component: {fileID: 457605669}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2951,18 +2949,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &457605669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457605667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6aeaa7b7379b944a0cff3284a09819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &457605670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2993,7 +2979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 457605672}
-  testSound: {fileID: 1833605729}
 --- !u!114 &457605672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6165,7 +6150,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1478352635}
+  - component: {fileID: 1478352638}
   - component: {fileID: 1478352636}
+  - component: {fileID: 1478352637}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -6209,9 +6196,69 @@ MonoBehaviour:
   - {fileID: 962890048}
   particle: {fileID: 1706280547}
   timer: 0
-  normalCheckTimer: 0
-  easyCheckTimer: 0
-  hardCheckTimer: 0
+  checkTimer: 0
+  pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
+  kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
+  bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}
+  rook: {fileID: -138471884498633079, guid: e18d0d669b34b664599ba409c1aad073, type: 3}
+  king: {fileID: 1060809481}
+  arrow: {fileID: 899290926}
+  global: {fileID: 471750955}
+  cautionR: {fileID: -3918835494435083620, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
+  cautionB: {fileID: 6679981253731768646, guid: 718afb0e1187ede48a3a3ca6b854bce5, type: 3}
+--- !u!114 &1478352637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478352633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d133c2a09c8ef4d86045cc9e6ab48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  n: 0
+  enemyColor: {r: 0, g: 0, b: 1, a: 1}
+  kingColor: {r: 1, g: 0, b: 0, a: 1}
+  globalColor: {r: 0, g: 1, b: 1, a: 1}
+  textTimers:
+  - {fileID: 1344356356}
+  - {fileID: 962890048}
+  particle: {fileID: 0}
+  timer: 0
+  checkTimer: 0
+  pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
+  kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
+  bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}
+  rook: {fileID: -138471884498633079, guid: e18d0d669b34b664599ba409c1aad073, type: 3}
+  king: {fileID: 1060809481}
+  arrow: {fileID: 899290926}
+  global: {fileID: 471750955}
+  cautionR: {fileID: -3918835494435083620, guid: 08cd6eadf808fa948aa7a484f1aea0f2, type: 3}
+  cautionB: {fileID: 6679981253731768646, guid: 718afb0e1187ede48a3a3ca6b854bce5, type: 3}
+--- !u!114 &1478352638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478352633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c05fe5ac15db34e85afad5cc62aa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  n: 0
+  enemyColor: {r: 0, g: 0, b: 1, a: 1}
+  kingColor: {r: 1, g: 0, b: 0, a: 1}
+  globalColor: {r: 0, g: 1, b: 1, a: 1}
+  textTimers:
+  - {fileID: 1344356356}
+  - {fileID: 962890048}
+  particle: {fileID: 1706280547}
+  timer: 0
+  checkTimer: 0
   pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
   kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
   bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}
@@ -7031,7 +7078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849315149}
-  - component: {fileID: 1849315148}
+  - component: {fileID: 1849315150}
   m_Layer: 0
   m_Name: CountController
   m_TagString: Untagged
@@ -7039,29 +7086,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1849315148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849315147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512306a75ed2d564da75c7218fe467e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 1496cdcad6b8e58448d83655f074f4be, type: 2}
-  countDownTime: 3
-  countDownDisPlay: {fileID: 408654749}
-  color:
-  - {r: 0.21402632, g: 0.5353823, b: 0.6792453, a: 1}
-  - {r: 0.17586327, g: 0.4558518, b: 0.6132076, a: 1}
-  - {r: 0.21338554, g: 0.3718832, b: 0.509434, a: 1}
-  backGroundImage: {fileID: 242593355}
-  uiCamera: {fileID: 373289589}
-  motionBlur: {fileID: 0}
-  spriteColor: 0
 --- !u!4 &1849315149
 Transform:
   m_ObjectHideFlags: 0
@@ -7077,6 +7101,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849315150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849315147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512306a75ed2d564da75c7218fe467e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 1496cdcad6b8e58448d83655f074f4be, type: 2}
+  countDownTime: 3
+  countDownDisPlay: {fileID: 408654749}
+  easyColor:
+  - {r: 0.30871996, g: 0.68, b: 0.2516, a: 1}
+  - {r: 0.17472003, g: 0.48, b: 0.13439998, a: 1}
+  - {r: 0.19319999, g: 0.42, b: 0.24989998, a: 1}
+  normalColor:
+  - {r: 0.2176, g: 0.5412799, b: 0.68, a: 1}
+  - {r: 0.17690001, g: 0.45119673, b: 0.61, a: 1}
+  - {r: 0.2142, g: 0.37195998, b: 0.51, a: 1}
+  hardColor:
+  - {r: 0.87843144, g: 0.1764706, b: 0.14509805, a: 1}
+  - {r: 0.7176471, g: 0.12941177, b: 0.16470589, a: 1}
+  - {r: 0.5294118, g: 0.10196079, b: 0.098039225, a: 1}
+  backGroundImage: {fileID: 242593355}
+  uiCamera: {fileID: 373289589}
+  motionBlur: {fileID: 0}
+  spriteColor: 0
 --- !u!1 &2123614099
 GameObject:
   m_ObjectHideFlags: 0

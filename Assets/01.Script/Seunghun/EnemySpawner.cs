@@ -22,10 +22,9 @@ public class EnemySpawner : MonoBehaviour
     private List<TextAsset> testList = new List<TextAsset>();
     private void Awake()
     {
-        for (int i = 0; i < Directory.GetFiles($"Assets/Resources/{HighScoreManager.Instance.timerCheck}").Length / 2; i++)
+        for (int i = 0; i < Directory.GetFiles($"Assets/Resources/{HighScoreManager.timerCheck}").Length / 2; i++)
         {
-            TextAsset item = Resources.Load($"{HighScoreManager.Instance.timerCheck}/{i + 1}") as TextAsset;
-            Debug.Log(item.name);
+            TextAsset item = Resources.Load($"{HighScoreManager.timerCheck}/{i + 1}") as TextAsset;
             testList.Add(item);
         }
         SpawnChaebo();

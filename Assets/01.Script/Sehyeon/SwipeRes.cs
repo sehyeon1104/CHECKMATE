@@ -12,6 +12,5 @@ public class SwipeRes : MonoBehaviour
     void Awake()
     {
         rect.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
-        Debug.Log(Screen.width);
     }
 }

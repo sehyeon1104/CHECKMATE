@@ -16,6 +16,23 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
     public float tikTime = 0f;
     public float nextTime = 0f;
     bool isParOn = false;
+    
+    private void Awake()
+    {
+        switch (HighScoreManager.timerCheck)
+        {
+            case TimerCheck.easy:
+                musicBpm = 110f;
+                break;
+            case TimerCheck.normal:
+                musicBpm = 128f;
+                break;
+            case TimerCheck.hard:
+                musicBpm = 146f;
+                break;
+        }
+
+    }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();

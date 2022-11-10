@@ -490,9 +490,21 @@ MonoBehaviour:
   countDownTime: 3
   countDownDisPlay: {fileID: 1794361736}
   color:
-  - {r: 0.8784314, g: 0.17633949, b: 0.14509802, a: 1}
-  - {r: 0.7169812, g: 0.13122104, b: 0.16356371, a: 1}
-  - {r: 0.5283019, g: 0.10100084, b: 0.09668918, a: 1}
+  - {r: 1, g: 0.042780746, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.059999943, a: 1}
+  - {r: 1, g: 0.010526314, b: 0, a: 1}
+  easyColor:
+  - {r: 0.30871996, g: 0.68, b: 0.2516, a: 1}
+  - {r: 0.17472003, g: 0.48, b: 0.13439998, a: 1}
+  - {r: 0.19319999, g: 0.42, b: 0.24989998, a: 1}
+  normalColor:
+  - {r: 0.2176, g: 0.5412799, b: 0.68, a: 1}
+  - {r: 0.17690001, g: 0.45119673, b: 0.61, a: 1}
+  - {r: 0.2142, g: 0.37195998, b: 0.51, a: 1}
+  hardColor:
+  - {r: 0.87843144, g: 0.1764706, b: 0.14509805, a: 1}
+  - {r: 0.7176471, g: 0.12941177, b: 0.16470589, a: 1}
+  - {r: 0.5294118, g: 0.10196079, b: 0.098039225, a: 1}
   backGroundImage: {fileID: 186052902}
   uiCamera: {fileID: 1751652177}
   motionBlur: {fileID: 0}
@@ -2198,7 +2210,6 @@ GameObject:
   - component: {fileID: 196816559}
   - component: {fileID: 196816558}
   - component: {fileID: 196816556}
-  - component: {fileID: 196816557}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2302,18 +2313,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &196816557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196816555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6aeaa7b7379b944a0cff3284a09819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &196816558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2344,7 +2343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 196816560}
-  testSound: {fileID: 0}
 --- !u!114 &196816560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,7 +2404,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScore: {fileID: 1330535460}
-  timerCheck: 2
 --- !u!4 &237446811
 Transform:
   m_ObjectHideFlags: 0

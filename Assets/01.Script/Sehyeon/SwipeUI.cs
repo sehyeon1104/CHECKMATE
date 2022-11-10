@@ -74,7 +74,6 @@ public class SwipeUI : MonoBehaviour
 
     private void Update()
     {
-        print($"이지 {PlayerPrefs.GetInt("TiemrScoreEasy")} 노말 {PlayerPrefs.GetInt("TiemrScore")}");
         int eie = currentPage;
         switch(eie)
         {
@@ -335,39 +334,47 @@ public class SwipeUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            switch (currentPage)
-            {
-                case 1:
-                    SceneManager.LoadScene("TutorialScene");
-                    break;
-                case 2:
-                    SceneManager.LoadScene("EasyScene");
-                    break;
-                case 3:
-                    if (PlayerPrefs.GetInt("TiemrScoreEasy") >= 45f)
-                        SceneManager.LoadScene("NormalScene");
-                    break;
-                case 4:
-                    if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
-                        SceneManager.LoadScene("HardScene");
-                    break;
-            }
             //switch (currentPage)
             //{
             //    case 1:
             //        SceneManager.LoadScene("TutorialScene");
-            //        return;
+            //        break;
             //    case 2:
-            //        HighScoreManager.Instance.timerCheck = TimerCheck.easy;
+            //        SceneManager.LoadScene("EasyScene");
             //        break;
             //    case 3:
-            //        HighScoreManager.Instance.timerCheck = TimerCheck.normal;
+            //        if (PlayerPrefs.GetInt("TiemrScoreEasy") >= 45f)
+            //            SceneManager.LoadScene("NormalScene");
             //        break;
             //    case 4:
-            //        HighScoreManager.Instance.timerCheck = TimerCheck.hard;
+            //        if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
+            //            SceneManager.LoadScene("HardScene");
             //        break;
             //}
-            //SceneManager.LoadScene("InGameScene");
+            switch (currentPage)
+            {
+                case 1:
+                    SceneManager.LoadScene("TutorialScene");
+                    return;
+                case 2:
+                    HighScoreManager.timerCheck = TimerCheck.easy;
+                    break;
+                case 3:
+                    if (PlayerPrefs.GetInt("TiemrScoreEasy") >= 45f)
+                    {
+                        HighScoreManager.timerCheck = TimerCheck.normal;
+                        break;
+                    }
+                    else return;
+                case 4:
+                    if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
+                    {
+                        HighScoreManager.timerCheck = TimerCheck.hard;
+                        break;
+                    }
+                    else return;
+            }
+            SceneManager.LoadScene("InGameScene");
         }
     }
     private void UpdateCircleContent()
