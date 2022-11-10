@@ -5,8 +5,8 @@ using UnityEngine;
 public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 {
     Hit test;
-    AudioSource audioSource;
     [SerializeField] private Timer timer;
+    [SerializeField] private AudioSource[] musics;
 
     public float musicBpm;
     public float realMusicBpm;
@@ -39,11 +39,10 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
                 timer.GetComponent<HardTimer>().enabled = true;
                 break;
         }
-
+        musics[(int)HighScoreManager.timerCheck].Play();
     }
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         test = GetComponent<Hit>();
         
         StartCoroutine(BpmSpeedUp());
@@ -54,7 +53,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
     {
        if(GameManager.Instance.TimeScale == 0)
        {
-            audioSource.Stop();
+            musics[(int)HighScoreManager.timerCheck].Stop();
        }
 
         tikTime = stdBpm / realMusicBpm;
@@ -66,7 +65,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
             if (!isParOn)
             {
                 isParOn = true;
-                audioSource.Play();
+                musics[(int)HighScoreManager.timerCheck].Play();
             }
             StartCoroutine(PlayTik(tikTime));
 
@@ -105,7 +104,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
         {
             yield return new WaitForSeconds(1f);
             s++;
-            audioSource.pitch = 1 + (s * 0.01f);
+            musics[(int)HighScoreManager.timerCheck].pitch = 1 + (s * 0.01f);
             realMusicBpm = musicBpm * (1 + (s * 0.01f));
         }
     }
