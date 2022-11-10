@@ -11,7 +11,7 @@ public class Wave
     public bool multi;
     public int childCount;
 }
-public class Testing : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     private enum ChessMal { Pawn, Knight, Bishop, Rook, King, Queen };
 

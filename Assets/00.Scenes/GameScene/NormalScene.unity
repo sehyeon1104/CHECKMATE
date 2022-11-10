@@ -6218,9 +6218,7 @@ MonoBehaviour:
   - {fileID: 962890048}
   particle: {fileID: 1706280547}
   timer: 0
-  normalCheckTimer: 0
-  easyCheckTimer: 0
-  hardCheckTimer: 0
+  checkTimer: 0
   pawn: {fileID: -1211391838426934455, guid: b21c8316c1d7fb748a3f67fce574e258, type: 3}
   kinght: {fileID: -7564290129132920935, guid: e7850b8856c09484789adf34c9931bcf, type: 3}
   bishop: {fileID: 4071623702496892191, guid: d2d9ca0067fd91f43929adf7e7678156, type: 3}

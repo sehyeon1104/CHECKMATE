@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
 {
-    Test test;
+    Hit test;
     AudioSource audioSource;
 
     public float musicBpm;
@@ -19,7 +19,7 @@ public class Sync_Gijoo : MonoSingleton<Sync_Gijoo>
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        test = GetComponent<Test>();
+        test = GetComponent<Hit>();
         
         StartCoroutine(BpmSpeedUp());
 

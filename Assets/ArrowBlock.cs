@@ -11,7 +11,7 @@ public class ArrowBlock : MonoBehaviour
     //닿았는데 체스가 내방향에 없다면 데미지 달게
     public ArrowRotate arrowRotate;
     public ParticleSystem particle;
-    public Testing testing;
+    public EnemySpawner testing;
 
     bool isActive = false;
 
@@ -50,7 +50,7 @@ public class ArrowBlock : MonoBehaviour
                 else
                 {
                     Timer.Instance.copyCheckTimer();
-                    testing.GetComponent<Testing>().isSpawn = false;
+                    testing.GetComponent<EnemySpawner>().isSpawn = false;
                     if (Timer.Instance.checkTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                     {
                         TimePlayerpersManager.Instance.Save();
