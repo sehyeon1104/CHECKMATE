@@ -99,7 +99,7 @@ public class SwipeUI : MonoBehaviour
                 testBpm.musicBpm = 128;
                 chromaticAberration.intensity.Override(0.5f);
                 bloom.tint.Override(Color.blue);
-                if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 30f)
+                if(PlayerPrefs.GetInt("TiemrScoreEasy") >= 45f)
                 {
                     diffLockPanels[0].SetActive(false);
                     diffLockPanels[1].SetActive(false);
@@ -344,7 +344,7 @@ public class SwipeUI : MonoBehaviour
                     SceneManager.LoadScene("EasyScene");
                     break;
                 case 3:
-                    if(PlayerPrefs.GetInt("TiemrScoreEasy") >=30f)
+                    if (PlayerPrefs.GetInt("TiemrScoreEasy") >= 45f)
                         SceneManager.LoadScene("NormalScene");
                     break;
                 case 4:
@@ -352,6 +352,22 @@ public class SwipeUI : MonoBehaviour
                         SceneManager.LoadScene("HardScene");
                     break;
             }
+            //switch (currentPage)
+            //{
+            //    case 1:
+            //        SceneManager.LoadScene("TutorialScene");
+            //        return;
+            //    case 2:
+            //        HighScoreManager.Instance.timerCheck = TimerCheck.easy;
+            //        break;
+            //    case 3:
+            //        HighScoreManager.Instance.timerCheck = TimerCheck.normal;
+            //        break;
+            //    case 4:
+            //        HighScoreManager.Instance.timerCheck = TimerCheck.hard;
+            //        break;
+            //}
+            //SceneManager.LoadScene("InGameScene");
         }
     }
     private void UpdateCircleContent()

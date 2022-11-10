@@ -7,10 +7,10 @@ public class CameraZoomer : MonoSingleton<CameraZoomer>
     Camera mainCamera;
     float minusSpeed = 0.5f;
 
-    private void Start()
+    private void Awake()
     {
         mainCamera = Camera.main;
-        //StartCoroutine(CameraZoom());
+        StartCoroutine(CameraZoom());
     }
 
     public IEnumerator CameraZoom()
