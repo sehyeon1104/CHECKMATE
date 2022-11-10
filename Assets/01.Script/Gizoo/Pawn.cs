@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,11 +30,10 @@ public class Pawn : ChessMal
 
     public void Move(Transform playerTransform, float tileRad)
     {
+        float transformDistX = playerTransform.position.x - transform.position.x;
+        float transformDistY = playerTransform.position.y - transform.position.y;
 
-
-        //transform.DOMove(transform.position + new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad, (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad), Sync_Gijoo.Instance.tikTime);
-
-        transform.position += new Vector3((playerTransform.position.x - transform.position.x) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.x - transform.position.x) < 0? -1 * GameManager.Instance.TimeScale : 0 * tileRad , (playerTransform.position.y - transform.position.y) > 0 ? 1 * GameManager.Instance.TimeScale : (playerTransform.position.y - transform.position.y) < 0 ? -1 * GameManager.Instance.TimeScale : 0 * tileRad);
+        transform.position += new Vector3(Math.Sign(transformDistX) * GameManager.Instance.TimeScale, Math.Sign(transformDistY) * GameManager.Instance.TimeScale);
     }
 
 

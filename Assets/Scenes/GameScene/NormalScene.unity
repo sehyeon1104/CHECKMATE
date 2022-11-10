@@ -6315,7 +6315,7 @@ PrefabInstance:
       objectReference: {fileID: 1548900999}
     - target: {fileID: 2648593193332015897, guid: 29d46d879e223064d979ed9f3ea5b43e, type: 3}
       propertyPath: m_VolumeLayerMask.m_Bits
-      value: 1
+      value: 2147483649
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29d46d879e223064d979ed9f3ea5b43e, type: 3}

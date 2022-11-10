@@ -34,7 +34,7 @@ public class ArrowBlock : MonoBehaviour
     private IEnumerator OnTriggerStay2D(Collider2D collision)
     {
         if (isActive == true) yield break;
-        //Debug.Log(collision.gameObject.GetComponent<IArrow>().GetArrowState());
+
         if (collision.gameObject.CompareTag("Chess"))
         {
             IArrow arr = collision.gameObject.GetComponent<IArrow>();
@@ -44,7 +44,7 @@ public class ArrowBlock : MonoBehaviour
             {
                 if (arrowRotate.arrow == arr.GetArrowState())
                 {
-                    audioSource.Play();
+                    //audioSource.Play();
                     particle.Play();
                     collision.gameObject.SetActive(false);
                 }
@@ -58,8 +58,6 @@ public class ArrowBlock : MonoBehaviour
                             testing.GetComponent<Testing_E>().isSpawn = false;
                             if (Timer.Instance.easyCheckTimer > TimePlayerpersManager.Instance.GetCheckEasyLoad())
                             {
-
-
                                 TimePlayerpersManager.Instance.SaveEasy();
                             }
                             break;
@@ -69,8 +67,6 @@ public class ArrowBlock : MonoBehaviour
                             Timer.Instance.copyNormalCheckTimer();
                             if (Timer.Instance.normalCheckTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                             {
-
-
                                 TimePlayerpersManager.Instance.SaveNormal();
                             }
                             break;
@@ -80,8 +76,6 @@ public class ArrowBlock : MonoBehaviour
                             Timer.Instance.copyHardCheckTimer();
                             if (Timer.Instance.hardCheckTimer > TimePlayerpersManager.Instance.GetCheckHardLoad())
                             {
-
-
                                 TimePlayerpersManager.Instance.SaveHard();
                             }
                             break;
