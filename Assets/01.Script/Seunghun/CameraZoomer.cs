@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class CameraZoooooooooom : MonoSingleton<CameraZoooooooooom>
+public class CameraZoomer : MonoSingleton<CameraZoomer>
 {
     Camera mainCamera;
     float minusSpeed = 0.5f;

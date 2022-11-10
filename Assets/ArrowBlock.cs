@@ -66,7 +66,7 @@ public class ArrowBlock : MonoBehaviour
                     testing.isSpawn = false;
                     //CountDownControllder.Instance.TextStart();
                     //SceanM.Instance.SeceanChange("Seunghun");
-                    yield return StartCoroutine(CameraZoooooooooom.Instance.CameraZoom());
+                    yield return StartCoroutine(CameraZoomer.Instance.CameraZoom());
 
                     transform.parent.gameObject.transform.DOShakePosition(0.4f, 0.2f, 24, 1f, false, true).OnComplete(() =>
                     {

@@ -137,13 +137,199 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_Vertices:
+  - position: {x: -0.07, y: 0.34, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.5933333, y: 0.58638746}
+  - position: {x: -0.05, y: 0.27, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.59466666, y: 0.5790576}
+  - position: {x: -0.06, y: 0.33, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.594, y: 0.5853403}
+  - position: {x: -0.07, y: 0.25, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.5933333, y: 0.57696337}
+  - position: {x: -0.05, y: 0.27, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.59466666, y: 0.5790576}
+  - position: {x: -0.05, y: 0.23, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.59466666, y: 0.5748691}
+  - position: {x: 0.63, y: 1.51, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.64, y: 0.7089005}
+  - position: {x: -0.05, y: 0.32, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.59466666, y: 0.5842932}
+  - position: {x: -0.06, y: 0.35, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.594, y: 0.58743453}
+  - position: {x: -0.96, y: 1.51, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.534, y: 0.7089005}
+  - position: {x: 1.01, y: 0.96, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.66533333, y: 0.6513089}
+  - position: {x: 0.8, y: -1.51, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.65133333, y: 0.39267015}
+  - position: {x: 1.01, y: -0.28, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.66533333, y: 0.52146596}
+  - position: {x: -0.06, y: 0.22, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.594, y: 0.57382196}
+  - position: {x: -1.01, y: 1.33, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.53066665, y: 0.69005233}
+  - position: {x: -1.01, y: -1.51, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0.53066665, y: 0.39267015}
   - position: {x: 0, y: 0, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 0000
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  m_Triangles: 000008000200030001000d0005000d0001000f000e000b0009000b000e000d000b00090003000d00090005000b000d0004000b00050007000b00040006000b0007000a000b0006000c000b000a00060000000900030009000000080000000600020008000600070002000600050001000400030000000100020001000000
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1.01, y: 1.51, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
