@@ -81,7 +81,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnChaebo()
     {
         int ran = Random.Range(0, testList.Count);
-
+        Debug.Log(ran + 1);
         ReadSpawnFile(ran);
     }
 
@@ -169,7 +169,6 @@ public class EnemySpawner : MonoBehaviour
 
                 IArrow arr = enmeyObj.GetComponent<IArrow>();
 
-                Debug.Log(arrow);
                 if (arr != null)
                 {
                     arr.ArrowCopySW(arrow);

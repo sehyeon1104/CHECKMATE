@@ -3,7 +3,6 @@ N,W, false, 0
 P,W, true, 3
 K,S, false, 0
 R,W, false, 0
-N,W, false, 0
 P,D, false, 0
 P,A, true, 2
 K,W, false, 0
