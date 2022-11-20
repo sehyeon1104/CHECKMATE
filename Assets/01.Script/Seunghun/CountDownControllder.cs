@@ -24,6 +24,8 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
     public Camera uiCamera;
     public MotionBlur motionBlur;
 
+    string[] countText = { "<size=115>Ready?", "<size=150>Set", "<size=150>Go!" };
+
     private void Awake()
     {
         profile.TryGet(out vig);
@@ -96,7 +98,7 @@ public class CountDownControllder : MonoSingleton<CountDownControllder>
         
         while(countDownTime > 0)
         {
-            countDownDisPlay.text = countDownTime.ToString();
+            countDownDisPlay.text = countText[spriteColor];
             backGroundImage.color = color[spriteColor];
             yield return new WaitForSeconds(Sync_Gijoo.Instance.tikTime);
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class SetselectButton : MonoBehaviour
+public class BtnSelect : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] pauseButtons;
@@ -45,7 +45,6 @@ public class SetselectButton : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                Debug.Log("안도!");
                 EventSystem.current.SetSelectedGameObject(pauseButtons[0]);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
@@ -57,12 +56,10 @@ public class SetselectButton : MonoBehaviour
                 if (EventSystem.current.currentSelectedGameObject == pauseButtons[0])
                 {
                     ContBtn.Select();
-                    Debug.Log("야호");
                 }
                 else if (EventSystem.current.currentSelectedGameObject == pauseButtons[1])
                 {
                     DiffBtn.Select();
-                    Debug.Log("하하");
                 }
             }
         }
@@ -76,7 +73,6 @@ public class SetselectButton : MonoBehaviour
 
     public void OnClickDiffBtn()
     {
-        //LoadingSceneController.LoadScene("SelectScene");
         SceneManager.LoadScene("SelectScene");
         Time.timeScale = 1f;
     }
