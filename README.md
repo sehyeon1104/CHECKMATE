@@ -1,6 +1,8 @@
+<div align="center">
+
 # CHECKMATE
----
-![1](https://user-images.githubusercontent.com/77712394/187807031-dca8e924-8f83-4236-ad83-a2b1bb123513.png)
+----
+<img width="140%" src="https://user-images.githubusercontent.com/77712394/187807031-dca8e924-8f83-4236-ad83-a2b1bb123513.png"/>
 
 # ✏️프로젝트 소개✏️
 ### 교내에서 진행한 2022 하계 게임잼 프로젝트입니다
