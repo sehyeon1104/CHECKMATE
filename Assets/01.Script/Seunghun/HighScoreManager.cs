@@ -11,9 +11,8 @@ public class HighScoreManager : MonoSingleton<HighScoreManager>
     void Awake()
     {
         TimePlayerpersManager.Instance.Load();
-        Debug.Log(timerCheck);
+        Debug.Log("TimerChecked! : " + timerCheck);
         highScore.text = "Best : " + Timer.Instance.checkTimer.ToString() + " sec";
-
     }
 
 

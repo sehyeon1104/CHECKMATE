@@ -2746,7 +2746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Survive 60 second at easy difficulty
+  m_text: Survive 30 second at easy difficulty
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}
   m_sharedMaterial: {fileID: -1756501961472831446, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}
@@ -4987,7 +4987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Survive 60 second at normal difficulty
+  m_text: Survive 30 second at normal difficulty
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}
   m_sharedMaterial: {fileID: -1756501961472831446, guid: 0743626d6b946f54f8306365363bb4c7, type: 2}

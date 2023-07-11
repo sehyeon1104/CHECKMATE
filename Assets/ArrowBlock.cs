@@ -50,6 +50,7 @@ public class ArrowBlock : MonoBehaviour
                 else
                 {
                     Timer.Instance.copyCheckTimer();
+                    Debug.Log("≈∏¿Ã∏” : " + Timer.Instance.timer);
                     testing.GetComponent<EnemySpawner>().isSpawn = false;
                     if (Timer.Instance.checkTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                     {

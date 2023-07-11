@@ -36,7 +36,6 @@ public class TestSync : MonoBehaviour
 
     private IEnumerator PlayTik(float tikTime)
     {
-        Debug.Log(nextTime);
         shakeUI.TestOffset();
         yield return new WaitForSeconds(tikTime);
     }
