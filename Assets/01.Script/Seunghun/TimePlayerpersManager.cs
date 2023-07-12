@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
 {
+    public Timer timer;
+
     public void Save()
     {
         switch(HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
-                PlayerPrefs.SetInt("TiemrScoreEasy", (int)Timer.Instance.checkTimer);
+                timer = FindObjectOfType<EasyTimer>();
+                PlayerPrefs.SetInt("TiemrScoreEasy", (int)timer.checkTimer);
                 break;
             case TimerCheck.normal:
-                PlayerPrefs.SetInt("TiemrScore", (int)Timer.Instance.checkTimer);
+                timer = FindObjectOfType<NormalTimer>();
+                PlayerPrefs.SetInt("TiemrScore", (int)timer.checkTimer);
                 break;
             case TimerCheck.hard:
-                PlayerPrefs.SetInt("TiemrScoreHard", (int)Timer.Instance.checkTimer);
+                timer = FindObjectOfType<HardTimer>();
+                PlayerPrefs.SetInt("TiemrScoreHard", (int)timer.checkTimer);
                 break;
         }
     }
@@ -25,13 +30,16 @@ public class TimePlayerpersManager : MonoSingleton<TimePlayerpersManager>
         switch (HighScoreManager.timerCheck)
         {
             case TimerCheck.easy:
-                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScoreEasy");
+                timer = FindObjectOfType<EasyTimer>();
+                timer.checkTimer = PlayerPrefs.GetInt("TiemrScoreEasy");
                 break;
             case TimerCheck.normal:
-                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScore");
+                timer = FindObjectOfType<NormalTimer>();
+                timer.checkTimer = PlayerPrefs.GetInt("TiemrScore");
                 break;
             case TimerCheck.hard:
-                Timer.Instance.checkTimer = PlayerPrefs.GetInt("TiemrScoreHard");
+                timer = FindObjectOfType<HardTimer>();
+                timer.checkTimer = PlayerPrefs.GetInt("TiemrScoreHard");
                 break;
         }
     }

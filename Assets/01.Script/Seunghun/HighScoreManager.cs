@@ -8,11 +8,11 @@ public class HighScoreManager : MonoSingleton<HighScoreManager>
     public static TimerCheck timerCheck;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         TimePlayerpersManager.Instance.Load();
         Debug.Log(timerCheck);
-        highScore.text = "Best : " + Timer.Instance.checkTimer.ToString() + " sec";
+        highScore.text = "Best : " + TimePlayerpersManager.Instance.timer.checkTimer.ToString() + " sec";
 
     }
 

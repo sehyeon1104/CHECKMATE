@@ -49,16 +49,16 @@ public class ArrowBlock : MonoBehaviour
                 }
                 else
                 {
-                    Timer.Instance.copyCheckTimer();
+                    GameManager.Instance.TimeScale = 0f;
+                    TimePlayerpersManager.Instance.timer.copyCheckTimer();
                     testing.GetComponent<EnemySpawner>().isSpawn = false;
-                    if (Timer.Instance.checkTimer > TimePlayerpersManager.Instance.GetCheckLoad())
+                    if (TimePlayerpersManager.Instance.GetCheckLoad() == 0 || TimePlayerpersManager.Instance.timer.checkTimer > TimePlayerpersManager.Instance.GetCheckLoad())
                     {
                         TimePlayerpersManager.Instance.Save();
                     }
 
                     isActive = true;
                     collision.gameObject.SetActive(false);
-                    GameManager.Instance.TimeScale = 0f;
                     spriteArrow.SetActive(false);
                     Sync_Gijoo.Instance.IsDeadTik();
                     //텍스트를 띄우는 함수

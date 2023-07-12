@@ -6,10 +6,9 @@ public class NormalTimer : Timer
 {
     public override void CheckUpdate()
     {
+        base.CheckUpdate();
         textTimers[0].text = $"{(int)timer / 60 % 60:00} : ";
         textTimers[1].text = $"{(int)timer % 60:00}";
-        if (GameManager.Instance.TimeScale != 0)
-            timer += Time.deltaTime;
 
 
         if (timer >= 122.5f)

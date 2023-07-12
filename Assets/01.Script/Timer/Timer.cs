@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoSingleton<Timer>
+public class Timer : MonoBehaviour
 {
     protected enum ColorMode
     {
@@ -63,7 +63,10 @@ public class Timer : MonoSingleton<Timer>
 
     public virtual void CheckUpdate()
     {
-        
+        if (GameManager.Instance.TimeScale != 0)
+        {
+            timer += Time.deltaTime;
+        }
     }
     public virtual void CheckState()
     {

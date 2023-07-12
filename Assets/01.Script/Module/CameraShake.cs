@@ -50,7 +50,7 @@ public class CameraShake : MonoBehaviour
     }
     void StartResize()
     {
-        mainCamera.fieldOfView-= 0.5f;
+        mainCamera.fieldOfView-= 0.2f;
     }
     void StopResize()
     {
