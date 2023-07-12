@@ -113,7 +113,7 @@ public class SwipeUI : MonoBehaviour
                 testBpm.musicBpm = 146;
                 bloom.tint.Override(Color.red);
                 chromaticAberration.intensity.Override(1f);
-                if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
+                if (PlayerPrefs.GetInt("TiemrScore") >= 30f)
                 {
                     diffLockPanels[1].SetActive(false);
                     diffLockPanels[0].SetActive(false);
@@ -367,7 +367,7 @@ public class SwipeUI : MonoBehaviour
                     }
                     else return;
                 case 4:
-                    if (PlayerPrefs.GetInt("TiemrScore") >= 45f)
+                    if (PlayerPrefs.GetInt("TiemrScore") >= 30f)
                     {
                         HighScoreManager.timerCheck = TimerCheck.hard;
                         break;
