@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         testList.Clear();
 
-        for (int i = 0; i < Directory.GetFiles($"Assets/Resources/{HighScoreManager.timerCheck}").Length / 2; i++)
+        for (int i = 0; i < Resources.LoadAll<TextAsset>($"{HighScoreManager.timerCheck}").Length / 2; i++)
         {
             TextAsset item = Resources.Load($"{HighScoreManager.timerCheck}/{i + 1}") as TextAsset;
             testList.Add(item);
