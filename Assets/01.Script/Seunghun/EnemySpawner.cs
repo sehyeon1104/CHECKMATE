@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < Resources.LoadAll<TextAsset>($"{HighScoreManager.timerCheck}").Length / 2; i++)
         {
-            TextAsset item = Resources.Load($"{HighScoreManager.timerCheck}/{i + 1}") as TextAsset;
+            TextAsset item = Resources.Load<TextAsset>($"{HighScoreManager.timerCheck}/{i + 1}");
             testList.Add(item);
         }
         SpawnChaebo();
